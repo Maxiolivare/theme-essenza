@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/scss/estilo.css">
 </head>
 <body>
-    
+    <h1>hola mudno lol</h1>
 </body>
 </html>
