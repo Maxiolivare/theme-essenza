@@ -49,6 +49,6 @@
 
 
   <!-- JS -->
-  <script src="assets/js/script.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/script.js"></script>
 </body>
 </html>
