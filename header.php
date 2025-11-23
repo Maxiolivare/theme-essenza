@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>assets/scss/style.css" />
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/scss/style.css" />
 </head>
 <body>
 
@@ -22,7 +22,7 @@
 
       <div class="mobile-menu__logo">
         <div class="logo-circle">
-          <img src="<?php echo get_template_directory_uri(); ?>assets/img/Logo-essenza.svg" alt="Logo Essenza">
+          <img src="<?php echo get_template_directory_uri();?>/assets/img/Logo-essenza.svg" alt="Logo Essenza">
         </div>
       </div>
     </div>
@@ -30,28 +30,28 @@
     <nav class="mobile-menu__nav">
       <a href="#inicio" class="mobile-menu__link active">
         <span class="mobile-menu__icon">
-          <img src="<?php echo get_template_directory_uri(); ?>assets/img/icono-home.svg" alt="Inicio">
+          <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-home.svg" alt="Inicio">
         </span>
         <span>Inicio</span>
       </a>
 
       <a href="#tienda" class="mobile-menu__link">
         <span class="mobile-menu__icon">
-          <img src="<?php echo get_template_directory_uri(); ?>assets/img/icono-tienda.svg" alt="Tienda">
+          <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-tienda.svg" alt="Tienda">
         </span>
         <span>Tienda</span>
       </a>
 
       <a href="#sobre-essenza" class="mobile-menu__link">
         <span class="mobile-menu__icon">
-          <img src="<?php echo get_template_directory_uri(); ?>assets/img/icono-sobre-la-marca.svg" alt="Sobre Essenza">
+          <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-sobre-la-marca.svg" alt="Sobre Essenza">
         </span>
         <span>Sobre Essenza</span>
       </a>
 
       <a href="#contacto" class="mobile-menu__link">
         <span class="mobile-menu__icon">
-          <img src="<?php echo get_template_directory_uri(); ?>assets/img/icono-contacto.svg" alt="Contacto">
+          <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-contacto.svg" alt="Contacto">
         </span>
         <span>Contacto</span>
       </a>
@@ -74,7 +74,7 @@
       <div class="header-left">
         <a href="index.html" class="logo-link">
           <div class="logo-circle">
-            <img src="<?php echo get_template_directory_uri(); ?>assets/img/Logo-essenza.svg" alt="Logo Essenza">
+            <img src="<?php echo get_template_directory_uri();?>/assets/img/Logo-essenza.svg" alt="Logo Essenza">
           </div>
         </a>
       </div>
@@ -91,13 +91,13 @@
       <div class="header-right">
         <button class="icon-btn" aria-label="Ver carrito">
           <span class="icon-round">
-            <img src="<?php echo get_template_directory_uri(); ?>assets/img/icono-carrito.svg" alt="Carrito">
+            <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-carrito.svg" alt="Carrito">
           </span>
         </button>
 
         <button class="icon-btn" aria-label="Cuenta">
           <span class="icon-round">
-            <img src="<?php echo get_template_directory_uri(); ?>assets/img/icono-perfil.svg" alt="Perfil">
+            <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-perfil.svg" alt="Perfil">
           </span>
         </button>
       </div>

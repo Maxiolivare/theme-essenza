@@ -15,22 +15,22 @@
         <h2 id="titulo-mas-querido">LO MÁS QUERIDO POR NUESTROS CLIENTES</h2>
         <div class="product-grid">
           <article class="product-card">
-            <div class="product-card__image" style="background-image: url('assets/img/producto home-1.png');"></div>
+            <div class="product-card__image" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/producto home-1.png');"></div>
             <h3 class="product-card__title">Arreglo floral, rosas.</h3>
             <p class="product-card__price">$ 15.000</p>
           </article>
           <article class="product-card">
-            <div class="product-card__image" style="background-image: url('assets/img/producto\ home-2.png');"></div>
+            <div class="product-card__image" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/producto\ home-2.png');"></div>
             <h3 class="product-card__title">Arreglo floral, flores.</h3>
             <p class="product-card__price">$ 15.000</p>
           </article>
           <article class="product-card">
-            <div class="product-card__image" style="background-image: url('assets/img/producto\ home-3.png');"></div>
+            <div class="product-card__image" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/producto\ home-3.png');"></div>
             <h3 class="product-card__title">Rosas en maceta cabeza.</h3>
             <p class="product-card__price">$ 10.000</p>
           </article>
           <article class="product-card">
-            <div class="product-card__image" style="background-image: url('assets/img/producto\ home-4.png');"></div>
+            <div class="product-card__image" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/producto\ home-4.png');"></div>
             <h3 class="product-card__title">Malteada de chocolate.</h3>
             <p class="product-card__price">$ 15.000</p>
           </article>
@@ -47,25 +47,25 @@
         <div class="category-grid">
           <article class="category-card">
             <div class="category-card__icon">
-              <img src="assets/img/icono-categoria-gourmet.svg" alt="Categoría Gourmet">
+              <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-categoria-gourmet.svg" alt="Categoría Gourmet">
             </div>
             <h3 class="category-card__title">Gourmet</h3>
           </article>
           <article class="category-card">
             <div class="category-card__icon">
-              <img src="assets/img/icono-caregorias-arreglos-florales.svg" alt="Arreglos florales">
+              <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-caregorias-arreglos-florales.svg" alt="Arreglos florales">
             </div>
             <h3 class="category-card__title">Arreglos Florales</h3>
           </article>
           <article class="category-card">
             <div class="category-card__icon">
-              <img src="assets/img/icono-categoria-flores.svg" alt="Flores">
+              <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-categoria-flores.svg" alt="Flores">
             </div>
             <h3 class="category-card__title">Flores</h3>
           </article>
           <article class="category-card">
             <div class="category-card__icon">
-              <img src="assets/img/icono-categoria-animales.svg" alt="Animales">
+              <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-categoria-animales.svg" alt="Animales">
             </div>
             <h3 class="category-card__title">Animales</h3>
           </article>
@@ -80,7 +80,7 @@
           <div class="events-info">
             <div class="events-info__item">
               <span class="events-info__icon">
-                <img src="assets/img/icono-ubicacion.svg" alt="Ubicación">
+                <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
               </span>
               <div>
                 <p class="events-info__label">Ubicación</p>
@@ -89,7 +89,7 @@
             </div>
             <div class="events-info__item">
               <span class="events-info__icon">
-                <img src="assets/img/icono-calendario.svg" alt="Fechas">
+                <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-calendario.svg" alt="Fechas">
               </span>
               <div>
                 <p class="events-info__label">Fechas</p>
@@ -98,7 +98,7 @@
             </div>
             <div class="events-info__item">
               <span class="events-info__icon">
-                <img src="assets/img/icono-reloj.svg" alt="Horario">
+                <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-reloj.svg" alt="Horario">
               </span>
               <div>
                 <p class="events-info__label">Horario</p>
