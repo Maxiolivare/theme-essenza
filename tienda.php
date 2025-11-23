@@ -1,11 +1,9 @@
-<main>
+  <main>
       <div class="productos">
         <h1 class="productos-h1">PRODUCTOS</h1>
-
         <ul>
           <li class="categorias">
             <a href="#" onclick="mostrarSubmenu(event)">Categorías ▼</a>
-
             <!-- SUBMENÚ -->
             <ul class="submenu" id="lista-categorias">
               <li><a onclick="mostrarCategoria('florales')">Arreglos florales</a></li>
@@ -16,7 +14,6 @@
           </li>
         </ul>
       </div>
-
       <!-- IMÁGENES -->
       <div id="contenedor-categorias" class="contenedor-categorias"></div>
-    </main>
+  </main>
