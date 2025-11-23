@@ -12,7 +12,7 @@
 
         <div class="footer-col footer-col--center">
           <div class="logo-circle logo-circle--footer">
-            <img src="assets/img/Logo-essenza.svg" alt="Logo Essenza">
+            <img src="<?php echo get_template_directory_uri(); ?>assets/img/Logo-essenza.svg" alt="Logo Essenza">
           </div>
         </div>
 
@@ -20,10 +20,10 @@
           <p class="footer-social-title">Redes Sociales</p>
           <div class="footer-social">
             <a href="#" class="social-icon">
-              <img src="assets/img/icono-instagram.svg" alt="Instagram Essenza">
+              <img src="<?php echo get_template_directory_uri(); ?>assets/img/icono-instagram.svg" alt="Instagram Essenza">
             </a>
             <a href="mailto:essenzachile.velas@gmail.com" class="social-icon">
-              <img src="assets/img/icono-gmail.svg" alt="Correo Essenza">
+              <img src="<?php echo get_template_directory_uri(); ?>assets/img/icono-gmail.svg" alt="Correo Essenza">
             </a>
           </div>
         </div>
@@ -46,6 +46,6 @@
   </footer>
 
   <!-- JS -->
-  <script src="assets/js/script.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>assets/js/script.js"></script>
 </body>
 </html>
