@@ -1,4 +1,5 @@
-@charset "UTF-8";
+/* ------------- CLASES HOME------------- */
+/* ------------- VARIABLES BASICAS ------------- */
 :root {
   --crema-claro: #FFF8F0;
   --crema-medio: #F5E6D3;
@@ -22,7 +23,6 @@ body {
   color: var(--cafe);
 }
 
-/* Evita scroll de fondo cuando el menú móvil está abierto */
 body.menu-open {
   overflow: hidden;
 }
@@ -41,7 +41,6 @@ button {
   font-family: inherit;
 }
 
-/* Contenedor general */
 .container {
   width: min(1120px, 100% - 3rem);
   margin-inline: auto;
@@ -63,7 +62,7 @@ button {
   padding-block: 0.75rem;
 }
 
-/* Logo */
+/* Logo circulo de fondo */
 .logo-circle {
   width: 64px;
   height: 64px;
@@ -73,46 +72,43 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Cinzel", serif;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--cafe);
 }
 
-.logo-circle--footer {
-  margin-inline: auto;
+/* Imagen del logo */
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
 }
 
-/* ------------- NAV DESKTOP ------------- */
+/* ------------- NAV DESKTOP (ORDENADOR) ------------- */
 .main-nav {
   display: flex;
-  gap: 2rem; /* separacion general entre enlaces */
-  position: relative; /* para poder posicionar la barrita de la izquierda */
+  gap: 2rem;
+  position: relative;
 }
 
-/* Enlaces del menú */
 .nav-link {
   font-weight: 400;
   color: var(--ambar);
   position: relative;
-  padding: 1rem 1rem; /* padding lateral + espacio abajo para subrayado */
+  padding: 1rem 1rem;
   font-size: 0.95rem;
 }
 
-/* Subrayado inferior (linea del hover/activo) */
 .nav-link::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 0px;
   width: 0;
   height: 2px;
   background: var(--cafe);
   transition: width 0.2s ease;
 }
 
-/* Hover: cambia color + muestra subayado abajo */
 .nav-link:hover {
   color: var(--cafe);
 }
@@ -122,11 +118,11 @@ button {
   width: 100%;
 }
 
-/* Barritas verticales a la DERECHA de cada enlace */
+/* Barras verticales entre enlaces */
 .main-nav .nav-link::before {
   content: "";
   position: absolute;
-  right: -0.9rem; /* alinear las barritas hacia la derecha */
+  right: -0.9rem;
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
@@ -135,7 +131,6 @@ button {
   border-radius: 10px;
 }
 
-/* Barrita al inicio del menu (a la izquierda de Inicio) */
 .main-nav::before {
   content: "";
   position: absolute;
@@ -148,12 +143,12 @@ button {
   border-radius: 10px;
 }
 
-/* ------------- ICONOS SVG GENERALES ------------- */
+/* ------------- ICONOS ------------- */
 .mobile-menu__icon img,
 .category-card__icon img,
 .events-info__icon img,
 .icon-round img {
-  width: 22px; /* ajusta si ves los SVG muy grandes o muy chicos */
+  width: 22px;
   height: 22px;
   display: block;
 }
@@ -184,14 +179,15 @@ button {
   font-size: 1.15rem;
 }
 
-/* Hamburguesa se oculta en desktop */
+/* Icono menu hamburguesa */
 .icon-btn--menu {
-  display: none;
+  display: none; /*  Se oculta por defecto en ordenador */
   font-size: 1.5rem;
   color: var(--ambar);
+  margin-right: 20px;
 }
 
-/* ------------- HERO SECTION ------------- */
+/* ------------- CLASES HERO SECTION ------------- */
 .hero {
   position: relative;
   min-height: 360px;
@@ -212,7 +208,7 @@ button {
 .hero__content {
   position: relative;
   padding-block: 4rem;
-  max-width: 520px;
+  max-width: 620px;
 }
 
 .hero h1 {
@@ -227,12 +223,13 @@ button {
   margin-bottom: 1.5rem;
 }
 
-/* ------------- BOTONES ------------- */
+/* ------------- CLASES BOTONES ------------- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1.8rem;
+  margin-top: 30px;
   border-radius: 999px;
   border: none;
   font-weight: 500;
@@ -243,6 +240,7 @@ button {
 
 .btn--primary {
   background: var(--ambar);
+  margin-left: 200px;
   color: var(--blanco);
   box-shadow: 0 10px 20px rgba(210, 117, 41, 0.35);
 }
@@ -259,7 +257,7 @@ button {
 }
 
 .btn--secondary:hover {
-  background: #4b3022;
+  background: var(--ambar);
 }
 
 /* ------------- SECCIONES GENERALES ------------- */
@@ -270,6 +268,7 @@ button {
 .section h2 {
   font-family: "Cinzel", serif;
   text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   margin-top: 0;
   margin-bottom: 2rem;
   font-size: 1.6rem;
@@ -280,7 +279,7 @@ button {
   margin-top: 2rem;
 }
 
-/* ------------- PRODUCTOS ------------- */
+/* ------------- PRODUCTOS MAS QUERIDOS------------- */
 .section-products {
   background: var(--crema-claro);
 }
@@ -288,7 +287,7 @@ button {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 5rem; /* si lo ves muy separado, baja a 1.5rem */
+  gap: 5rem;
 }
 
 .product-card {
@@ -298,15 +297,27 @@ button {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.25rem;
   border: 1px solid #FF9641;
 }
 
 .product-card__image {
-  background-size: cover;
-  background-position: center 100%;
+  background-size: contain;
+  background-position: center top 50%; /* Ajusta el recorte */
+  background-repeat: no-repeat;
   border-radius: 12px;
   aspect-ratio: 1/1;
+  margin-top: 10px;
+}
+
+.product-card__title::before {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 1px;
+  background: rgba(92, 61, 46, 0.2);
+  margin: 1rem auto 0.8rem;
+  border-radius: 2px;
 }
 
 .product-card__title {
@@ -321,9 +332,9 @@ button {
   color: var(--ambar);
 }
 
-/* ------------- CATEGORÍAS ------------- */
+/* ------------- CATEGORiAS ------------- */
 .section-categories {
-  background: var(--crema-medio);
+  background: var(--blanco);
 }
 
 .category-grid {
@@ -333,8 +344,9 @@ button {
 }
 
 .category-card {
-  background: var(--blanco);
+  background: var(--crema-claro);
   border-radius: var(--radius-card);
+  border: 1px solid #FF9641;
   box-shadow: var(--shadow-soft);
   padding: 1.25rem 1rem;
   text-align: center;
@@ -343,8 +355,16 @@ button {
 }
 
 .category-card__icon {
-  font-size: 1.8rem; /* ya no afecta al SVG, pero no molesta */
-  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.category-card__icon img,
+.category-card__icon svg {
+  width: 55px;
+  height: 55px;
 }
 
 .category-card__title {
@@ -354,12 +374,12 @@ button {
 }
 
 .category-card:hover {
-  background: var(--crema-claro);
+  background: var(--crema-medio);
   transform: translateY(-2px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* ------------- EVENTOS / FERIAS ------------- */
+/* ------------- EVENTOS ------------- */
 .section-events {
   background: var(--crema-claro);
 }
@@ -375,6 +395,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  color: var(--ambar);
 }
 
 .events-info__item {
@@ -384,21 +405,27 @@ button {
 }
 
 .events-info__icon {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
   background: var(--crema-medio);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem; /* ya no afecta al SVG, pero se puede dejar */
-  color: var(--ambar);
+}
+
+.events-info__icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .events-info__label {
   font-family: "Lora", serif;
   font-weight: 500;
   margin: 0 0 0.1rem;
+  color: var(--ambar);
 }
 
 .events-map iframe {
@@ -407,20 +434,6 @@ button {
   border: 0;
   border-radius: 18px;
   box-shadow: var(--shadow-soft);
-}
-
-/* ------------- SECCIONES EXTRA (about/contact) ------------- */
-.section-about,
-.section-contact {
-  background: var(--crema-medio);
-}
-
-.section-about p,
-.section-contact p {
-  max-width: 720px;
-  margin-inline: auto;
-  text-align: center;
-  line-height: 1.6;
 }
 
 /* ------------- FOOTER ------------- */
@@ -436,7 +449,7 @@ button {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr auto 1fr; /*centra el logo del footer*/
   align-items: center;
   gap: 1.5rem;
 }
@@ -447,16 +460,14 @@ button {
   gap: 0.25rem;
 }
 
-.footer-link {
-  color: var(--cafe);
-}
-
 .footer-link:hover {
   color: var(--ambar);
 }
 
 .footer-col--center {
   text-align: center;
+  margin-left: 0;
+  justify-self: center; /* fuerza a que se centre el logo en la columna*/
 }
 
 .footer-col--right {
@@ -475,16 +486,22 @@ button {
 }
 
 .social-icon {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: var(--ambar);
   color: var(--blanco);
-  font-size: 0.9rem;
-  font-weight: 600;
+}
+
+.social-icon img {
+  width: 20px;
+  height: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
 }
 
 .footer-bottom {
@@ -508,15 +525,11 @@ button {
   align-items: center;
 }
 
-.footer-legal__link {
-  color: var(--crema-medio);
-}
-
 .footer-legal__link:hover {
   text-decoration: underline;
 }
 
-/* ------------- MENÚ MÓVIL OVERLAY ------------- */
+/* ------------- MENU MOVIL ------------- */
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -530,7 +543,7 @@ button {
 }
 
 .mobile-menu__header {
-  background: var(--crema-claro);
+  background: var(--crema-medio);
   padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
@@ -548,11 +561,6 @@ button {
   cursor: pointer;
 }
 
-.mobile-menu__logo .logo-circle {
-  margin-inline: auto;
-  background: var(--blanco);
-}
-
 .mobile-menu__nav {
   background: var(--blanco);
   padding: 1.5rem 1.75rem 1rem;
@@ -561,27 +569,23 @@ button {
   gap: 0.75rem;
 }
 
-/* Links del menu mobile, estilo limpio como mockup */
+/* Links del menu mobile */
 .mobile-menu__link {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.85rem 1rem;
   font-size: 1rem;
-  background: none;
-  border-radius: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  color: var(--cafe);
 }
 
-/* Ítem activo del menú mobile */
 .mobile-menu__link.active {
   background: var(--ambar);
   color: var(--blanco);
   position: relative;
 }
 
-/* Barrita blanca vertical al inicio (más separada del icono) */
+/* Barrita blanca vertical al inicio del contenedor seleccionado del menu */
 .mobile-menu__link.active::before {
   content: "";
   position: absolute;
@@ -594,7 +598,7 @@ button {
   border-radius: 6px;
 }
 
-/* Puntito blanco a la derecha */
+/* Puntito blanco a la derecha del contenedor seleccionado del menu */
 .mobile-menu__link.active::after {
   content: "";
   position: absolute;
@@ -607,29 +611,21 @@ button {
   border-radius: 50%;
 }
 
-/* Hover muy sutil */
-.mobile-menu__link:hover {
-  background: var(--ambar);
-  color: var(--cafe);
-}
-
 .mobile-menu__icon {
-  font-size: 1.25rem;
-  color: var(--ambar);
   margin-left: 20px;
 }
 
 .mobile-menu__footer {
-  background: var(--crema-claro);
+  background: var(--crema-medio);
   padding: 1.25rem 1.75rem 2.5rem;
   text-align: center;
-  font-size: 0.95rem;
 }
 
 .mobile-menu__brand {
-  margin-top: 0.5rem;
-  font-family: "Lora", serif;
-  font-weight: 600;
+  color: #D27529;
+  font-size: larger;
+  text-shadow: #000;
+  font-weight: bold;
 }
 
 /* ------------- RESPONSIVE ------------- */
@@ -644,71 +640,137 @@ button {
     grid-template-columns: 1fr;
   }
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
   }
   .footer-col--center {
-    grid-column: 1/-1;
     order: -1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
-}
-@media (max-width: 768px) {
+  .footer-col--right {
+    text-align: center;
+  }
   .header-container {
     padding-block: 0.5rem;
   }
   .main-nav {
     display: none;
   }
-  /* Menú hamburguesa visible y a la izquierda */
   .icon-btn--menu {
-    display: block;
-    order: 1;
+    display: inline-flex; /* Ayuda que seaa visible solo en movil */
   }
-  /* Logo al centro */
   .header-left {
     order: 2;
     flex: 1;
     display: flex;
     justify-content: center;
   }
-  /* Iconos a la derecha */
   .header-right {
     order: 3;
     gap: 0.25rem;
   }
+}
+@media (max-width: 600px) {
   .hero {
     text-align: center;
     justify-content: center;
   }
   .hero__content {
     max-width: 100%;
+    align-items: center;
+  }
+  .btn--primary {
+    margin-left: 0;
   }
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
   .category-grid {
     grid-template-columns: 1fr 1fr;
-  }
-  .section {
-    padding-block: 2.75rem;
-  }
-  .events-layout {
     gap: 1.5rem;
   }
   .footer-grid {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .footer-col--right {
-    text-align: center;
-  }
-  .footer-bottom__inner {
-    flex-direction: column;
-    text-align: center;
-  }
 }
-@media (max-width: 520px) {
-  .category-grid {
-    grid-template-columns: 1fr;
-  }
+/* ------------- CLASES TIENDA ------------- */
+.productos {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* TITULO */
+.productos-h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* LISTA PRINCIPAL */
+.productos ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* ITEM CATEGORIAS */
+.categorias > a {
+  display: block;
+  background: #f5f5f5;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.categorias > a:hover {
+  background: #e8e8e8;
+}
+
+/* SUBMENU */
+.submenu {
+  display: none;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.submenu li {
+  margin-bottom: 8px;
+}
+
+.submenu a {
+  text-decoration: none;
+  color: #444;
+  cursor: pointer;
+}
+
+.submenu a:hover {
+  text-decoration: underline;
+}
+
+/* IMG */
+.contenedor-categorias {
+  margin-top: 20px;
+}
+
+.titulo-categoria {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.grid-imagenes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.grid-imagenes img {
+  width: 100%;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
 }/*# sourceMappingURL=style.css.map */
