@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>assets/scss/style.scss" />
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>assets/scss/style.css" />
 </head>
 <body>
 
