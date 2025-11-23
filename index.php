@@ -4,7 +4,7 @@
     <section class="hero">
       <div class="hero__overlay"></div>
       <div class="container hero__content">
-        <h1>VELAS DE SOJA HECHAS A MANO CON AMOR</h1>
+        <h1 class="h1-luis">VELAS DE SOJA HECHAS A MANO CON AMOR</h1>
         <p>Aromas naturales, larga duración y compromiso con el medio ambiente.</p>
         <a href="tienda.html" class="btn-luis btn-luis--primary">Ver Tienda</a>
       </div>

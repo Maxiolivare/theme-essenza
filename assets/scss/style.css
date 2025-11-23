@@ -211,7 +211,7 @@ button {
   max-width: 620px;
 }
 
-.hero h1 {
+.h1-luis {
   font-family: "Cinzel", serif;
   font-size: clamp(1.9rem, 3vw, 2.4rem);
   margin-bottom: 1rem;
