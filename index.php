@@ -6,7 +6,7 @@
       <div class="container hero__content">
         <h1>VELAS DE SOJA HECHAS A MANO CON AMOR</h1>
         <p>Aromas naturales, larga duración y compromiso con el medio ambiente.</p>
-        <a href="tienda.html" class="btn btn--primary">Ver Tienda</a>
+        <a href="tienda.html" class="btn-luis btn-luis--primary">Ver Tienda</a>
       </div>
     </section>
     <!-- LO MAS QUERIDO -->
@@ -36,7 +36,7 @@
           </article>
         </div>
         <div class="section__actions">
-          <a href="#tienda.html" class="btn btn--secondary">Ver más</a>
+          <a href="#tienda.html" class="btn-luis btn-luis--secondary">Ver más</a>
         </div>
       </div>
     </section>

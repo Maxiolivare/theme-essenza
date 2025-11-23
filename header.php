@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Home Essenza - Velas de soya artesanales</title>
-
+  <title>Home Essenza - Velas de soya artesanales</title>
   <!-- Fuentes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- Estilos -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/scss/style.css" />
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/scss/style.css"/>
 </head>
 <body>
-
   <!-- ===================== MENU MOVIL OVERLAY ===================== -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <div class="mobile-menu__header">
-      <button class="icon-btn icon-btn--close" id="btnCloseMenu" aria-label="Cerrar menú">✕</button>
+      <button class="icon-btn-luis icon-btn-luis--close" id="btn-luisCloseMenu" aria-label="Cerrar menú">✕</button>
 
       <div class="mobile-menu__logo">
         <div class="logo-circle">
@@ -48,7 +46,6 @@
         </span>
         <span>Sobre Essenza</span>
       </a>
-
       <a href="#contacto" class="mobile-menu__link">
         <span class="mobile-menu__icon">
           <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-contacto.svg" alt="Contacto">
@@ -68,7 +65,7 @@
     <div class="container header-container">
 
       <!-- Boton menu mbil (izquierda en mobile) -->
-      <button class="icon-btn icon-btn--menu" id="btnOpenMenu" aria-label="Abrir menú">☰</button>
+      <button class="icon-btn-luis icon-btn-luis--menu" id="btn-luisOpenMenu" aria-label="Abrir menú">☰</button>
 
       <!-- Logo -->
       <div class="header-left">
@@ -89,13 +86,13 @@
 
       <!-- Iconos derecha -->
       <div class="header-right">
-        <button class="icon-btn" aria-label="Ver carrito">
+        <button class="icon-btn-luis" aria-label="Ver carrito">
           <span class="icon-round">
             <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-carrito.svg" alt="Carrito">
           </span>
         </button>
 
-        <button class="icon-btn" aria-label="Cuenta">
+        <button class="icon-btn-luis" aria-label="Cuenta">
           <span class="icon-round">
             <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-perfil.svg" alt="Perfil">
           </span>

@@ -160,7 +160,7 @@ button {
   align-items: center;
 }
 
-.icon-btn {
+.icon-btn-luis {
   background: none;
   border: none;
   cursor: pointer;
@@ -180,7 +180,7 @@ button {
 }
 
 /* Icono menu hamburguesa */
-.icon-btn--menu {
+.icon-btn-luis--menu {
   display: none; /*  Se oculta por defecto en ordenador */
   font-size: 1.5rem;
   color: var(--ambar);
@@ -224,7 +224,7 @@ button {
 }
 
 /* ------------- CLASES BOTONES ------------- */
-.btn {
+.btn-luis {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -238,25 +238,25 @@ button {
   transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
 
-.btn--primary {
+.btn-luis--primary {
   background: var(--ambar);
   margin-left: 200px;
   color: var(--blanco);
   box-shadow: 0 10px 20px rgba(210, 117, 41, 0.35);
 }
 
-.btn--primary:hover {
+.btn-luis--primary:hover {
   transform: translateY(-1px);
   box-shadow: 0 14px 24px rgba(210, 117, 41, 0.45);
   color: #000;
 }
 
-.btn--secondary {
+.btn-luis--secondary {
   background: var(--cafe);
   color: var(--blanco);
 }
 
-.btn--secondary:hover {
+.btn-luis--secondary:hover {
   background: var(--ambar);
 }
 
@@ -551,7 +551,7 @@ button {
   position: relative;
 }
 
-.icon-btn--close {
+.icon-btn-luis--close {
   position: absolute;
   left: 0.75rem;
   background: none;
@@ -657,7 +657,7 @@ button {
   .main-nav {
     display: none;
   }
-  .icon-btn--menu {
+  .icon-btn-luis--menu {
     display: inline-flex; /* Ayuda que seaa visible solo en movil */
   }
   .header-left {
@@ -680,7 +680,7 @@ button {
     max-width: 100%;
     align-items: center;
   }
-  .btn--primary {
+  .btn-luis--primary {
     margin-left: 0;
   }
   .product-grid {
