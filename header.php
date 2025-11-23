@@ -1,4 +1,3 @@
-<?php get_header();?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -105,4 +104,3 @@
 
     </div>
   </header>
-<?php get_footer();?>
