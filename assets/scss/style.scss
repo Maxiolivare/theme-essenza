@@ -801,14 +801,6 @@ button {
   margin: 40px 0 ;
 }
 /* Tarjeta tienda */
-.product-card {
-  position: relative;
-  padding: 16px;
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
 .product-card__image-wrapper {
   position: relative;
 }
@@ -841,12 +833,5 @@ button {
   margin-top: 12px;
   font-size: 1rem;
   color: #4a3a32;
-}
-
-.product-card__price {
-  margin-top: 6px;
-  font-size: 1.2rem;
-  color: #d6852b;
-  font-weight: bold;
 }
 
