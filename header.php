@@ -79,7 +79,7 @@
       <!-- Nav desktop (ordenador) -->
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="inicio.html" class="nav-link nav-link--active">Inicio</a>
-        <a href="#tienda.html" class="nav-link">Tienda</a>
+        <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>">Tienda</a>
         <a href="#sobre-essenza.html" class="nav-link">Sobre Essenza</a>
         <a href="#contacto" class="nav-link">Contacto</a>
       </nav>
