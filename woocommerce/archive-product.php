@@ -15,22 +15,24 @@ get_header();?>
                 $precio = $product->get_price_html();
                 ?>
                 <article class="product-card">
-					<div class="product-card__image-wrapper">
+					<div class="product-card__image-wrapper">						
+						<!-- Imagen + link a single -->
 						<a href="<?php the_permalink(); ?>">
-							<?php woocommerce_template_loop_product_thumbnail(); ?>
+							<div class="product-card__image"
+								style="background-image: url('<?php echo esc_url($img); ?>');">
+							</div>
 						</a>
+						<!-- Botón carrito (arriba derecha) -->
 						<a 
 							href="<?php echo esc_url( wc_get_cart_url() . '?add-to-cart=' . get_the_ID() ); ?>"
 							class="product-card__add-to-cart"
 							data-product_id="<?php echo get_the_ID(); ?>"
 						>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon-cart.svg" alt="Agregar al carrito">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-carrito.svg" alt="Agregar al carrito">
 						</a>
 					</div>
 					<h3 class="product-card__title"><?php the_title(); ?></h3>
-					<span class="product-card__price">
-						<?php woocommerce_template_loop_price(); ?>
-					</span>
+					<p class="product-card__price"><?php echo $precio; ?></p>
 				</article>
             <?php endwhile; ?>
         </div>

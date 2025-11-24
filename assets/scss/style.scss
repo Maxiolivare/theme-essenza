@@ -800,16 +800,16 @@ button {
   font-weight: bold;
   margin: 40px 0 ;
 }
-/* Tarjeta tienda */
+/* Tarjeta con carrito */
+
 .product-card__image-wrapper {
   position: relative;
 }
-
 .product-card__add-to-cart {
   position: absolute;
   top: -12px;
   right: -12px;
-  background: #432f25;
+  background: #432f25; 
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -829,9 +829,5 @@ button {
   transform: scale(1.08);
 }
 
-.product-card__title {
-  margin-top: 12px;
-  font-size: 1rem;
-  color: #4a3a32;
-}
+
 
