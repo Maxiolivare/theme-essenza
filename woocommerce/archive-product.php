@@ -4,7 +4,7 @@ get_header();?>
 <main>
     <?php if ( have_posts() ) : ?>
     <div class="container-luis">
-		<h1 class="h1-luis">PRODUCTOS</h1>
+		<h1 class="h1-cual text-center">PRODUCTOS</h1>
         <div class="product-grid">
             <?php while ( have_posts() ) : the_post(); global $product; ?>
                 <?php

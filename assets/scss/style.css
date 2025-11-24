@@ -704,12 +704,6 @@ button {
   margin: 20px auto;
 }
 
-/* TITULO */
-.productos-h1 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
 /* LISTA PRINCIPAL */
 .productos ul {
   list-style: none;
@@ -775,4 +769,13 @@ button {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
+}
+
+.h1-cual {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
 }/*# sourceMappingURL=style.css.map */
