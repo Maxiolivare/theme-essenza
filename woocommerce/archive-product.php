@@ -3,31 +3,32 @@
  * Custom Shop Page Template
  * Overridden from WooCommerce archive-product.php
  */
-
 defined( 'ABSPATH' ) || exit;
-
-get_header( 'shop' );
-
 // Abrir contenedor principal
 do_action( 'woocommerce_before_main_content' );
 ?>
-
-<div class="tienda-header">
-    <h1 class="titulo-tienda">Tienda</h1>
-
-    <div class="filtros-tienda">
-        <button class="btn-filtro categoria">Categorías</button>
-        <button class="btn-filtro ordenar">Ordenar</button>
-    </div>
-</div>
-
+<?php get_header(); ?>
+  <main>
+      <div class="productos">
+        <h1 class="productos-h1">PRODUCTOS</h1>
+        <ul>
+          <li class="categorias">
+            <a href="#" onclick="mostrarSubmenu(event)">Categorías ▼</a>
+            <!-- SUBMENÚ -->
+            <ul class="submenu" id="lista-categorias">
+              <li><a onclick="mostrarCategoria('florales')">Arreglos florales</a></li>
+              <li><a onclick="mostrarCategoria('gourmet')">Gourmet</a></li>
+              <li><a onclick="mostrarCategoria('flores')">Flores</a></li>
+              <li><a onclick="mostrarCategoria('animales')">Animales</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- IMÁGENES -->
+      <div id="contenedor-categorias" class="contenedor-categorias"></div>
+  </main>
 <?php
 if ( woocommerce_product_loop() ) {
-
-    // ---------- LIMPIAR FILTROS DEFAULT ----------
-    // Estos hooks son removidos en functions.php:
-    // woocommerce_result_count
-    // woocommerce_catalog_ordering
     do_action( 'woocommerce_before_shop_loop' );
 
     // ---------- LOOP DE PRODUCTOS ----------
@@ -39,7 +40,7 @@ if ( woocommerce_product_loop() ) {
 
             do_action( 'woocommerce_shop_loop' );
 
-            // Aquí entra cada tarjeta de producto
+            // tarjeta de producto
             wc_get_template_part( 'content', 'product' );
         }
     }
@@ -54,10 +55,7 @@ if ( woocommerce_product_loop() ) {
     do_action( 'woocommerce_no_products_found' );
 }
 
-// Cerrar contenedor principal
 do_action( 'woocommerce_after_main_content' );
+?>
 
-// Sidebar (si tu tema no usa sidebar, lo puedes quitar)
-do_action( 'woocommerce_sidebar' );
-
-get_footer( 'shop' );
+<?php get_footer(); ?>
