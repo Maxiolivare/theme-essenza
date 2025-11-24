@@ -1,13 +1,19 @@
 <?php
 defined('ABSPATH') || exit;
-
-wc_print_notices();
 ?>
-<?php get_header();?>
+
+<?php get_header(); ?>
+
+<?php do_action( 'woocommerce_before_cart' ); ?>
+
 <div class="carrito-container">
     <h2 class="carrito-titulo">Tu carrito</h2>
 
-    <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+    <?php wc_print_notices(); ?>
+
+    <form class="woocommerce-cart-form" 
+          action="<?php echo esc_url( wc_get_cart_url() ); ?>" 
+          method="post">
 
         <table class="carrito-tabla">
             <thead>
@@ -21,34 +27,26 @@ wc_print_notices();
                 <?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
                     $_product   = $cart_item['data'];
                     if ( ! $_product || ! $_product->exists() ) continue;
-                    
+
                     $product_id = $cart_item['product_id'];
                 ?>
-
                 <tr class="carrito-item">
 
                     <!-- COLUMNA PRODUCTO -->
                     <td class="carrito-producto">
-
-                        <!-- Imagen -->
                         <div class="carrito-producto-imagen">
                             <?php echo $_product->get_image('woocommerce_thumbnail'); ?>
                         </div>
 
-                        <!-- Detalles -->
                         <div class="carrito-producto-detalles">
-
-                            <!-- Nombre -->
                             <h3 class="carrito-producto-nombre">
                                 <?php echo $_product->get_name(); ?>
                             </h3>
 
-                            <!-- Precio unitario -->
                             <span class="carrito-precio-unitario">
                                 <?php echo wc_price( $_product->get_price() ); ?>
                             </span>
 
-                            <!-- Cantidad -->
                             <div class="carrito-cantidad">
                                 <?php
                                 woocommerce_quantity_input( array(
@@ -59,9 +57,8 @@ wc_print_notices();
                                 ?>
                             </div>
 
-                            <!-- Eliminar -->
                             <a class="carrito-eliminar"
-                                href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>">
+                               href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>">
                                 Eliminar producto
                             </a>
                         </div>
@@ -72,33 +69,31 @@ wc_print_notices();
                         <?php echo WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ); ?>
                     </td>
                 </tr>
-
                 <?php endforeach; ?>
             </tbody>
         </table>
 
-        <!-- Actualizar carrito -->
         <button type="submit" class="carrito-actualizar" name="update_cart">
             Actualizar carrito
         </button>
 
-        <?php wp_nonce_field( 'woocommerce-cart' );
-		do_action( 'woocommerce_after_cart' );
- 		?>
-
+        <?php wp_nonce_field( 'woocommerce-cart' ); ?>
     </form>
 
-    <!-- TOTAL GENERAL -->
     <div class="carrito-resumen">
-
         <p class="carrito-total-general">
             Total de la compra:
             <strong><?php wc_cart_totals_order_total_html(); ?></strong>
         </p>
+
         <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="carrito-btn-comprar">
             Comprar
         </a>
     </div>
 </div>
-<?php get_footer();?>
+
+<?php do_action( 'woocommerce_after_cart' ); ?>
+
+<?php get_footer(); ?>
+
 
