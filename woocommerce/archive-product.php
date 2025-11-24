@@ -16,17 +16,15 @@ get_header();?>
                 ?>
                 <article class="product-card">
 					<div class="product-card__image-wrapper">						
-						<!-- Imagen + link a single -->
 						<a href="<?php the_permalink(); ?>">
 							<div class="product-card__image"
 								style="background-image: url('<?php echo esc_url($imagen_principal); ?>');">
 							</div>
 						</a>
-						<!-- Botón carrito (arriba derecha) -->
 						<a 
 							href="<?php echo esc_url( wc_get_cart_url() . '?add-to-cart=' . get_the_ID() ); ?>"
 							class="product-card__add-to-cart"
-							data-product_id="<?php echo get_the_ID(); ?>"
+							data-product_id="<?php echo get_the_ID();?>"
 						>
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-carrito.svg" alt="Agregar al carrito">
 						</a>

@@ -9,55 +9,54 @@
         <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="btn-luis btn-luis--primary">Ver Tienda</a>
       </div>
     </section>
-    <!-- LO MAS QUERIDO -->
-<section class="section section-products" aria-labelledby="titulo-mas-querido">
-  <div class="container-luis">
-    <h2 id="titulo-mas-querido">LO MÁS QUERIDO POR NUESTROS CLIENTES</h2>
-    <div class="product-grid">
-      <?php
-      $args = array(
-          'post_type'      => 'product',
-          'posts_per_page' => 4, 
-          'tax_query'      => array(
-              array(
-                  'taxonomy' => 'product_tag',
-                  'field'    => 'slug',
-                  'terms'    => 'lo-mas-querido',
+    <section class="section section-products" aria-labelledby="titulo-mas-querido">
+      <div class="container-luis">
+        <h2 id="titulo-mas-querido">LO MÁS QUERIDO POR NUESTROS CLIENTES</h2>
+        <div class="product-grid">
+          <?php
+          $args = array(
+              'post_type'      => 'product',
+              'posts_per_page' => 4, 
+              'tax_query'      => array(
+                  array(
+                      'taxonomy' => 'product_tag',
+                      'field'    => 'slug',
+                      'terms'    => 'lo-mas-querido',
+                  ),
               ),
-          ),
-      );
-      $queridos = new WP_Query($args);
-      if ($queridos->have_posts()) :
-          while ($queridos->have_posts()) :
-              $queridos->the_post();
-              global $product;
-              $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
-              if (!$img) $img = wc_placeholder_img_src();
-              $precio = $product->get_price_html();
-      ?>
-          <article class="product-card">
-            <a href="<?php the_permalink(); ?>">
-              <div class="product-card__image"
-                   style="background-image: url('<?php echo esc_url($img); ?>');">
-              </div>
-              <h3 class="product-card__title"><?php the_title(); ?></h3>
-              <p class="product-card__price"><?php echo $precio; ?></p>
-            </a>
-          </article>
-      <?php
-          endwhile;
-          wp_reset_postdata();
-      else :
-      ?>
-        <p>No hay productos destacados aún.</p>
-      <?php endif; ?>
-    </div>
-    <div class="section__actions">
-      <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>"
-         class="btn-luis btn-luis--secondary">Ver más</a>
-    </div>
-  </div>
-</section>
+          );
+          $queridos = new WP_Query($args);
+          if ($queridos->have_posts()) :
+              while ($queridos->have_posts()) :
+                  $queridos->the_post();
+                  global $product;
+                  $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                  if (!$img) $img = wc_placeholder_img_src();
+                  $precio = $product->get_price_html();
+          ?>
+              <article class="product-card">
+                <a href="<?php the_permalink(); ?>">
+                  <div class="product-card__image"
+                      style="background-image: url('<?php echo esc_url($img); ?>');">
+                  </div>
+                  <h3 class="product-card__title"><?php the_title(); ?></h3>
+                  <p class="product-card__price"><?php echo $precio; ?></p>
+                </a>
+              </article>
+          <?php
+              endwhile;
+              wp_reset_postdata();
+          else :
+          ?>
+            <p>No hay productos destacados aún.</p>
+          <?php endif; ?>
+        </div>
+        <div class="section__actions">
+          <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>"
+            class="btn-luis btn-luis--secondary">Ver más</a>
+        </div>
+      </div>
+    </section>
     <!-- CATEGORiAS -->
     <section class="section section-categories" id="tienda">
       <div class="container-luis">
