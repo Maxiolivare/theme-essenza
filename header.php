@@ -16,7 +16,7 @@
   <!-- ===================== MENU MOVIL OVERLAY ===================== -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <div class="mobile-menu__header">
-      <button class="icon-btn-luis icon-btn-luis--close" id="btn-CloseMenu" aria-label="Cerrar menú">✕</button>
+      <button class="icon-btn-luis icon-btn-luis--close" id="btnCloseMenu" aria-label="Cerrar menú">✕</button>
 
       <div class="mobile-menu__logo">
         <div class="logo-circle">
@@ -65,7 +65,7 @@
     <div class="container-luis header-container-luis">
 
       <!-- Boton menu mbil (izquierda en mobile) -->
-      <button class="icon-btn-luis icon-btn-luis--menu" id="btn-OpenMenu" aria-label="Abrir menú">☰</button>
+      <button class="icon-btn-luis icon-btn-luis--menu" id="btnOpenMenu" aria-label="Abrir menú">☰</button>
 
       <!-- Logo -->
       <div class="header-left">
