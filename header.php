@@ -75,7 +75,6 @@
           </div>
         </a>
       </div>
-
       <!-- Nav desktop (ordenador) -->
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="<?php echo home_url(); ?>" class="nav-link nav-link--active">Inicio</a>
