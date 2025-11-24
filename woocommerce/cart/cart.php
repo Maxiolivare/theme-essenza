@@ -82,7 +82,9 @@ wc_print_notices();
             Actualizar carrito
         </button>
 
-        <?php wp_nonce_field( 'woocommerce-cart' ); ?>
+        <?php wp_nonce_field( 'woocommerce-cart' );
+		do_action( 'woocommerce_after_cart' );
+ 		?>
 
     </form>
 
