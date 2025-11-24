@@ -16,7 +16,7 @@
   <!-- ===================== MENU MOVIL OVERLAY ===================== -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <div class="mobile-menu__header">
-      <button class="icon-btn-luis icon-btn-luis--close" id="btn-luisCloseMenu" aria-label="Cerrar menú">✕</button>
+      <button class="icon-btn-luis icon-btn-luis--close" id="btn-CloseMenu" aria-label="Cerrar menú">✕</button>
 
       <div class="mobile-menu__logo">
         <div class="logo-circle">
@@ -65,11 +65,11 @@
     <div class="container-luis header-container-luis">
 
       <!-- Boton menu mbil (izquierda en mobile) -->
-      <button class="icon-btn-luis icon-btn-luis--menu" id="btn-luisOpenMenu" aria-label="Abrir menú">☰</button>
+      <button class="icon-btn-luis icon-btn-luis--menu" id="btn-OpenMenu" aria-label="Abrir menú">☰</button>
 
       <!-- Logo -->
       <div class="header-left">
-        <a href="index.html" class="logo-link">
+        <a href="<?php echo home_url(); ?>" class="logo-link">
           <div class="logo-circle">
             <img src="<?php echo get_template_directory_uri();?>/assets/img/Logo-essenza.svg" alt="Logo Essenza">
           </div>
@@ -78,10 +78,10 @@
 
       <!-- Nav desktop (ordenador) -->
       <nav class="main-nav" aria-label="Navegación principal">
-        <a href="inicio.html" class="nav-link nav-link--active">Inicio</a>
+        <a href="<?php echo home_url(); ?>" class="nav-link nav-link--active">Inicio</a>
         <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="nav-link">Tienda</a>
-        <a href="#sobre-essenza.html" class="nav-link">Sobre Essenza</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="" class="nav-link">Sobre Essenza</a>
+        <a href="" class="nav-link">Contacto</a>
       </nav>
 
       <!-- Iconos derecha -->
