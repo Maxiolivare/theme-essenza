@@ -1,3 +1,5 @@
+<?php echo "<!-- CARRITO PERSONALIZADO -->"; ?>
+
 <?php
 /**
  * Custom Cart Page Template
