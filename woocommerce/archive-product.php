@@ -1,12 +1,10 @@
 <?php
 defined( 'ABSPATH' ) || exit;
-get_header();
-?>
-
+get_header();?>
 <main>
-    <h1 class="productos-h1">PRODUCTOS</h1>
     <?php if ( have_posts() ) : ?>
     <div class="container-luis">
+		<h1 class="productos-h1">PRODUCTOS</h1>
         <div class="product-grid">
             <?php while ( have_posts() ) : the_post(); global $product; ?>
                 <?php
