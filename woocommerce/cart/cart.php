@@ -3,10 +3,8 @@ defined('ABSPATH') || exit;
 
 wc_print_notices();
 ?>
-
+<?php get_header();?>
 <div class="carrito-container">
-
-    <!-- TÍTULO -->
     <h2 class="carrito-titulo">Tu carrito</h2>
 
     <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
@@ -95,11 +93,10 @@ wc_print_notices();
             Total de la compra:
             <strong><?php wc_cart_totals_order_total_html(); ?></strong>
         </p>
-
         <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="carrito-btn-comprar">
             Comprar
         </a>
     </div>
-
 </div>
+<?php get_footer();?>
 
