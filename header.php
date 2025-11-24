@@ -33,7 +33,7 @@
         <span>Inicio</span>
       </a>
 
-      <a href="#tienda" class="mobile-menu__link">
+      <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="mobile-menu__link">
         <span class="mobile-menu__icon">
           <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-tienda.svg" alt="Tienda">
         </span>
@@ -63,7 +63,6 @@
   <!-- ===================== HEADER ===================== -->
   <header class="site-header" id="inicio">
     <div class="container-luis header-container-luis">
-
       <!-- Boton menu mbil (izquierda en mobile) -->
       <button class="icon-btn-luis icon-btn-luis--menu" id="btnOpenMenu" aria-label="Abrir menú">☰</button>
 

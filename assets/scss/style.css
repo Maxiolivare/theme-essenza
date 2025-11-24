@@ -777,4 +777,54 @@ button {
   text-transform: uppercase;
   font-weight: bold;
   margin: 40px 0;
+}
+
+/* Tarjeta tienda */
+.product-card {
+  position: relative;
+  padding: 16px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.product-card__image-wrapper {
+  position: relative;
+}
+
+.product-card__add-to-cart {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: #432f25;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.product-card__add-to-cart img {
+  width: 22px;
+  height: 22px;
+}
+
+.product-card__add-to-cart:hover {
+  transform: scale(1.08);
+}
+
+.product-card__title {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #4a3a32;
+}
+
+.product-card__price {
+  margin-top: 6px;
+  font-size: 1.2rem;
+  color: #d6852b;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

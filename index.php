@@ -6,7 +6,7 @@
       <div class="container-luis hero__content">
         <h1 class="h1-luis">VELAS DE SOJA HECHAS A MANO CON AMOR</h1>
         <p>Aromas naturales, larga duración y compromiso con el medio ambiente.</p>
-        <a href="tienda.html" class="btn-luis btn-luis--primary">Ver Tienda</a>
+        <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="btn-luis btn-luis--primary">Ver Tienda</a>
       </div>
     </section>
     <!-- LO MAS QUERIDO -->
