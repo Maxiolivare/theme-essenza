@@ -19,7 +19,7 @@ get_header();?>
 						<!-- Imagen + link a single -->
 						<a href="<?php the_permalink(); ?>">
 							<div class="product-card__image"
-								style="background-image: url('<?php echo esc_url($img); ?>');">
+								style="background-image: url('<?php echo esc_url($imagen_principal); ?>');">
 							</div>
 						</a>
 						<!-- Botón carrito (arriba derecha) -->
