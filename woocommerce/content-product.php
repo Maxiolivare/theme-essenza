@@ -1,35 +1,41 @@
-<?php
-defined('ABSPATH') || exit;
+<?php if (woocommerce_product_loop()) : ?>
 
-global $product;
+<div class="container-luis">
+    <div class="product-grid">
 
-if (empty($product) || !$product->is_visible()) {
-    return;
-}
+        <?php while (have_posts()) : the_post(); global $product; ?>
 
-$imagen_principal = get_the_post_thumbnail_url(get_the_ID(), 'large');
+            <?php
+            // Imagen principal
+            $imagen_principal = get_the_post_thumbnail_url(get_the_ID(), 'large');
 
-$galeria = get_post_meta(get_the_ID(), '_product_image_gallery', true);
-$imagenes = explode(',', $galeria);
-$segunda_imagen = '';
+            if (!$imagen_principal) {
+                $imagen_principal = wc_placeholder_img_src(); // imagen por defecto si no hay
+            }
 
-if (!empty($imagenes[0])) {
-    $segunda_imagen = wp_get_attachment_image_src($imagenes[0], 'large')[0];
-}
-?>
+            // Precio
+            $precio = $product->get_price_html();
+            ?>
 
-<div class="col-md-4 text-center u-producto">
-    <a href="<?php the_permalink(); ?>" class="producto-hover">
+            <article class="product-card">
 
-        <div class="contenedor-img-producto">
-            <img class="imagen-principal" src="<?php echo esc_url($imagen_principal); ?>" alt="<?php the_title(); ?>">
-            <?php if ($segunda_imagen): ?>
-                <img class="imagen-hover" src="<?php echo esc_url($segunda_imagen); ?>" alt="<?php the_title(); ?>">
-            <?php endif; ?>
-        </div>
+                <a href="<?php the_permalink(); ?>">
 
-        <h3><?php the_title(); ?></h3>
-        <p class="light"><?php echo $product->get_price_html(); ?></p>
+                    <div class="product-card__image"
+                        style="background-image: url('<?php echo esc_url($imagen_principal); ?>');">
+                    </div>
 
-    </a>
+                    <h3 class="product-card__title"><?php the_title(); ?></h3>
+
+                    <p class="product-card__price"><?php echo $precio; ?></p>
+
+                </a>
+            </article>
+
+        <?php endwhile; ?>
+
+    </div>
 </div>
+
+<?php endif; ?>
+
