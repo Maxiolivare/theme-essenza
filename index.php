@@ -22,13 +22,11 @@
               array(
                   'taxonomy' => 'product_tag',
                   'field'    => 'slug',
-                  'terms'    => 'lo_mas_querido',
+                  'terms'    => 'lo-mas-querido',
               ),
           ),
       );
-
       $queridos = new WP_Query($args);
-
       if ($queridos->have_posts()) :
           while ($queridos->have_posts()) :
               $queridos->the_post();
@@ -71,27 +69,21 @@
           // Obtener categorías de productos WooCommerce
           $categorias = get_terms( array(
             'taxonomy'   => 'product_cat',
-            'hide_empty' => true, // solo categorías con productos
+            'hide_empty' => false, // solo categorías con productos
             'slug'       => array('gourmet', 'arreglo-floral', 'flores', 'animales'), // ORDÉN que tú quieras
           ));
-
           foreach ( $categorias as $cat ) :
-
             // Imagen de la categoría
             $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
             $imagen = $thumbnail_id ? wp_get_attachment_url( $thumbnail_id ) : wc_placeholder_img_src();
-
             // Link a la categoría
             $link = get_term_link( $cat );
           ?>
-
           <article class="category-card">
             <a href="<?php echo esc_url( $link ); ?>">
-
               <div class="category-card__icon">
                 <img src="<?php echo esc_url( $imagen ); ?>" alt="<?php echo esc_attr( $cat->name ); ?>">
               </div>
-
               <h3 class="category-card__title">
                 <?php echo esc_html( $cat->name ); ?>
               </h3>
