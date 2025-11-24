@@ -3,7 +3,7 @@
     <!-- HERO SECTION -->
     <section class="hero">
       <div class="hero__overlay"></div>
-      <div class="container hero__content">
+      <div class="container-luis hero__content">
         <h1 class="h1-luis">VELAS DE SOJA HECHAS A MANO CON AMOR</h1>
         <p>Aromas naturales, larga duración y compromiso con el medio ambiente.</p>
         <a href="tienda.html" class="btn-luis btn-luis--primary">Ver Tienda</a>
@@ -11,7 +11,7 @@
     </section>
     <!-- LO MAS QUERIDO -->
     <section class="section section-products" aria-labelledby="titulo-mas-querido">
-      <div class="container">
+      <div class="container-luis">
         <h2 id="titulo-mas-querido">LO MÁS QUERIDO POR NUESTROS CLIENTES</h2>
         <div class="product-grid">
           <article class="product-card">
@@ -42,7 +42,7 @@
     </section>
     <!-- CATEGORiAS -->
     <section class="section section-categories" id="tienda">
-      <div class="container">
+      <div class="container-luis">
         <h2>EXPLORA NUESTRAS CATEGORÍAS</h2>
         <div class="category-grid">
           <article class="category-card">
@@ -74,7 +74,7 @@
     </section>
     <!-- EVENTOS -->
     <section class="section section-events">
-      <div class="container">
+      <div class="container-luis">
         <h2>EVENTOS / FERIAS</h2>
         <div class="events-layout">
           <div class="events-info">

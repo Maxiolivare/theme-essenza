@@ -62,7 +62,7 @@
   <!-- ===================== FIN DEL MENU MOVIL ===================== -->
   <!-- ===================== HEADER ===================== -->
   <header class="site-header" id="inicio">
-    <div class="container header-container">
+    <div class="container-luis header-container-luis">
 
       <!-- Boton menu mbil (izquierda en mobile) -->
       <button class="icon-btn-luis icon-btn-luis--menu" id="btn-luisOpenMenu" aria-label="Abrir menú">☰</button>

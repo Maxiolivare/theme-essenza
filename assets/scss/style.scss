@@ -39,7 +39,7 @@ button {
   font-family: inherit;
 }
 
-.container {
+.container-luis {
   width: min(1120px, 100% - 3rem);
   margin-inline: auto;
 }
@@ -54,7 +54,7 @@ button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
-.header-container {
+.header-container-luis {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -666,7 +666,7 @@ button {
     text-align: center;
   }
 
-  .header-container {
+  .header-container-luis {
     padding-block: 0.5rem;
   }
 

@@ -1,6 +1,6 @@
   <footer class="site-footer">
     <div class="footer-main">
-      <div class="container footer-grid">
+      <div class="container-luis footer-grid">
 
         <div class="footer-col">
           <nav class="footer-nav">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="footer-bottom">
-      <div class="container footer-bottom__inner">
+      <div class="container-luis footer-bottom__inner">
         <p>© 2025 Essenza. Todos los derechos reservados</p>
         <nav class="footer-legal">
           <a href="#" class="footer-legal__link">Términos y condiciones</a>
