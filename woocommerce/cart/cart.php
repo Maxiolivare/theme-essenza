@@ -9,20 +9,23 @@ defined( 'ABSPATH' ) || exit;
         <h1 class="h1n">Tu carrito</h1>
         <div class="row text-center mb-4 align-items-center">
             <div class="col-6 d-flex flex-column align-items-center">
-                <img class="mb-2 icono-basura-vela" 
-                    src="<?php echo get_template_directory_uri();?>/assets/img/Trash.png" 
-                    alt="Eliminar">
-                <p class="m-0 text-accent fw-bold">Eliminar</p>
+                <button id="btnEliminarSeleccionados" class="btn bg-transparent border-0 p-0 d-flex flex-column align-items-center">
+                    <img class="mb-2 icono-basura-vela" 
+                        src="<?php echo get_template_directory_uri();?>/assets/img/Trash.png" 
+                        alt="Eliminar seleccionados">
+                    <span class="text-accent fw-bold">Eliminar</span>
+                </button>
             </div>
             <div class="col-6 d-flex flex-column align-items-center">
-                <img class="mb-2 icono-basura-vela" 
-                    src="<?php echo get_template_directory_uri();?>/assets/img/vela.png" 
-                    alt="Seguir comprando">
-                <p class="m-0 text-accent fw-bold">Seguir comprando</p>
+                <a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" 
+                class="btn bg-transparent border-0 p-0 d-flex flex-column align-items-center">
+                    <img class="mb-2 icono-basura-vela" 
+                        src="<?php echo get_template_directory_uri();?>/assets/img/vela.png" 
+                        alt="Seguir comprando">
+                    <span class="text-accent fw-bold">Seguir comprando</span>
+                </a>
             </div>
         </div>
-
-
         <!-- PRODUCTO / TOTAL -->
         <div class="producto-total">
             <div class="col-6">Producto</div>

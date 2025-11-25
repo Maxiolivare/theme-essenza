@@ -169,29 +169,42 @@ document.querySelectorAll(".qty-btn-custom").forEach(btn => {
         realInput.value = current;
         visualBtn.innerText = current;
 
-        // Actualizar automáticamente el carrito
         document.querySelector("button[name='update_cart']").click();
     });
 });
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Desactivar el comportamiento nativo de WooCommerce
     jQuery(document.body).off('change', 'input.qty');
 
 });
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Botón oculto update_cart
     const updateButton = document.querySelector('button[name="update_cart"]');
 
-    // Detectar cambios en cualquier input de cantidad
     document.querySelectorAll('input.qty').forEach(function(input){
         input.addEventListener('change', function(){
-            // No recarga automática, solo marca que hay cambios
             updateButton.disabled = false;
         });
     });
 
 });
+document.getElementById("btnEliminarSeleccionados").addEventListener("click", function() {
+
+    const checkboxes = document.querySelectorAll("input[name='cart[]']:checked");
+
+    if (checkboxes.length === 0) {
+        alert("No hay productos seleccionados");
+        return;
+    }
+    const form = document.querySelector("form.woocommerce-cart-form");
+    checkboxes.forEach(chk => {
+        const cartKey = chk.value;
+        const qtyInput = document.querySelector(`input[name='cart[${cartKey}][qty]']`);
+        if (qtyInput) qtyInput.value = 0;
+    });
+
+    form.submit(); 
+});
+
 
 
