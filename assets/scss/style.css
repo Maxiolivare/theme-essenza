@@ -1148,4 +1148,9 @@ button {
   margin: 40px 0 20px;
   font-size: 22px;
   color: #4a2a1b;
+}
+
+.total-monto {
+  font-weight: bold;
+  margin-left: 20px;
 }/*# sourceMappingURL=style.css.map */
