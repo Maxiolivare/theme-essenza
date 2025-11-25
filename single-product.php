@@ -7,9 +7,18 @@
 get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
+    <?php global $product; ?>
+
+    <!-- ===== ESTO ELIMINA EL LABEL PARA SIEMPRE ===== -->
+    <?php remove_all_filters( 'woocommerce_cart_product_quantity' ); ?>
+    <?php remove_action( 'woocommerce_before_quantity_input_field', 'woocommerce_quantity_input_label' ); ?>
+    <?php remove_action( 'woocommerce_after_quantity_input_field', 'woocommerce_quantity_input_label' ); ?>
+    <!-- =============================================== -->
+
+    <?php do_action( 'woocommerce_before_single_product' ); ?>
 
     <?php
-    // ¡¡¡ESTO ES LO QUE FALTABA!!!
+    // ¡¡ESTO ES LO QUE FALTABA!! sin esto el single tiende a combinarse con otras variables
     global $product;
     
     // Si por alguna razón $product no está definido (raro pero pasa), lo forzamos:
