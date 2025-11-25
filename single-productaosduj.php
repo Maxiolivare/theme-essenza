@@ -1,50 +1,63 @@
 <?php
-/*
- * Template Name: Single (detalle-producto)
- * single-product.php - WooCommerce
+/**
+ * single-product.php - WooCommerce Essenza
+ * Sobreescribe el detalle de producto por completo
  */
 
 get_header(); ?>
- 
-    <?php while ( have_posts() ) : the_post(); ?>
+
+<?php while ( have_posts() ) : the_post(); ?>
+
+    <?php
+    // ¡¡¡ESTO ES LO QUE FALTABA!!!
+    global $product;
     
+    // Si por alguna razón $product no está definido (raro pero pasa), lo forzamos:
+    if ( ! is_a( $product, 'WC_Product' ) ) {
+        $product = wc_get_product( get_the_ID() );
+    }
+    ?>
+
+    <!-- Hook importante para que WooCommerce cargue scripts y estilos del producto -->
+    <?php do_action( 'woocommerce_before_single_product' ); ?>
+
     <main class="fondo">
         <div class="container textos mt-5">
             <div class="row">
-                <!-- ================ IMÁGENES DEL PRODUCTO ================ -->
+                <!-- IMÁGENES DEL PRODUCTO -->
                 <div class="col-md-6 mx-auto">
                     <!-- Imagen principal -->
                     <div class="mb-4">
-                        <a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" 
-                           data-fancybox="gallery" class="contorno d-block">
-                            <?php the_post_thumbnail( 'large', ['class' => 'img-fluid cuadrar-img w-100 bg-img rounded-4'] ); ?>
-                        </a>
-                    </div>
-
-                    <!-- Miniaturas (Galería de WooCommerce) -->
-                    <?php
-                    $attachment_ids = $product->get_gallery_image_ids();
-                    if ( $attachment_ids ) :
-                        foreach ( $attachment_ids as $attachment_id ) :
-                            $image_link = wp_get_attachment_url( $attachment_id );
-                            ?>
-                            <a href="<?php echo $image_link; ?>" 
-                               data-fancybox="gallery" 
-                               class="contorno mx-auto d-inline-block w-25 bg-img ratio ratio-1x1 rounded-5 me-2 mb-3">
-                                <img src="<?php echo $image_link; ?>" 
-                                     class="img-fluid cuadrar-img" 
-                                     alt="Miniatura">
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" 
+                               data-fancybox="gallery" class="contorno d-block">
+                                <?php the_post_thumbnail( 'large', ['class' => 'img-fluid cuadrar-img w-100 bg-img rounded-4'] ); ?>
                             </a>
-                            <?php
-                        endforeach;
-                    endif;
-                    ?>
+                        <?php endif; ?>
+
+                        <!-- Miniaturas -->
+                        <?php
+                        $attachment_ids = $product->get_gallery_image_ids();
+                        if ( $attachment_ids ) :
+                            foreach ( $attachment_ids as $attachment_id ) :
+                                $image_link = wp_get_attachment_url( $attachment_id );
+                                ?>
+                                <a href="<?php echo esc_url( $image_link ); ?>" 
+                                   data-fancybox="gallery" 
+                                   class="contorno mx-auto d-inline-block w-25 bg-img ratio ratio-1x1 rounded-5 me-2 mb-3">
+                                    <img src="<?php echo esc_url( $image_link ); ?>" 
+                                         class="img-fluid cuadrar-img" alt="Miniatura">
+                                </a>
+                                <?php
+                            endforeach;
+                        endif;
+                        ?>
+                    </div>
                 </div>
 
-                <!-- ================ INFORMACIÓN DEL PRODUCTO ================ -->
+                <!-- INFORMACIÓN DEL PRODUCTO -->
                 <div class="col-md-6 mx-auto">
                     <h1 class="titulos-48"><?php the_title(); ?></h1>
-                    
                     <p class="my-3"><?php the_excerpt(); ?></p>
 
                     <!-- Precio -->
@@ -55,31 +68,12 @@ get_header(); ?>
                     </div>
 
                     <p class="my-3 parrafos-24">Detalles del producto:</p>
-                    <?php
-                    // Mostrar atributos personalizados (Duración, Aroma, Tamaño, etc.)
-                    if ( $product->has_attributes() ) {
-                        wc_display_product_attributes( $product );
-                    }
-                    ?>
+                    <?php wc_display_product_attributes( $product ); ?>
 
-                    <!-- Cantidad + Añadir al carrito -->
-                    <form class="cart my-4" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype="multipart/form-data">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="col-md-4">
-                                <p class="parrafos-24 mb-0">Cantidad:</p>
-                            </div>
-                            <div class="col-md-6 justify-content-start d-flex ms-3">
-                                <?php woocommerce_quantity_input( array(
-                                    'min_value'   => 1,
-                                    'max_value'   => $product->get_max_purchase_quantity(),
-                                    'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1,
-                                ) ); ?>
-                                <?php woocommerce_template_single_add_to_cart(); ?>
-                            </div>
-                        </div>
-                    </form>
+                    <!-- Formulario de añadir al carrito -->
+                    <?php woocommerce_template_single_add_to_cart(); ?>
 
-                    <!-- Botones personalizados (opcional: puedes dejar solo el de WooCommerce) -->
+                    <!-- Tus botones personalizados (opcional) -->
                     <div class="d-flex gap-3 my-5">
                         <button type="button" id="liveToastBtnCarrito" onclick="cambiarTextoBoton()" 
                                 class="btn btn-secundary text-nowrap px-4 flex-fill">
@@ -90,7 +84,7 @@ get_header(); ?>
                         </a>
                     </div>
 
-                    <!-- Toast de confirmación -->
+                    <!-- Toast -->
                     <div class="toast-container position-fixed bottom-0 end-0 p-3">
                         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="toast-header">
@@ -99,14 +93,13 @@ get_header(); ?>
                                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                             </div>
                             <div class="toast-body">
-                                <p class="d-inline m-0 align-middle">Su producto ha sido añadido al carrito <i class="bi bi-check2 align-middle"></i></p>
+                                Su producto ha sido añadido al carrito <i class="bi bi-check2"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Advertencia -->
             <div class="row">
                 <div class="col-md-10 my-4">
                     <h5 class="text-danger">Material inflamable: Utilizar con precaución</h5>
@@ -114,12 +107,11 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- ================ PRODUCTOS RELACIONADOS ================ -->
+        <!-- Productos relacionados -->
         <?php woocommerce_output_related_products(); ?>
-     <?php endwhile; ?>       
+
     </main>
 
+<?php endwhile; ?>
 
-
-    <?php get_footer(); ?>
-
+<?php get_footer(); ?>
