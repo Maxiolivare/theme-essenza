@@ -200,7 +200,7 @@ get_header(); ?>
                     while ($related->have_posts()) : $related->the_post();
                         $related_product = wc_get_product(get_the_ID());
                         ?>
-                        <div class="col-md-3 mx-auto mb-1">
+                        <div class="col-md-3 mx-auto mb-3">
                             <a href="<?php the_permalink(); ?>" class="card rounded-top shadow-sm text-decoration-none">
                                 <div class="ratio ratio-1x1 rounded-top">
                                     <?php if (has_post_thumbnail()) : ?>
