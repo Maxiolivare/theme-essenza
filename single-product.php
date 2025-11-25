@@ -7,15 +7,8 @@
 get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
-    <?php global $product; ?>
 
-    <!-- ===== ESTO ELIMINA EL LABEL PARA SIEMPRE ===== -->
-    <?php remove_all_filters( 'woocommerce_cart_product_quantity' ); ?>
-    <?php remove_action( 'woocommerce_before_quantity_input_field', 'woocommerce_quantity_input_label' ); ?>
-    <?php remove_action( 'woocommerce_after_quantity_input_field', 'woocommerce_quantity_input_label' ); ?>
-    <!-- =============================================== -->
 
-    <?php do_action( 'woocommerce_before_single_product' ); ?>
 
     <?php
     // ¡¡ESTO ES LO QUE FALTABA!! sin esto el single tiende a combinarse con otras variables
@@ -26,6 +19,13 @@ get_header(); ?>
         $product = wc_get_product( get_the_ID() );
     }
     ?>
+    <!-- ===== ESTO ELIMINA EL LABEL PARA SIEMPRE ===== -->
+    <?php remove_all_filters( 'woocommerce_cart_product_quantity' ); ?>
+    <?php remove_action( 'woocommerce_before_quantity_input_field', 'woocommerce_quantity_input_label' ); ?>
+    <?php remove_action( 'woocommerce_after_quantity_input_field', 'woocommerce_quantity_input_label' ); ?>
+    <!-- =============================================== -->
+
+    <?php do_action( 'woocommerce_before_single_product' ); ?>
 
     <!-- Hook importante para que WooCommerce cargue scripts y estilos del producto -->
     <?php do_action( 'woocommerce_before_single_product' ); ?>
