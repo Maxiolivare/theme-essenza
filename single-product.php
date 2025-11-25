@@ -94,7 +94,7 @@ get_header(); ?>
                             <?php
                             woocommerce_quantity_input( array(
                                 'min_value'   => 1,
-                                'max_value'   => $product->get_max_purchase_quantity(),
+                                'max_value'   => 5,
                                 'input_value' => 1,
                                 'input_id'    => 'cantidadReal',
                                 'input_name'  => 'quantity',
