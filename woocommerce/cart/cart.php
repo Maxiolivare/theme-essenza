@@ -12,14 +12,14 @@ defined( 'ABSPATH' ) || exit;
         <div class="row text-center mb-4">
             <div class="col-6">
                 <a class="link-carrito" href="<?php echo wc_get_cart_url(); ?>">
-                    <img class="mb-2 fs-1 text-accent icono-basura-vela" src="<?php echo get_template_directory_uri();?>assets/img/Trash.png">
+                    <img class="mb-2 fs-1 text-accent icono-basura-vela" src="<?php echo get_template_directory_uri();?>/assets/img/Trash.png">
                     <p class="m-0 text-accent">Eliminar</p>
                 </a>
             </div>
 
             <div class="col-6">
                 <a class="link-carrito" href="<?php echo wc_get_page_permalink( 'shop' ); ?>">
-                    <img class="mb-2 fs-1 text-accent icono-basura-vela" src="<?php echo get_template_directory_uri();?>assets/img/vela.png">
+                    <img class="mb-2 fs-1 text-accent icono-basura-vela" src="<?php echo get_template_directory_uri();?>/assets/img/vela.png">
                     <p class="m-0">Seguir comprando</p>
                 </a>
             </div>
