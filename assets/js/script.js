@@ -33,34 +33,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* Funciones de añadir cantidad de productos */
-function restarNumero(){
-    const encontrarNumero = document.getElementById("numero");
-    if (!encontrarNumero) return;
-    let numero = parseInt(encontrarNumero.innerText, 10);
-    if (isNaN(numero)) numero = 0;
-    if (numero > 1) {
-        numero--;
-        encontrarNumero.innerText = numero;
+function incrementar() {
+    let visual = document.getElementById('cantidadVisual');
+    let real = document.getElementById('cantidadReal');
+    let valor = parseInt(real.value) + 1;
+    if (valor <= real.max) {
+        real.value = valor;
+        visual.textContent = valor;
     }
 }
 
-function sumarNumero(){
-    const encontrarNumero = document.getElementById("numero");
-    if (!encontrarNumero) return;
-    let numero = parseInt(encontrarNumero.innerText, 10);
-    if (isNaN(numero)) numero = 0;
-    numero++;
-    encontrarNumero.innerText = numero;
-}
-
-function numeroQueCambia(){
-    const encontrarNumero = document.getElementById("numero");
-    if (!encontrarNumero) return;
-    let numero = parseInt(encontrarNumero.innerText, 10);
-    if (isNaN(numero) || numero < 1) {
-        encontrarNumero.innerText = 1;
+function decrementar() {
+    let visual = document.getElementById('cantidadVisual');
+    let real = document.getElementById('cantidadReal');
+    let valor = parseInt(real.value) - 1;
+    if (valor >= real.min) {
+        real.value = valor;
+        visual.textContent = valor;
     }
 }
+
+// Sincroniza al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    let real = document.getElementById('cantidadReal');
+    document.getElementById('cantidadVisual').textContent = real.value;
+});
 /*     Fin de funciones de añadir cantidad de productos */
 /* Funcion para cambiar el texto de añadir a carrito a eliminar de carrito */
 function cambiarTextoBoton(){
