@@ -77,7 +77,7 @@ get_header(); ?>
                         </div>
                         <div class="col-md-8 d-flex align-items-center ms-3">
                     
-                            <!-- TU CONTADOR BONITO (solo visual) -->
+                            <!-- Contador, para que se vea visualmente y no use el de woocomerce por defecto-->
                             <div class="btn-group me-3" role="group">
                                 <button type="button" class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-end-0 btn-lg" onclick="decrementar()">
                                     <i class="bi bi-dash-circle"></i>
@@ -105,8 +105,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <!-- Formulario de añadir al carrito, el que esta por defecto, guardado por si necesito volver
-                    <?php woocommerce_template_single_add_to_cart(); ?>-->
+                    <!-- Formulario de añadir al carrito, el que esta por defecto, guardado por si necesito volver ?php woocommerce_template_single_add_to_cart(); ?>-->
                     
 
                     <!-- Personalizacion del boton -->
