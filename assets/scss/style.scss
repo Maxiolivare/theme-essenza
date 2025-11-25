@@ -931,9 +931,10 @@ button {
 
 /* Botón comprar */
 .buy-btn {
-    display: inline-block;
-    width: auto;
-    margin: 0 auto;
+    display: inline-block !important;
+    width: auto !important;
+    margin-left: auto;
+    margin-right: auto;
     padding: 14px 35px;
     background: #683c2e;
     color: white;

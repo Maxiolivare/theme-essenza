@@ -132,12 +132,10 @@ defined( 'ABSPATH' ) || exit;
                 <?php echo wc_price( WC()->cart->total ); ?>
             </span>
         </div>
-
         <!-- BOTÓN COMPRAR -->
         <a href="<?php echo wc_get_checkout_url(); ?>" class="buy-btn">
             Comprar
         </a>
-
     </div>
 </main>
 
