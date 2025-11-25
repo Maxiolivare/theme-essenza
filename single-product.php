@@ -200,9 +200,9 @@ get_header(); ?>
                     while ($related->have_posts()) : $related->the_post();
                         $related_product = wc_get_product(get_the_ID());
                         ?>
-                        <div class="col-md-3 mx-auto">
+                        <div class="col-md-3 mx-auto mb-1">
                             <a href="<?php the_permalink(); ?>" class="card rounded-top shadow-sm text-decoration-none">
-                                <div class="ratio ratio-1x1 rounded-top mb-1">
+                                <div class="ratio ratio-1x1 rounded-top">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium', ['class' => 'card-img-top img-fluid w-100 border-bottom cuadrar-img ratio ratio-1x1 rounded-5 me-2', 'alt' => get_the_title()]); ?>
                                     <?php else : ?>
