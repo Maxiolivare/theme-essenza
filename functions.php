@@ -18,5 +18,3 @@ function ocultar_titulo_solo_en_tienda($show) {
     return $show;
 }
 add_filter('woocommerce_show_page_title', 'ocultar_titulo_solo_en_tienda');
-
-// Evita que la pagina recargue cuando realiza un añadido al carro
