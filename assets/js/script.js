@@ -126,9 +126,9 @@ function cambiarTextoBoton(){
             const body = liveToast.querySelector('.toast-body');
             if (body) {
                 if (textNode.nodeValue.trim() === 'Eliminar del Carrito') {
-                    body.innerHTML = '<p class="d-inline m-0 align-middle">Su producto ha sido añadido al Carrito <i class="bi bi-check2 align-middle"></i></p>';
+                    body.innerHTML = '<p class="d-inline m-0 align-middle">Su producto ha sido añadido al Carrito'+'<i class="bi bi-check2 align-middle"></i></p>';
                 } else {
-                    body.innerHTML = '<p class="d-inline m-0 align-middle">Su producto ha sido eliminado del carrito <i class="bi bi-check2 align-middle"></i></p>';
+                    body.innerHTML = '<p class="d-inline m-0 align-middle">Su producto ha sido eliminado del carrito'+'<i class="bi bi-check2 align-middle"></i></p>';
                 }
             }
         }
