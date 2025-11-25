@@ -106,11 +106,8 @@ defined( 'ABSPATH' ) || exit;
                                 data-target="<?php echo $cart_item_key; ?>">
                                 <i class="bi bi-plus-circle"></i>
                             </button>
-
                         </div>
-
                     </div>
-
                     <div>
                         <a 
                             class="btn minar-p btn-link p-0 mt-2"
@@ -119,22 +116,15 @@ defined( 'ABSPATH' ) || exit;
                             Eliminar producto
                         </a>
                     </div>
-
                 </div>
-
                 <!-- SUBTOTAL -->
                 <div class="col-2 text-end fs-5">
                     <?php echo $subtotal; ?>
                 </div>
-
             </div>
-
             <?php endforeach; ?>
-
             <button type="submit" class="d-none" name="update_cart"></button>
-
         </form>
-
         <!-- TOTAL FINAL -->
         <div class="checkout-total-carro">
             <span>Total de la compra</span>
