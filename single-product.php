@@ -70,8 +70,9 @@ get_header(); ?>
                     <p class="my-3 parrafos-24">Detalles del producto:</p>
                     <?php wc_display_product_attributes( $product ); ?>
 
-                    <!-- Formulario de añadir al carrito -->
-                    <?php woocommerce_template_single_add_to_cart(); ?>
+                    <!-- Formulario de añadir al carrito
+                    <?php woocommerce_template_single_add_to_cart(); ?>-->
+                    
 
                     <!-- Tus botones personalizados (opcional) -->
                     <div class="d-flex gap-3 my-5">
