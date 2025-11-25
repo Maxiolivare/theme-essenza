@@ -85,11 +85,6 @@ do_action( 'woocommerce_before_cart' );
                 <?php endforeach; ?>
             </tbody>
         </table>
-
-        <button type="submit" class="carrito-actualizar" name="update_cart">
-            Actualizar carrito
-        </button>
-
         <?php wp_nonce_field( 'woocommerce-cart' ); ?>
     </form>
 
