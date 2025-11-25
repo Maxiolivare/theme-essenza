@@ -1,107 +1,97 @@
-<?php echo "<!-- CARRITO PERSONALIZADO -->"; ?>
+<div class="container cart-custom py-5">
 
-<?php
-/**
- * Cart Page
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart.php.
- *
- * @see     https://woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 10.1.0
- */
+    <!-- Título -->
+    <h2 class="text-center cart-title mb-5">Tu carrito</h2>
 
-defined( 'ABSPATH' ) || exit;
+    <!-- Acciones superiores -->
+    <div class="row justify-content-between text-center mb-5 cart-actions">
+        <div class="col-6 col-md-3">
+            <img src="ICONO_ELIMINAR.svg" class="icon-top mb-2" alt="">
+            <p class="action-text">Eliminar</p>
+        </div>
 
-do_action( 'woocommerce_before_cart' );
-?>
+        <div class="col-6 col-md-3">
+            <img src="ICONO_COMPRAR.svg" class="icon-top mb-2" alt="">
+            <p class="action-text">Seguir comprando</p>
+        </div>
+    </div>
 
-<div class="carrito-container">
-    <h2 class="carrito-titulo">Tu carrito</h2>
+    <!-- Encabezado tabla -->
+    <div class="row fw-semibold border-bottom pb-2 mb-4 small text-muted">
+        <div class="col-8">Producto</div>
+        <div class="col-4 text-end">Total</div>
+    </div>
 
-    <?php wc_print_notices(); ?>
+    <!-- Loop de productos -->
+    <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
-    <form class="woocommerce-cart-form" 
-          action="<?php echo esc_url( wc_get_cart_url() ); ?>" 
-          method="post">
+        <?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
+            $product = $cart_item['data']; 
+            if ( ! $product || ! $product->exists() ) continue;
+        ?>
 
-        <table class="carrito-tabla">
-            <thead>
-                <tr>
-                    <th class="carrito-col-producto">Producto</th>
-                    <th class="carrito-col-total">Total</th>
-                </tr>
-            </thead>
+        <div class="row align-items-center mb-4 cart-item">
+            
+            <!-- Checkbox -->
+            <div class="col-auto">
+                <span class="check-circle <?php echo $cart_item['quantity'] > 0 ? 'active' : ''; ?>"></span>
+            </div>
 
-            <tbody>
-                <?php 
-                foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
+            <!-- Imagen -->
+            <div class="col-auto">
+                <?php echo $product->get_image( 'woocommerce_thumbnail', ['class' => 'rounded product-img'] ); ?>
+            </div>
 
-                    $_product = $cart_item['data'];
+            <!-- Nombre, precio, cantidad -->
+            <div class="col">
+                <p class="product-name mb-1"><?php echo $product->get_name(); ?></p>
+                <p class="price mb-2">$<?php echo $product->get_price(); ?></p>
 
-                    if ( ! $_product || ! $_product->exists() ) continue;
-
+                <div class="qty-box d-inline-flex align-items-center border rounded px-2 me-3">
+                    <button type="button" class="qty-btn" data-type="minus">-</button>
+                    <?php
+                        woocommerce_quantity_input([
+                            'input_class' => 'qty-input',
+                        ], $product, $cart_item_key);
                     ?>
-                    <tr class="carrito-item">
+                    <button type="button" class="qty-btn" data-type="plus">+</button>
+                </div>
 
-                        <!-- PRODUCTO -->
-                        <td class="carrito-producto">
-                            <div class="carrito-producto-imagen">
-                                <?php echo $_product->get_image('woocommerce_thumbnail'); ?>
-                            </div>
+                <a class="remove-link" href="<?php echo wc_get_cart_remove_url( $cart_item_key ); ?>">
+                    Eliminar producto
+                </a>
+            </div>
 
-                            <div class="carrito-producto-detalles">
-                                <h3 class="carrito-producto-nombre">
-                                    <?php echo $_product->get_name(); ?>
-                                </h3>
+            <!-- Subtotal -->
+            <div class="col-3 text-end">
+                <p class="subtotal fw-semibold">
+                    <?php echo WC()->cart->get_product_subtotal( $product, $cart_item['quantity'] ); ?>
+                </p>
+            </div>
 
-                                <span class="carrito-precio-unitario">
-                                    <?php echo wc_price( $_product->get_price() ); ?>
-                                </span>
+        </div>
 
-                                <div class="carrito-cantidad">
-                                    <?php
-                                    woocommerce_quantity_input( array(
-                                        'input_name'  => "cart[{$cart_item_key}][qty]",
-                                        'input_value' => $cart_item['quantity'],
-                                        'min_value'   => 1,
-                                    ) );
-                                    ?>
-                                </div>
+        <?php endforeach; ?>
 
-                                <a class="carrito-eliminar"
-                                   href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>">
-                                    Eliminar producto
-                                </a>
-                            </div>
-                        </td>
-
-                        <!-- TOTAL ITEM -->
-                        <td class="carrito-total-item">
-                            <?php echo WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ); ?>
-                        </td>
-
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-        <?php wp_nonce_field( 'woocommerce-cart' ); ?>
+        <!-- Botón actualizar -->
+        <button type="submit" class="d-none" name="update_cart"></button>
     </form>
 
-    <!-- RESUMEN -->
-    <div class="carrito-resumen">
-        <p class="carrito-total-general">
-            Total de la compra:
-            <strong><?php wc_cart_totals_order_total_html(); ?></strong>
-        </p>
+    <!-- Total -->
+    <div class="row justify-content-end mt-5">
+        <div class="col-auto text-end">
+            <p class="total-label">Total de la compra</p>
+        </div>
+        <div class="col-auto">
+            <p class="total-amount fw-bold">$<?php echo WC()->cart->total; ?></p>
+        </div>
+    </div>
 
-        <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" 
-           class="carrito-btn-comprar">
-            Comprar
-        </a>
+    <!-- Botón comprar -->
+    <div class="text-center mt-4">
+        <a href="<?php echo wc_get_checkout_url(); ?>" class="btn btn-buy px-5 py-2">Comprar</a>
     </div>
 </div>
 
-<?php do_action( 'woocommerce_after_cart' ); ?>
 
 

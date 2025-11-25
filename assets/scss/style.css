@@ -810,150 +810,118 @@ button {
 }
 
 /* CARRITO */
-/* ================================
-   CONTENEDOR GENERAL
-================================ */
-.carrito-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  font-family: "Poppins", sans-serif;
-  color: #5a3c2a;
+.cart-custom {
+  font-family: "Inter", sans-serif;
+  color: #5c3b2e;
+  background: #f6efe4;
 }
 
-/* Título */
-.carrito-titulo {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 30px;
-  letter-spacing: 0.5px;
-  font-weight: 700;
-}
-
-/* ================================
-   TABLA
-================================ */
-.carrito-tabla {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-.carrito-tabla thead th {
-  text-align: left;
+.cart-title {
+  font-size: 32px;
   font-weight: 600;
-  padding: 10px 0;
-  border-bottom: 1px solid #d8c6b4;
-  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.icon-top {
+  width: 50px;
+  opacity: 0.9;
+}
+
+.action-text {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* Encabezado */
+.cart-custom .small {
   font-size: 14px;
 }
 
-/* ================================
-   FILAS DE PRODUCTO
-================================ */
-.carrito-item {
-  border-bottom: 1px solid #f1e6db;
-  padding: 20px 0;
+/* Checkbox estilo punto café */
+.check-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #bfa58a;
+  display: inline-block;
 }
 
-.carrito-producto {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  padding: 15px 0;
+.check-circle.active {
+  background: #5c3b2e;
+  border-color: #5c3b2e;
 }
 
-/* Imagen */
-.carrito-producto-imagen img {
-  width: 90px;
-  height: 90px;
-  border-radius: 10px;
+/* Producto */
+.product-img {
+  width: 80px;
+  height: 80px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-/* Detalles del producto */
-.carrito-producto-detalles {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Nombre */
-.carrito-producto-nombre {
-  font-size: 17px;
-  margin: 0;
+.product-name {
+  font-size: 18px;
   font-weight: 600;
 }
 
-/* Precio unitario */
-.carrito-precio-unitario {
-  font-size: 15px;
-  color: rgba(90, 60, 42, 0.8);
-  margin: 5px 0;
-}
-
-/* ================================
-   CANTIDAD
-================================ */
-.carrito-cantidad input {
-  width: 55px !important;
-  height: 36px;
-  border: 1px solid #e1d2c3;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 15px;
-}
-
-/* ================================
-   ELIMINAR
-================================ */
-.carrito-eliminar {
-  font-size: 13px;
-  color: #b7632a;
-  text-decoration: underline;
-  margin-top: 6px;
-}
-
-/* ================================
-   TOTAL POR PRODUCTO
-================================ */
-.carrito-total-item {
-  text-align: right;
+.price {
   font-size: 16px;
-  font-weight: 600;
-  padding-right: 5px;
 }
 
-/* ================================
-   BOTÓN ACTUALIZAR
-================================ */
-.carrito-actualizar {
-  margin-top: 15px;
-  padding: 10px 25px;
-  border: 1px solid #cbb7a5;
-  background: transparent;
-  border-radius: 10px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.2s;
+/* Cantidad */
+.qty-box {
+  height: 38px;
+  border-color: #d1b59e;
 }
 
-.carrito-actualizar:hover {
-  background: #f6ede6;
-}
-
-/* ================================
-   RESUMEN TOTAL
-================================ */
-.carrito-resumen {
-  text-align: right;
-  margin-top: 30px;
-}
-
-.carrito-total-general {
+.qty-btn {
+  background: none;
+  border: none;
   font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  padding: 0 8px;
+  color: #b67a42;
+  cursor: pointer;
+}
+
+.qty-input {
+  border: none;
+  width: 40px;
+  text-align: center;
+  font-size: 16px;
+  background: none !important;
+}
+
+/* Remove link */
+.remove-link {
+  color: #8b6b53;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.subtotal {
+  font-size: 18px;
+}
+
+/* Totales */
+.total-label {
+  font-size: 16px;
+}
+
+.total-amount {
+  font-size: 20px;
+  color: #5c3b2e;
+}
+
+/* Botón comprar */
+.btn-buy {
+  background-color: #5c3b2e;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+.btn-buy:hover {
+  background-color: #4a2f25;
 }
 
 /*css para detalle-producto y checkout*/
