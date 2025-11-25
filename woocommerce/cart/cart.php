@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
             </div>
         </div>
         <!-- PRODUCTO / TOTAL -->
-        <div class="producto-total">
+        <div class="producto-total ">
             <div class="col-6">Producto</div>
             <div class="col-6 text-end">Total</div>
         </div>
