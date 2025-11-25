@@ -1,127 +1,128 @@
-<div class="container cart-custom py-5">
+<?php
+defined( 'ABSPATH' ) || exit;
+?>
 
-    <!-- Título -->
-    <h2 class="text-center cart-title mb-5">Tu carrito</h2>
+<main>
+    <div class="container">
+        
+        <!-- TÍTULO -->
+        <h1 class="h1n">Tu carrito</h1>
 
-    <!-- Acciones superiores -->
-    <div class="row justify-content-between text-center mb-5 cart-actions">
-        <div class="col-6 col-md-3">
-            <img src="ICONO_ELIMINAR.svg" class="icon-top mb-2" alt="">
-            <p class="action-text">Eliminar</p>
-        </div>
-
-        <div class="col-6 col-md-3">
-            <img src="ICONO_COMPRAR.svg" class="icon-top mb-2" alt="">
-            <p class="action-text">Seguir comprando</p>
-        </div>
-    </div>
-
-    <!-- Encabezado -->
-    <div class="row fw-semibold border-bottom pb-2 mb-4 small text-muted">
-        <div class="col-8">Producto</div>
-        <div class="col-4 text-end">Total</div>
-    </div>
-
-    <!-- Loop de productos -->
-    <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
-
-        <?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
-
-            $product = $cart_item['data'];
-
-            if ( ! $product || ! $product->exists() ) continue;
-
-        ?>
-
-        <div class="row align-items-center cart-item py-4 border-bottom">
-
-            <!-- Check decorativo -->
-            <div class="col-auto pe-0">
-                <span class="check-circle <?php echo $cart_item['quantity'] > 0 ? 'active' : ''; ?>"></span>
+        <!-- ACCIONES DE ARRIBA -->
+        <div class="row text-center mb-4">
+            <div class="col-6">
+                <a class="link-carrito" href="<?php echo wc_get_cart_url(); ?>">
+                    <img class="mb-2 fs-1 text-accent icono-basura-vela" src="<?php echo get_template_directory_uri();?>assets/img/Trash.png">
+                    <p class="m-0 text-accent">Eliminar</p>
+                </a>
             </div>
 
-            <!-- Imagen -->
-            <div class="col-auto">
-                <?php echo $product->get_image( 'woocommerce_thumbnail', ['class' => 'product-img rounded'] ); ?>
+            <div class="col-6">
+                <a class="link-carrito" href="<?php echo wc_get_page_permalink( 'shop' ); ?>">
+                    <img class="mb-2 fs-1 text-accent icono-basura-vela" src="<?php echo get_template_directory_uri();?>assets/img/vela.png">
+                    <p class="m-0">Seguir comprando</p>
+                </a>
             </div>
+        </div>
 
-            <!-- Contenido principal: nombre, precio, cantidad -->
-            <div class="col ps-4">
+        <!-- PRODUCTO / TOTAL -->
+        <div class="producto-total">
+            <div class="col-6">Producto</div>
+            <div class="col-6 text-end">Total</div>
+        </div>
 
-                <p class="product-name mb-1 fw-semibold">
-                    <?php echo esc_html( $product->get_name() ); ?>
-                </p>
+        <hr class="linea-carrito">
 
-                <p class="price mb-2 small">
-                    $<?php echo number_format( $product->get_price(), 0, ',', '.' ); ?>
-                </p>
+        <!-- FORMULARIO DEL CARRITO -->
+        <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
-                <!-- Box cantidad -->
-                <div class="qty-box d-inline-flex align-items-center border rounded px-2 me-3">
+            <?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
+                
+                $product = $cart_item['data'];
+                if ( ! $product || !$product->exists() ) continue;
+                
+                $product_id = $product->get_id(); 
+                $nombre     = $product->get_name();
+                $precio     = wc_price( $product->get_price() );
+                $subtotal   = WC()->cart->get_product_subtotal( $product, $cart_item['quantity'] );
+                $img        = $product->get_image( 'woocommerce_thumbnail', ['class' => 'imagen-p-carrito rounded product-img'] );
 
-                    <button type="button" class="qty-btn" data-type="minus">-</button>
+            ?>
 
-                    <?php
-                        woocommerce_quantity_input([
-                            'input_class' => 'qty-input',
-                            'product_name' => ' ', 
-                        ], $product, $cart_item_key);
-                    ?>
+            <!-- FILA DE PRODUCTO -->
+            <div class="row align-items-center py-4">
 
-                    <button type="button" class="qty-btn" data-type="plus">+</button>
+                <!-- CHECK + IMAGEN -->
+                <div class="col-4 d-flex chekp">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="">
+                    </div>
+
+                    <?php echo $img; ?>
+
                 </div>
 
-                <!-- Eliminar -->
-                <a class="remove-link small d-block mt-1"
-                   href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>">
-                    Eliminar producto
-                </a>
+                <!-- NOMBRE, PRECIO, CANTIDAD, ELIMINAR -->
+                <div class="col-6">
+
+                    <h5 class="mb-1 nombre-carrito"><?php echo esc_html( $nombre ); ?></h5>
+
+                    <p class="mb-3"><?php echo $precio; ?></p>
+
+                    <div class="mb-3 cantidad-box">
+
+                        <?php 
+                        woocommerce_quantity_input(
+                            array(
+                                'input_class' => 'form-cantidad',
+                            ),
+                            $product,
+                            $cart_item_key
+                        );
+                        ?>
+                    </div>
+
+                    <div>
+                        <a 
+                            class="btn minar-p btn-link p-0 mt-2"
+                            href="<?php echo wc_get_cart_remove_url( $cart_item_key ); ?>"
+                        >
+                            Eliminar producto
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- SUBTOTAL -->
+                <div class="col-2 text-end fs-5">
+                    <?php echo $subtotal; ?>
+                </div>
 
             </div>
 
-            <!-- Subtotal -->
-            <div class="col-3 text-end">
+            <?php endforeach; ?>
 
-                <p class="subtotal fw-semibold mb-0">
-                    <?php
-                        echo WC()->cart->get_product_subtotal( $product, $cart_item['quantity'] );
-                    ?>
-                </p>
+            <button type="submit" class="d-none" name="update_cart"></button>
 
-            </div>
+        </form>
 
+        <!-- TOTAL FINAL -->
+        <div class="checkout-total">
+            <span>Total de la compra</span>
+            <span class="total-monto">
+                <?php echo wc_price( WC()->cart->total ); ?>
+            </span>
         </div>
 
-        <?php endforeach; ?>
-
-        <button type="submit" name="update_cart" class="d-none"></button>
-
-    </form>
-
-    <!-- Total general -->
-    <div class="row justify-content-end mt-5">
-
-        <div class="col-auto text-end">
-            <p class="total-label mb-0">Total de la compra</p>
-        </div>
-
-        <div class="col-auto">
-            <p class="total-amount fw-bold mb-0">
-                $<?php echo number_format( WC()->cart->total, 0, ',', '.' ); ?>
-            </p>
-        </div>
-
-    </div>
-
-    <!-- Botón comprar -->
-    <div class="text-center mt-4">
-        <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>"
-           class="btn btn-buy px-5 py-2">
-           Comprar
+        <!-- BOTÓN COMPRAR -->
+        <a href="<?php echo wc_get_checkout_url(); ?>" class="buy-btn">
+            Comprar
         </a>
-    </div>
 
-</div>
+    </div>
+</main>
+
 
 
 
