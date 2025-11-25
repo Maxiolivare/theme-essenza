@@ -4,7 +4,6 @@ defined( 'ABSPATH' ) || exit;
 
 <main>
     <div class="container">
-        <!-- TÍTULO -->
         <h1 class="h1n">Tu carrito</h1>
         <div class="row text-center mb-4 align-items-center">
             <div class="col-6 d-flex flex-column align-items-center">
