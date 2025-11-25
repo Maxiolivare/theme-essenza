@@ -149,3 +149,49 @@ function cambiarTextoBoton(){
 Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
+
+/* CARRITO */
+
+document.querySelectorAll(".qty-btn-custom").forEach(btn => {
+    btn.addEventListener("click", function () {
+
+        const type = this.dataset.type;
+        const key = this.dataset.target;
+
+        const realInput = document.getElementById("qty-real-" + key);
+        const visualBtn = document.getElementById("cantidadVisual-" + key);
+
+        let current = parseInt(realInput.value);
+
+        if (type === "minus" && current > 1) current--;
+        if (type === "plus") current++;
+
+        realInput.value = current;
+        visualBtn.innerText = current;
+
+        // Actualizar automáticamente el carrito
+        document.querySelector("button[name='update_cart']").click();
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Desactivar el comportamiento nativo de WooCommerce
+    jQuery(document.body).off('change', 'input.qty');
+
+});
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Botón oculto update_cart
+    const updateButton = document.querySelector('button[name="update_cart"]');
+
+    // Detectar cambios en cualquier input de cantidad
+    document.querySelectorAll('input.qty').forEach(function(input){
+        input.addEventListener('change', function(){
+            // No recarga automática, solo marca que hay cambios
+            updateButton.disabled = false;
+        });
+    });
+
+});
+
+

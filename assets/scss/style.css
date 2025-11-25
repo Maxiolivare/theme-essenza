@@ -912,14 +912,14 @@ button {
 }
 
 /* Botón comprar */
-.btn-buy {
+.buy-btn {
   background-color: #5c3b2e;
   color: #fff;
   font-size: 18px;
   border-radius: 10px;
 }
 
-.btn-buy:hover {
+.buy-btn:hover {
   background-color: #4a2f25;
 }
 
@@ -1074,9 +1074,20 @@ button {
   display: inline-block;
 }
 
-/* ================================
-   BOTÓN COMPRAR
-================================ */
+.chekp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imagen-p-carrito {
+  width: 90px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+
 .carrito-btn-comprar {
   display: inline-block;
   background: #5a3c2a;
@@ -1092,9 +1103,6 @@ button {
   background: #412a1d;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
 @media (max-width: 600px) {
   .carrito-producto {
     flex-direction: column;

@@ -7,23 +7,21 @@ defined( 'ABSPATH' ) || exit;
         
         <!-- TÍTULO -->
         <h1 class="h1n">Tu carrito</h1>
-
-        <!-- ACCIONES DE ARRIBA -->
-        <div class="row text-center mb-4">
-            <div class="col-6">
-                <a class="link-carrito" href="<?php echo wc_get_cart_url(); ?>">
-                    <img class="mb-2 fs-1 text-accent icono-basura-vela" src="<?php echo get_template_directory_uri();?>/assets/img/Trash.png">
-                    <p class="m-0 text-accent">Eliminar</p>
-                </a>
+        <div class="row text-center mb-4 align-items-center">
+            <div class="col-6 d-flex flex-column align-items-center">
+                <img class="mb-2 icono-basura-vela" 
+                    src="<?php echo get_template_directory_uri();?>/assets/img/Trash.png" 
+                    alt="Eliminar">
+                <p class="m-0 text-accent fw-bold">Eliminar</p>
             </div>
-
-            <div class="col-6">
-                <a class="link-carrito" href="<?php echo wc_get_page_permalink( 'shop' ); ?>">
-                    <img class="mb-2 fs-1 text-accent icono-basura-vela" src="<?php echo get_template_directory_uri();?>/assets/img/vela.png">
-                    <p class="m-0">Seguir comprando</p>
-                </a>
+            <div class="col-6 d-flex flex-column align-items-center">
+                <img class="mb-2 icono-basura-vela" 
+                    src="<?php echo get_template_directory_uri();?>/assets/img/vela.png" 
+                    alt="Seguir comprando">
+                <p class="m-0 text-accent fw-bold">Seguir comprando</p>
             </div>
         </div>
+
 
         <!-- PRODUCTO / TOTAL -->
         <div class="producto-total">
@@ -151,30 +149,7 @@ defined( 'ABSPATH' ) || exit;
 </main>
 
 
-<!-- SCRIPT PARA MANEJAR CANTIDAD -->
-<script>
-document.querySelectorAll(".qty-btn-custom").forEach(btn => {
-    btn.addEventListener("click", function () {
 
-        const type = this.dataset.type;
-        const key = this.dataset.target;
-
-        const realInput = document.getElementById("qty-real-" + key);
-        const visualBtn = document.getElementById("cantidadVisual-" + key);
-
-        let current = parseInt(realInput.value);
-
-        if (type === "minus" && current > 1) current--;
-        if (type === "plus") current++;
-
-        realInput.value = current;
-        visualBtn.innerText = current;
-
-        // Actualizar automáticamente el carrito
-        document.querySelector("button[name='update_cart']").click();
-    });
-});
-</script>
 
 
 
