@@ -115,19 +115,21 @@ get_header(); ?>
                         </div>
                     </div>
                      <!-- boton de añadir al carro -->
-                   <!-- Formulario de añadir al carrito, el que esta por defecto, guardado por si necesito volver ?php woocommerce_template_single_add_to_cart(); ?>-->
-                
-
-                <!-- Personalizacion del boton -->
-                <div class="d-flex gap-3 my-5">
-                    <button type="button" id="liveToastBtnCarrito" onclick="cambiarTextoBoton()" 
-                            class="btn btn-secundary text-nowrap px-4 flex-fill">
-                        <i class="bi bi-cart3"></i> Agregar al carrito
-                    </button>
-                    <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-secundary px-4 flex-fill">
-                        Comprar ahora
-                    </a>
-                </div>
+                    <div class="d-flex gap-3 my-5">
+                        <button type="button" 
+                                id="liveToastBtnCarrito" 
+                                class="btn btn-secundary text-nowrap px-4 flex-fill">
+                            <i class="bi bi-cart3"></i> Agregar al carrito
+                        </button>
+                        <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-secundary px-4 flex-fill">
+                            Comprar ahora
+                        </a>
+                    </div>
+                    
+                    <!-- Botón REAL de WooCommerce (lo dejamos oculto, pero FUNCIONA) -->
+                    <div class="d-none">
+                        <?php woocommerce_template_single_add_to_cart(); ?>
+                    </div>
 
 
                     <!-- Toast, se activa al apretar agregar carrito. -->
