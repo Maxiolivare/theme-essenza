@@ -108,7 +108,6 @@ get_header(); ?>
                                 'input_name'  => 'quantity',
                                 'input_id'    => 'cantidadReal',
                                 'classes'     => ['d-none'],           // oculta el input
-                                'show_label'  => false,                // ← ESTO ELIMINA EL LABEL
                             ), $product );
                             ?>
     
