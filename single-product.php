@@ -1,4 +1,4 @@
-?php
+<?php
 /*
  * Template Name: Single (detalle-producto)
  * single-product.php - WooCommerce
