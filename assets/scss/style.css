@@ -973,27 +973,6 @@ button {
 .carrito-btn-comprar:hover {
   background: #412a1d;
 }
-
-/* ================================
-   RESPONSIVE
-================================ */
-@media (max-width: 600px) {
-  .carrito-producto {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .carrito-total-item {
-    text-align: left;
-    margin-top: 10px;
-  }
-  .carrito-tabla thead {
-    display: none;
-  }
-  .carrito-tabla tr {
-    display: block;
-    padding: 20px 0;
-  }
-}/*# sourceMappingURL=style.css.map */
 /*css para detalle-producto y checkout*/
 
 /*Tamaño de letra*/
@@ -1129,4 +1108,25 @@ button {
 .accordion-button.collapsed .bi-chevron-down { display: inline-block; }
 .accordion-button:not(.collapsed) .bi-chevron-down { display: none; }
 .accordion-button:not(.collapsed) .bi-chevron-up { display: inline-block; }
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+  .carrito-producto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .carrito-total-item {
+    text-align: left;
+    margin-top: 10px;
+  }
+  .carrito-tabla thead {
+    display: none;
+  }
+  .carrito-tabla tr {
+    display: block;
+    padding: 20px 0;
+  }
+}/*# sourceMappingURL=style.css.map */
+
 
