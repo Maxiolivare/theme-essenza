@@ -44,7 +44,7 @@ get_header(); ?>
                                 ?>
                                 <a href="<?php echo esc_url( $image_link ); ?>" 
                                    data-fancybox="gallery" 
-                                   class="contorno mx-auto d-inline-block w-25 bg-img ratio ratio-1x1 rounded-5 me-2 mb-3">
+                                   class="contorno d-block mx-auto d-inline-block w-25 bg-img ratio ratio-1x1 rounded-5 me-2 mb-3">
                                     <img src="<?php echo esc_url( $image_link ); ?>" 
                                          class="img-fluid cuadrar-img" alt="Miniatura">
                                 </a>
@@ -70,8 +70,9 @@ get_header(); ?>
                     <p class="my-3 parrafos-24">Detalles del producto:</p>
                     <?php wc_display_product_attributes( $product ); ?>
 
-                    <!-- Formulario de añadir al carrito -->
-                    <?php woocommerce_template_single_add_to_cart(); ?>
+                    <!-- Formulario de añadir al carrito
+                    <?php woocommerce_template_single_add_to_cart(); ?>-->
+                    
 
                     <!-- Tus botones personalizados (opcional) -->
                     <div class="d-flex gap-3 my-5">
