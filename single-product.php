@@ -91,16 +91,16 @@ get_header(); ?>
                             </div>
                     
                             <!-- ESTE ES EL INPUT REAL que WooCommerce lee (lo ocultamos) -->
-                            <?php
+                                <?php
                             woocommerce_quantity_input( array(
                                 'min_value'   => 1,
-                                'max_value'   => $product->get_max_purchase_quantity(), // Funciona segun la cantidad de productos que hay, sino, no aumenta, en todos los productos parece que por ahora solo hay 1.
+                                'max_value'   => $product->get_max_purchase_quantity(),
                                 'input_value' => 1,
-                                'input_id'    => 'cantidadReal',
                                 'input_name'  => 'quantity',
-                                'classes'     => ['d-none'] // lo ocultamos con Bootstrap
-                                'show_label'  => false,  // esto elimina el comentario que woo-conmerce pone por defecto
-                                'aria_label'  => 'Cantidad del producto', 
+                                'input_id'    => 'cantidadReal',
+                                'classes'     => ['d-none'],           // oculta el input
+                                'show_label'  => false,                // ← ESTO ELIMINA EL LABEL
+                                'aria_label'  => 'Cantidad del producto', // opcional: accesibilidad sin mostrarlo
                             ), $product );
                             ?>
     
