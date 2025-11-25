@@ -100,7 +100,6 @@ get_header(); ?>
                                 'input_id'    => 'cantidadReal',
                                 'classes'     => ['d-none'],           // oculta el input
                                 'show_label'  => false,                // ← ESTO ELIMINA EL LABEL
-                                'aria_label'  => 'Cantidad del producto', // opcional: accesibilidad sin mostrarlo
                             ), $product );
                             ?>
     
