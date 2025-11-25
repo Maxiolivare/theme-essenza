@@ -30,8 +30,8 @@ get_header(); ?>
                     <div class="mb-4">
                         <?php if ( has_post_thumbnail() ) : ?>
                             <a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" 
-                               data-fancybox="gallery" class="ratio ratio-1x1">
-                                <?php the_post_thumbnail( 'large', ['class' => 'd-block img-fluid cuadrar-img w-100 bg-img rounded-4'] ); ?>
+                               data-fancybox="gallery" class="d-block ratio ratio-1x1">
+                                <?php the_post_thumbnail( 'large', ['class' => ' img-fluid cuadrar-img w-100 bg-img rounded-4'] ); ?>
                             </a>
                         <?php endif; ?>
 
@@ -94,7 +94,7 @@ get_header(); ?>
                             <?php
                             woocommerce_quantity_input( array(
                                 'min_value'   => 1,
-                                'max_value'   => 5,
+                                'max_value'   => $product->get_max_purchase_quantity(), // Funciona segun la cantidad de productos que hay, sino, no aumenta, en todos los productos parece que por ahora solo hay 1.
                                 'input_value' => 1,
                                 'input_id'    => 'cantidadReal',
                                 'input_name'  => 'quantity',
