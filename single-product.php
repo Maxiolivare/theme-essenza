@@ -31,7 +31,7 @@ get_header(); ?>
                         <?php if ( has_post_thumbnail() ) : ?>
                             <a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" 
                                data-fancybox="gallery" class="ratio ratio-1x1">
-                                <?php the_post_thumbnail( 'large', ['class' => 'img-fluid cuadrar-img w-100 bg-img rounded-4'] ); ?>
+                                <?php the_post_thumbnail( 'large', ['class' => 'd-block img-fluid cuadrar-img w-100 bg-img rounded-4'] ); ?>
                             </a>
                         <?php endif; ?>
 
@@ -44,7 +44,7 @@ get_header(); ?>
                                 ?>
                                 <a href="<?php echo esc_url( $image_link ); ?>" 
                                    data-fancybox="gallery" 
-                                   class="contorno d-block mx-auto d-inline-block w-25 bg-img ratio ratio-1x1 rounded-5 me-2 mb-3">
+                                   class="mx-auto d-inline-block w-25 bg-img ratio ratio-1x1 rounded-5 me-2 mb-3">
                                     <img src="<?php echo esc_url( $image_link ); ?>" 
                                          class="img-fluid cuadrar-img" alt="Miniatura">
                                 </a>
@@ -70,11 +70,46 @@ get_header(); ?>
                     <p class="my-3 parrafos-24">Detalles del producto:</p>
                     <?php wc_display_product_attributes( $product ); ?>
 
-                    <!-- Formulario de añadir al carrito
+                    <!-- Contador de productos -->
+                    <div class="mx-auto d-flex align-items-center mb-4">
+                        <div class="col-md-4">
+                            <p class="parrafos-24 mb-0">Cantidad:</p>
+                        </div>
+                        <div class="col-md-8 d-flex align-items-center ms-3">
+                    
+                            <!-- TU CONTADOR BONITO (solo visual) -->
+                            <div class="btn-group me-3" role="group">
+                                <button type="button" class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-end-0 btn-lg" onclick="decrementar()">
+                                    <i class="bi bi-dash-circle"></i>
+                                </button>
+                                <button type="button" id="cantidadVisual" class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-end-0 border-start-0 btn-lg">
+                                    1
+                                </button>
+                                <button type="button" class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-start-0 btn-lg" onclick="incrementar()">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button>
+                            </div>
+                    
+                            <!-- ESTE ES EL INPUT REAL que WooCommerce lee (lo ocultamos) -->
+                            <?php
+                            woocommerce_quantity_input( array(
+                                'min_value'   => 1,
+                                'max_value'   => $product->get_max_purchase_quantity(),
+                                'input_value' => 1,
+                                'input_id'    => 'cantidadReal',
+                                'input_name'  => 'quantity',
+                                'classes'     => ['d-none'] // lo ocultamos con Bootstrap
+                            ), $product );
+                            ?>
+                    
+                        </div>
+                    </div>
+
+                    <!-- Formulario de añadir al carrito, el que esta por defecto, guardado por si necesito volver
                     <?php woocommerce_template_single_add_to_cart(); ?>-->
                     
 
-                    <!-- Tus botones personalizados (opcional) -->
+                    <!-- Personalizacion del boton -->
                     <div class="d-flex gap-3 my-5">
                         <button type="button" id="liveToastBtnCarrito" onclick="cambiarTextoBoton()" 
                                 class="btn btn-secundary text-nowrap px-4 flex-fill">
