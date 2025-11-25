@@ -19,3 +19,10 @@ function ocultar_titulo_solo_en_tienda($show) {
 }
 add_filter('woocommerce_show_page_title', 'ocultar_titulo_solo_en_tienda');
 
+// Evita que la pagina recargue cuando realiza un añadido al carro
+add_action( 'wp_enqueue_scripts', function() {
+    if ( is_product() ) {
+        wp_enqueue_script( 'wc-add-to-cart' );
+    }
+} );
+<?php wp_enqueue_script( 'wc-cart-fragments' ); ?>
