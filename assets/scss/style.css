@@ -1060,7 +1060,7 @@ button {
   background-image: none !important;
   content: none !important;
 }
-.btn-group.me-3.ai-style-change-2 {
+.screen-reader-text {
             display: none; 
 }
 
