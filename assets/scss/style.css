@@ -1060,6 +1060,9 @@ button {
   background-image: none !important;
   content: none !important;
 }
+.btn-group.me-3.ai-style-change-2 {
+            display: none; 
+}
 
 /* Mostrar/ocultar los iconos según el estado collapsed, los bi-chevron-up son los iconos de bootstrap*/
 .accordion-button.collapsed .bi-chevron-up {
