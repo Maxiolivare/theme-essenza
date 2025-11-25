@@ -64,7 +64,7 @@ defined( 'ABSPATH' ) || exit;
                 </div>
 
                 <!-- NOMBRE, PRECIO, CANTIDAD, ELIMINAR -->
-                <div class="col-6">
+                <div class="col-5">
 
                     <h5 class="mb-1 nombre-carrito"><?php echo esc_html( $nombre ); ?></h5>
 
