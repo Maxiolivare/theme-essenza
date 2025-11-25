@@ -101,38 +101,76 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 /*     Fin de funciones de añadir cantidad de productos */
 /* Funcion para cambiar el texto de añadir a carrito a eliminar de carrito */
-function cambiarTextoBoton(){
+document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('liveToastBtnCarrito');
     if (!btn) return;
 
-    let textNode = null;
-    for (let n of btn.childNodes) {
-        if (n.nodeType === Node.TEXT_NODE) { textNode = n; break; }
-    }
-    if (!textNode) {
-        textNode = document.createTextNode(' Agregar al Carrito');
-        btn.appendChild(textNode);
+    btn.addEventListener('click', function() {
+        const productId = this.getAttribute('data-product-id');
+        const inCart = this.getAttribute('data-in-cart') === 'true';
+        const cartItemKey = this.getAttribute('data-cart-item-key');
+
+        if (!inCart) {
+            // AÑADIR al carrito
+            fetch(wc_add_to_cart_params.ajax_url, {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    action: 'woocommerce_add_to_cart',
+                    product_id: productId,
+                    quantity: document.getElementById('cantidadReal').value || 1
+                })
+            })
+            .then(() => {
+                actualizarBoton(true);
+                mostrarToast('añadido');
+                // Opcional: actualizar contador del carrito en el header
+                document.body.dispatchEvent(new Event('added_to_cart'));
+            });
+        } else {
+            // ELIMINAR del carrito
+            fetch(wc_add_to_cart_params.ajax_url, {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    action: 'woocommerce_remove_cart_item',
+                    cart_item_key: cartItemKey
+                })
+            })
+            .then(() => {
+                actualizarBoton(false);
+                mostrarToast('eliminado');
+            });
+        }
+    });
+
+    function actualizarBoton(estaEnCarrito) {
+        const icon = btn.querySelector('i');
+        const texto = btn.querySelector('.btn-text');
+        
+        if (estaEnCarrito) {
+            icon.className = 'bi bi-cart-x';
+            texto.textContent = 'Eliminar del carrito';
+            btn.setAttribute('data-in-cart', 'true');
+        } else {
+            icon.className = 'bi bi-cart3';
+            texto.textContent = 'Agregar al carrito';
+            btn.setAttribute('data-in-cart', 'false');
+        }
     }
 
-    const current = textNode.nodeValue.trim();
-    if (current === 'Agregar al Carrito' || current === 'Agregar al carrito') {
-        textNode.nodeValue = ' Eliminar del Carrito';
-    } else {
-        textNode.nodeValue = ' Agregar al Carrito';
+    function mostrarToast(accion) {
+        const toast = document.getElementById('liveToast');
+        const body = toast.querySelector('.toast-body p');
+        body.innerHTML = accion === 'añadido' 
+            ? 'Su producto ha sido añadido al carrito <i class="bi bi-check2"></i>'
+            : 'Su producto ha sido eliminado del carrito <i class="bi bi-check2"></i>';
+        
+        new bootstrap.Toast(toast).show();
     }
-        // Actualizar mensaje del toast segun si es para agregar o añadir
-        const liveToast = document.getElementById('liveToast');
-        if (liveToast) {
-            const body = liveToast.querySelector('.toast-body');
-            if (body) {
-                if (textNode.nodeValue.trim() === 'Eliminar del Carrito') {
-                    body.innerHTML = '<p class="d-inline m-0 align-middle">Su producto ha sido añadido al Carrito'+'<i class="bi bi-check2 align-middle"></i></p>';
-                } else {
-                    body.innerHTML = '<p class="d-inline m-0 align-middle">Su producto ha sido eliminado del carrito'+'<i class="bi bi-check2 align-middle"></i></p>';
-                }
-            }
-        }
-}
+});
 { /*     Funciones de Toast de Bootstrap, con esto se activa. */
     const toastTrigger = document.getElementById('liveToastBtnCarrito') // Cambiado para que funcione con el id de carrito
     const toastLiveExample = document.getElementById('liveToast')
