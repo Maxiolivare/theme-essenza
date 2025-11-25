@@ -94,9 +94,9 @@ function decrementar() {
     }
 }
 
-// Sincroniza al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
-    let real = document.getElementById('cantidadReal');
+// Sincronizar al cargar
+document.addEventListener('DOMContentLoaded', () => {
+    const real = document.getElementById('cantidadReal');
     document.getElementById('cantidadVisual').textContent = real.value;
 });
 /*     Fin de funciones de añadir cantidad de productos */
