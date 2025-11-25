@@ -18,4 +18,3 @@ function ocultar_titulo_solo_en_tienda($show) {
     return $show;
 }
 add_filter('woocommerce_show_page_title', 'ocultar_titulo_solo_en_tienda');
-?>
