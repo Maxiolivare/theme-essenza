@@ -136,7 +136,7 @@ defined( 'ABSPATH' ) || exit;
         </form>
 
         <!-- TOTAL FINAL -->
-        <div class="checkout-total">
+        <div class="checkout-total-carro">
             <span>Total de la compra</span>
             <span class="total-monto">
                 <?php echo wc_price( WC()->cart->total ); ?>
