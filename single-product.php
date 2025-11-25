@@ -30,7 +30,7 @@ get_header(); ?>
                     <div class="mb-4">
                         <?php if ( has_post_thumbnail() ) : ?>
                             <a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" 
-                               data-fancybox="gallery" class="contorno d-block">
+                               data-fancybox="gallery" class="contorno d-block ratio ratio-1x1">
                                 <?php the_post_thumbnail( 'large', ['class' => 'img-fluid cuadrar-img w-100 bg-img rounded-4'] ); ?>
                             </a>
                         <?php endif; ?>
