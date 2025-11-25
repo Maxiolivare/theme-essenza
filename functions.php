@@ -25,4 +25,3 @@ add_action( 'wp_enqueue_scripts', function() {
         wp_enqueue_script( 'wc-add-to-cart' );
     }
 } );
-<?php wp_enqueue_script( 'wc-cart-fragments' ); ?>
