@@ -69,7 +69,7 @@ defined( 'ABSPATH' ) || exit;
 
                     <h5 class="mb-1 nombre-carrito"><?php echo esc_html( $nombre ); ?></h5>
 
-                    <p class="mb-3"><?php echo $precio; ?></p>
+                    <p class="mb-3 precio-carri"><?php echo $precio; ?></p>
 
                     <!-- CANTIDAD PERSONALIZADA -->
                     <div class="mb-3 cantidad-box">
