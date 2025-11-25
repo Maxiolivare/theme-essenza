@@ -155,8 +155,92 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- Productos relacionados -->
-        <?php woocommerce_output_related_products(); ?>
+            <!-- Productos relacionados -->
+             
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-12 my-5">
+                    <h1 class="text-center">Podrían Interesarte</h1>
+                </div>
+
+                <?php
+                global $post;
+                $product = wc_get_product($post->ID);
+
+                // Obtener categorías y tags del producto actual
+                $cats_array = wp_get_post_terms($post->ID, 'product_cat', ['fields' => 'ids']);
+                $tags_array = wp_get_post_terms($post->ID, 'product_tag', ['fields' => 'ids']);
+
+                // Query de productos relacionados (máximo 3 para que quede exactamente como tu diseño)
+                $related = new WP_Query([
+                    'post_type'           => 'product',
+                    'posts_per_page'      => 3,
+                    'post__not_in'        => [$post->ID], // Excluir el producto actual
+                    'no_found_rows'       => true,
+                    'ignore_sticky_posts' => true,
+                    'tax_query'           => [
+                        'relation' => 'OR',
+                        [
+                            'taxonomy' => 'product_cat',
+                            'field'    => 'id',
+                            'terms'    => $cats_array,
+                            'operator' => 'IN'
+                        ],
+                        [
+                            'taxonomy' => 'product_tag',
+                            'field'    => 'id',
+                            'terms'    => $tags_array,
+                            'operator' => 'IN'
+                        ]
+                    ],
+                    'orderby' => 'rand', // opcional: puedes cambiar a 'date' si prefieres los más nuevos
+                ]);
+
+                if ($related->have_posts()) :
+                    while ($related->have_posts()) : $related->the_post();
+                        $related_product = wc_get_product(get_the_ID());
+                        ?>
+                        <div class="col-md-3 mx-auto">
+                            <a href="<?php the_permalink(); ?>" class="card rounded-top shadow-sm text-decoration-none">
+                                <div class="ratio ratio-1x1 rounded-top">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('medium', ['class' => 'card-img-top img-fluid w-100 border-bottom cuadrar-img ratio ratio-1x1 rounded-5 me-2', 'alt' => get_the_title()]); ?>
+                                    <?php else : ?>
+                                        <img src="<?php echo wc_placeholder_img_src('woocommerce_single'); ?>" class="card-img-top img-fluid w-100 border-bottom cuadrar-img ratio ratio-1x1 rounded-5 me-2" alt="<?php the_title(); ?>">
+                                    <?php endif; ?>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text"><?php the_title(); ?></p>
+                                    <h2 class="textos-naranja-oscuro">
+                                        <?php echo $related_product->get_price_html(); ?>
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+                        <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    // Si por alguna razón no hay relacionados, muestra 3 placeholders bonitos (para que nunca quede vacío)
+                    for ($i = 1; $i <= 3; $i++) : ?>
+                        <div class="col-md-3 mx-auto">
+                            <a href="#" class="card rounded-top shadow-sm text-decoration-none opacity-50">
+                                <div class="ratio ratio-1x1 rounded-top bg-light">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <small class="text-muted">Sin productos relacionados</small>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text text-muted">Producto de ejemplo</p>
+                                    <h2 class="textos-naranja-oscuro">$0</h2>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endfor;
+                endif;
+                ?>
+            </div>
+        </div>
 
     </main>
 
