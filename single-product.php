@@ -115,35 +115,21 @@ get_header(); ?>
                         </div>
                     </div>
                      <!-- boton de añadir al carro -->
-                    <div class="d-flex gap-3 my-5">
-                        <?php
-                        global $product;
-                        $product_id = $product->get_id();
-                        $in_cart = false;
-                        foreach( WC()->cart->get_cart() as $cart_item ) {
-                            if ( $cart_item['product_id'] == $product_id ) {
-                                $in_cart = true;
-                                $cart_item_key = $cart_item['key'];
-                                break;
-                            }
-                        }
-                        ?>
-                    
-                        <!-- Botón inteligente: cambia según si está o no en el carrito -->
-                        <button type="button" 
-                                id="liveToastBtnCarrito" 
-                                class="btn btn-secundary text-nowrap px-4 flex-fill <?= $in_cart ? 'in-cart' : '' ?>"
-                                data-product-id="<?= $product_id ?>"
-                                data-in-cart="<?= $in_cart ? 'true' : 'false' ?>"
-                                data-cart-item-key="<?= $in_cart ? $cart_item_key : '' ?>">
-                            <i class="bi <?= $in_cart ? 'bi-cart-x' : 'bi-cart3' ?>"></i>
-                            <span class="btn-text"><?= $in_cart ? 'Eliminar del carrito' : 'Agregar al carrito' ?></span>
-                        </button>
-                    
-                        <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-secundary px-4 flex-fill">
-                            Comprar ahora
-                        </a>
-                    </div>
+                   <!-- Formulario de añadir al carrito, el que esta por defecto, guardado por si necesito volver ?php woocommerce_template_single_add_to_cart(); ?>-->
+                
+
+                <!-- Personalizacion del boton -->
+                <div class="d-flex gap-3 my-5">
+                    <button type="button" id="liveToastBtnCarrito" onclick="cambiarTextoBoton()" 
+                            class="btn btn-secundary text-nowrap px-4 flex-fill">
+                        <i class="bi bi-cart3"></i> Agregar al carrito
+                    </button>
+                    <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-secundary px-4 flex-fill">
+                        Comprar ahora
+                    </a>
+                </div>
+
+
                     <!-- Toast, se activa al apretar agregar carrito. -->
                     <div class="toast-container position-fixed bottom-0 end-0 p-3">
                         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
