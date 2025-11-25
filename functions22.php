@@ -30,5 +30,3 @@ add_action('wp_enqueue_scripts', function() {
 add_action('widgets_init', function() {
     unregister_sidebar('sidebar-1');
 });
-
-?>
