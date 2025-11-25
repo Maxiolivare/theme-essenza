@@ -99,8 +99,8 @@ get_header(); ?>
                                 'input_id'    => 'cantidadReal',
                                 'input_name'  => 'quantity',
                                 'classes'     => ['d-none'] // lo ocultamos con Bootstrap
-                                'show_label'  => false,                // esto elimina el comentario que woo-conmerce pone por defecto
-
+                                'show_label'  => false,  // esto elimina el comentario que woo-conmerce pone por defecto
+                                'aria_label'  => 'Cantidad del producto', 
                             ), $product );
                             ?>
     
