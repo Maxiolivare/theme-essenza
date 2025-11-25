@@ -1,5 +1,5 @@
 <div class="container cart-custom py-5">
-
+<?php echo '<!-- CUSTOM CART LOADED -->'; ?>
     <!-- Título -->
     <h2 class="text-center cart-title mb-5">Tu carrito</h2>
 
