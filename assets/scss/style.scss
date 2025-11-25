@@ -1085,7 +1085,7 @@ button {
 .imagen-p-carrito {
     width: 80% ;   
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
 }
 
@@ -1133,7 +1133,10 @@ button {
 .icono-basura-vela{
   width: 90px;
 }
-
+.nombre-carrito{
+    font-size: 24px;
+    font-weight: 200;
+}
 
 
 
