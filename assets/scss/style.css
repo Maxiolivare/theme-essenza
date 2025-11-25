@@ -913,8 +913,10 @@ button {
 
 /* Botón comprar */
 .buy-btn {
-  display: block;
-  margin: 0 auto;
+  display: inline-block !important;
+  width: auto !important;
+  margin-left: auto;
+  margin-right: auto;
   padding: 14px 35px;
   background: #683c2e;
   color: white;
@@ -1059,6 +1061,10 @@ button {
   display: none !important;
   background-image: none !important;
   content: none !important;
+}
+
+.screen-reader-text {
+  display: none;
 }
 
 /* Mostrar/ocultar los iconos según el estado collapsed, los bi-chevron-up son los iconos de bootstrap*/

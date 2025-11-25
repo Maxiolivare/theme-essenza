@@ -933,7 +933,14 @@ button {
 .buy-btn {
     display: inline-block !important;
     width: auto !important;
-    
+    margin-left: auto;
+    margin-right: auto;
+    padding: 14px 35px;
+    background: #683c2e;
+    color: white;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
 }
 
 .buy-btn:hover {
