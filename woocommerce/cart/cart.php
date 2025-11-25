@@ -70,17 +70,44 @@ defined( 'ABSPATH' ) || exit;
 
                     <p class="mb-3"><?php echo $precio; ?></p>
 
+                    <!-- CANTIDAD PERSONALIZADA -->
                     <div class="mb-3 cantidad-box">
 
-                        <?php 
-                        woocommerce_quantity_input(
-                            array(
-                                'input_class' => 'form-cantidad',
-                            ),
-                            $product,
-                            $cart_item_key
-                        );
-                        ?>
+                        <div class="btn-group me-3" role="group">
+
+                            <!-- Botón restar -->
+                            <button type="button"
+                                class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-end-0 btn-lg qty-btn-custom"
+                                data-type="minus"
+                                data-target="<?php echo $cart_item_key; ?>">
+                                <i class="bi bi-dash-circle"></i>
+                            </button>
+
+                            <!-- Botón cantidad visual -->
+                            <button type="button"
+                                id="cantidadVisual-<?php echo $cart_item_key; ?>"
+                                class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-end-0 border-start-0 btn-lg">
+                                <?php echo $cart_item['quantity']; ?>
+                            </button>
+
+                            <!-- Input real que WooCommerce necesita -->
+                            <input type="number"
+                                class="d-none"
+                                name="cart[<?php echo $cart_item_key; ?>][qty]"
+                                id="qty-real-<?php echo $cart_item_key; ?>"
+                                value="<?php echo $cart_item['quantity']; ?>"
+                                min="1" />
+
+                            <!-- Botón sumar -->
+                            <button type="button"
+                                class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-start-0 btn-lg qty-btn-custom"
+                                data-type="plus"
+                                data-target="<?php echo $cart_item_key; ?>">
+                                <i class="bi bi-plus-circle"></i>
+                            </button>
+
+                        </div>
+
                     </div>
 
                     <div>
@@ -122,6 +149,33 @@ defined( 'ABSPATH' ) || exit;
 
     </div>
 </main>
+
+
+<!-- SCRIPT PARA MANEJAR CANTIDAD -->
+<script>
+document.querySelectorAll(".qty-btn-custom").forEach(btn => {
+    btn.addEventListener("click", function () {
+
+        const type = this.dataset.type;
+        const key = this.dataset.target;
+
+        const realInput = document.getElementById("qty-real-" + key);
+        const visualBtn = document.getElementById("cantidadVisual-" + key);
+
+        let current = parseInt(realInput.value);
+
+        if (type === "minus" && current > 1) current--;
+        if (type === "plus") current++;
+
+        realInput.value = current;
+        visualBtn.innerText = current;
+
+        // Actualizar automáticamente el carrito
+        document.querySelector("button[name='update_cart']").click();
+    });
+});
+</script>
+
 
 
 
