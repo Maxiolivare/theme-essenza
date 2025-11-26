@@ -1,4 +1,13 @@
 <?php
+/**
+ * Checkout form
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/checkout/form-checkout.php.
+ *
+ * @version 9.4.0
+ */
+
+<?php
 defined( 'ABSPATH' ) || exit;
 
 // Required by WooCommerce – show notices
