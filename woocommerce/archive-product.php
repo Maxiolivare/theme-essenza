@@ -5,7 +5,26 @@ get_header();?>
 <main>
     <?php if ( have_posts() ) : ?>
     <div class="container-luis">
-		<h1 class="h1-cual text-center">PRODUCTOS</h1>
+		<div class="productos">
+            <h1 class="productos-h1">PRODUCTOS</h1>
+
+            <ul class="menu-principal">
+                <li class="categorias">
+                    <a href="#" class="categorias-link">Categorías ▼</a>
+
+                    <!-- SUBMENÚ -->
+                    <ul class="submenu">
+                        <li><a href="#" onclick="mostrarCategoria('todos')">Todos</a></li>
+                        <li><a href="#" onclick="mostrarCategoria('florales')">Arreglos florales</a></li>
+                        <li><a href="#" onclick="mostrarCategoria('gourmet')">Gourmet</a></li>
+                        <li><a href="#" onclick="mostrarCategoria('flores')">Flores</a></li>
+                        <li><a href="#" onclick="mostrarCategoria('animales')">Animales</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    <div id="contenedor-categorias" class="contenedor-categorias"></div>
         <div class="product-grid">
             <?php while ( have_posts() ) : the_post(); global $product; ?>
                 <?php
