@@ -741,13 +741,13 @@ button {
 
 .submenu li {
   margin-bottom: 8px;
+  padding: 12px 0;
 }
 
 .submenu a {
   text-decoration: none;
   color: #444;
   cursor: pointer;
-  padding: 10px 0;
 }
 
 .submenu a:hover {
