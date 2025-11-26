@@ -727,11 +727,15 @@ button {
   background: #e8e8e8;
 }
 
-/* SUBMENU */
+/* SUBMENU (por defecto oculto) */
 .submenu {
   display: none;
   margin-top: 10px;
   padding-left: 20px;
+}
+
+.submenu.activo {
+  display: block;
 }
 
 .submenu li {
