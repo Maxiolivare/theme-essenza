@@ -29,7 +29,7 @@
     </div>
 
     <nav class="mobile-menu__nav">
-      <a href="#inicio" class="mobile-menu__link active">
+      <a href="#inicio" class="mobile-menu__link">
         <span class="mobile-menu__icon">
           <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-home.svg" alt="Inicio">
         </span>
@@ -79,7 +79,7 @@
       </div>
       <!-- Nav desktop (ordenador) -->
       <nav class="main-nav" aria-label="Navegación principal">
-        <a href="<?php echo home_url(); ?>" class="nav-link nav-link--active">Inicio</a>
+        <a href="<?php echo home_url(); ?>" class="nav-link">Inicio</a>
         <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="nav-link">Tienda</a>
         <a href="" class="nav-link">Sobre Essenza</a>
         <a href="" class="nav-link">Contacto</a>
