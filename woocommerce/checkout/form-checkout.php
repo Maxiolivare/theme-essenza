@@ -7,7 +7,6 @@
  * @version 9.4.0
  */
 
-<?php
 defined( 'ABSPATH' ) || exit;
 
 // Required by WooCommerce – show notices
