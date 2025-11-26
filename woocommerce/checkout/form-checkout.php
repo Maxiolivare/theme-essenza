@@ -21,11 +21,11 @@ if ( WC()->cart->is_empty() ) {
     return;
 }
 ?>
-
+<?php get_header(); ?>
 <form name="checkout" method="post" class="checkout woocommerce-checkout" 
     action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
-<?php get_header(); ?>
+
 
 <main class="py-4 py-lg-5">
 <div class="container">
@@ -120,8 +120,6 @@ if ( WC()->cart->is_empty() ) {
 </div>
 </main>
 
-<?php get_footer(); ?>
-
 </form>
-
+<?php get_footer(); ?>
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
