@@ -64,7 +64,7 @@ get_header(); ?>
 
                 <!-- INFORMACIÓN DEL PRODUCTO -->
                 <div class="col-md-6 mx-auto">
-                    <h1 class="titulos-48"><?php the_title(); ?></h1>
+                    <h1 class="titulos-48 h1n"><?php the_title(); ?></h1>
                     <p class="my-3"><?php the_excerpt(); ?></p>
 
                     <!-- Precio -->
