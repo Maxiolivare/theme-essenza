@@ -50,5 +50,19 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="<?php echo get_template_directory_uri();?>/assets/js/script.js"></script>
+  <script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const botonCategorias = document.querySelector(".categorias-link");
+    const submenu = document.querySelector(".submenu");
+
+    botonCategorias.addEventListener("click", function (e) {
+        e.preventDefault();
+        submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+    });
+});
+</script>
+
+  </script>
 </body>
 </html>
