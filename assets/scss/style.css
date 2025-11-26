@@ -734,7 +734,7 @@ button {
   padding-left: 20px;
 }
 
-.submenu.activo {
+.submenu:active {
   display: block;
 }
 
