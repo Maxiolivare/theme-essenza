@@ -33,40 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //Barra active dinamica de cada enlace de cada pagina en el header
 
 // Función para actualizar links activos
-function actualizarLinksActivos() {
-  const currentPath = window.location.pathname; // ruta actual del archivo
-  const currentHash = window.location.hash; // si hay hash de sección ( ejemplo:#tienda, etc.)
 
-  // Seleccionamos los links
-  const mobileLinks = document.querySelectorAll('.mobile-menu__link');
-  const desktopLinks = document.querySelectorAll('.main-nav .nav-link');
-
-  // Función auxiliar para actualizar una lista de links
-  function actualizarLista(links) {
-    links.forEach(link => {
-      const href = link.getAttribute('href');
-
-      // Comparar hash o archivo según corresponda
-      if ((href.startsWith('#') && href === currentHash) ||
-          (!href.startsWith('#') && currentPath.includes(href))) {
-        link.classList.add('active');
-        link.classList.add('nav-link--active'); // para desktop
-      } else {
-        link.classList.remove('active');
-        link.classList.remove('nav-link--active'); // para desktop
-      }
-    });
-  }
-
-  actualizarLista(mobileLinks);
-  actualizarLista(desktopLinks);
-}
-
-// Ejecutamos al cargar la página
-window.addEventListener('DOMContentLoaded', actualizarLinksActivos);
-
-// Si hay navegación con hash (scroll a secciones), actualizar dinámicamente
-window.addEventListener('hashchange', actualizarLinksActivos);
 
 
 
