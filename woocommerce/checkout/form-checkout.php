@@ -121,5 +121,6 @@ if ( WC()->cart->is_empty() ) {
 </main>
 
 </form>
-<?php get_footer(); ?>
+
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+<?php get_footer(); ?>
