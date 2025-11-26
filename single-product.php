@@ -71,6 +71,7 @@ get_header(); ?>
 
                     <!-- Precio -->
                     <div class="border border-2 rounded-2 w-50 border-naranjo-oscuro textos-naranja-oscuro mb-4">
+                        <h2 class=" text-start align-middle ms-4 sub-titulos-32 my-2">
                         <h2 class="text-start align-middle ms-4 sub-titulos-32 my-2">
                             <?php woocommerce_template_single_price(); ?>
                         </h2>
@@ -98,7 +99,6 @@ get_header(); ?>
                                     <i class="bi bi-plus-circle"></i>
                                 </button>
                             </div>
-                    
                             <!-- ESTE ES EL INPUT REAL que WooCommerce lee (lo ocultamos) -->
                                 <?php
                             woocommerce_quantity_input( array(
@@ -116,17 +116,15 @@ get_header(); ?>
                     </div>
                      <!-- boton de añadir al carro -->
                     <div class="d-flex gap-3 my-5">
-                        <button type="button"
-                                id="liveToastBtnCarrito"
-                                class="btn btn-secundary text-nowrap px-4 flex-fill"
-                                data-product_id="<?php echo $product->get_id(); ?>">
+                        <button type="button" 
+                                id="liveToastBtnCarrito" 
+                                class="btn btn-secundary text-nowrap px-4 flex-fill">
                             <i class="bi bi-cart3"></i> Agregar al carrito
                         </button>
                         <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-secundary px-4 flex-fill">
                             Comprar ahora
                         </a>
                     </div>
-
                     
                     <!-- Botón REAL de WooCommerce (lo dejamos oculto, pero FUNCIONA) -->
                     <div class="d-none">
