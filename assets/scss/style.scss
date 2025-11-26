@@ -764,7 +764,10 @@ button {
 
 .submenu li {
   margin-bottom: 8px;
-  padding: 12px 0;
+  padding: 5px 0;
+}
+.submenu li:hover{
+  background-color: #D27529;
 }
 
 .submenu a {
