@@ -50,36 +50,25 @@ defined( 'ABSPATH' ) || exit;
 
             <!-- FILA DE PRODUCTO -->
             <div class="row align-items-center py-4">
-
                 <!-- CHECK + IMAGEN -->
                 <div class="col-4 d-flex chekp">
-
-                    <div class="form-check">
+                    <div class="form-check d-none">
                         <input
                             class="form-check-input"
                             type="checkbox"
                             name="cart[]"
                             value="<?php echo $cart_item_key; ?>"
                         >
-
                     </div>
-
                     <?php echo $img; ?>
-
                 </div>
-
                 <!-- NOMBRE, PRECIO, CANTIDAD, ELIMINAR -->
                 <div class="col-5">
-
                     <h5 class="mb-1 nombre-carrito"><?php echo esc_html( $nombre ); ?></h5>
-
                     <p class="mb-3 precio-carri"><?php echo $precio; ?></p>
-
                     <!-- CANTIDAD PERSONALIZADA -->
                     <div class="mb-3 cantidad-box">
-
                         <div class="btn-group me-3" role="group">
-
                             <!-- Botón restar -->
                             <button type="button"
                                 class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-end-0 btn-lg qty-btn-custom"
