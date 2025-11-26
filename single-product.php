@@ -158,7 +158,7 @@ get_header(); ?>
         <div class="container my-5">
             <div class="row">
                 <div class="col-md-12 my-5">
-                    <h1 class="text-center">Podrían Interesarte</h1>
+                    <h1 class="text-center h1n">Podrían Interesarte</h1>
                 </div>
 
                 <?php
