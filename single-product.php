@@ -71,7 +71,7 @@ get_header(); ?>
 
                     <!-- Precio -->
                     <div class="border border-2 rounded-2 w-50 border-naranjo-oscuro textos-naranja-oscuro mb-4">
-                        <h2 class="d-inline-block text-start align-middle ms-4 sub-titulos-32 my-2">
+                        <h2 class="text-start align-middle ms-4 sub-titulos-32 my-2">
                             <?php woocommerce_template_single_price(); ?>
                         </h2>
                     </div>
