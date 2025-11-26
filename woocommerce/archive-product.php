@@ -69,7 +69,7 @@ $categorias = get_terms([
                         class="product-card__add-to-cart"
                         data-product_id="<?php echo get_the_ID();?>"
                     >
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-carrito.svg" alt="Agregar al carrito">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Vector.png" alt="Agregar al carrito">
                     </a>
                 </div>
                 <h3 class="product-card__title"><?php the_title(); ?></h3>
