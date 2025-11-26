@@ -25,8 +25,6 @@ get_header(); ?>
     <?php remove_action( 'woocommerce_after_quantity_input_field', 'woocommerce_quantity_input_label' ); ?>
     <!-- =============================================== -->
 
-    <?php do_action( 'woocommerce_before_single_product' ); ?>
-
     <!-- Hook importante para que WooCommerce cargue scripts y estilos del producto -->
     <?php do_action( 'woocommerce_before_single_product' ); ?>
 
