@@ -220,4 +220,32 @@ document.getElementById("btnEliminarSeleccionados").addEventListener("click", fu
     form.submit(); 
 });
 
+/* TIENDA: Filtro Categorias */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const botonCategorias = document.querySelector(".categorias-link");
+    const submenu = document.querySelector(".submenu");
+
+    botonCategorias.addEventListener("click", function (e) {
+        e.preventDefault();
+        submenu.classList.toggle("activo");
+    });
+});
+
+function mostrarCategoria(categoria) {
+    const productos = document.querySelectorAll(".producto");
+
+    productos.forEach(producto => {
+        if (categoria === "todos") {
+            producto.style.display = "block";
+        } else {
+            if (producto.classList.contains(categoria)) {
+                producto.style.display = "block";
+            } else {
+                producto.style.display = "none";
+            }
+        }
+    });
+}
+
 
