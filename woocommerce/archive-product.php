@@ -1,63 +1,104 @@
 <?php
-
 defined( 'ABSPATH' ) || exit;
-get_header();?>
+get_header();
+
+// Obtener categoría seleccionada
+$categoria_actual = isset($_GET['categoria']) ? sanitize_text_field($_GET['categoria']) : 'todos';
+
+// Obtener categorías de WooCommerce
+$categorias = get_terms([
+    'taxonomy' => 'product_cat',
+    'hide_empty' => false
+]);
+?>
+
 <main>
-    <?php if ( have_posts() ) : ?>
     <div class="container-luis">
-		<div class="productos">
+
+        <!-- TÍTULO + MENÚ DE CATEGORÍAS -->
+        <div class="productos">
             <h1 class="productos-h1">PRODUCTOS</h1>
 
             <ul class="menu-principal">
                 <li class="categorias">
                     <a href="#" class="categorias-link">Categorías ▼</a>
 
-                    <!-- SUBMENÚ -->
+                    <!-- SUBMENÚ DINÁMICO -->
                     <ul class="submenu">
-                        <li><a href="#" onclick="mostrarCategoria('todos')">Todos</a></li>
-                        <li><a href="#" onclick="mostrarCategoria('florales')">Arreglos florales</a></li>
-                        <li><a href="#" onclick="mostrarCategoria('gourmet')">Gourmet</a></li>
-                        <li><a href="#" onclick="mostrarCategoria('flores')">Flores</a></li>
-                        <li><a href="#" onclick="mostrarCategoria('animales')">Animales</a></li>
+                        <li><a href="?categoria=todos">Todos</a></li>
+
+                        <?php foreach ($categorias as $cat) : ?>
+                            <li>
+                                <a href="?categoria=<?php echo esc_attr($cat->slug); ?>">
+                                    <?php echo esc_html($cat->name); ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
                 </li>
             </ul>
         </div>
 
-    <div id="contenedor-categorias" class="contenedor-categorias"></div>
+        <!-- FILTRO DE PRODUCTOS CON PHP -->
+        <?php
+        $args = [
+            'post_type' => 'product',
+            'posts_per_page' => -1
+        ];
+
+        if ($categoria_actual !== 'todos') {
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => 'product_cat',
+                    'field' => 'slug',
+                    'terms' => $categoria_actual
+                ]
+            ];
+        }
+
+        $query = new WP_Query($args);
+        ?>
+
+        <!-- GRID DE PRODUCTOS -->
         <div class="product-grid">
-            <?php while ( have_posts() ) : the_post(); global $product; ?>
-                <?php
-                $imagen_principal = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                if (!$imagen_principal) {
-                    $imagen_principal = wc_placeholder_img_src();
-                }
-                $precio = $product->get_price_html();
-                ?>
-                <article class="product-card">
-					<div class="product-card__image-wrapper">						
-						<a href="<?php the_permalink(); ?>">
-							<div class="product-card__image"
-								style="background-image: url('<?php echo esc_url($imagen_principal); ?>');">
-							</div>
-						</a>
-						<a 
-							href="<?php echo esc_url( wc_get_cart_url() . '?add-to-cart=' . get_the_ID() ); ?>"
-							class="product-card__add-to-cart"
-							data-product_id="<?php echo get_the_ID();?>"
-						>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-carrito.svg" alt="Agregar al carrito">
-						</a>
-					</div>
-					<h3 class="product-card__title"><?php the_title(); ?></h3>
-					<p class="product-card__price"><?php echo $precio; ?></p>
-				</article>
-            <?php endwhile; ?>
+        <?php while ($query->have_posts()) : $query->the_post(); global $product; ?>
+
+            <?php
+            $imagen_principal = get_the_post_thumbnail_url(get_the_ID(), 'large');
+            if (!$imagen_principal) {
+                $imagen_principal = wc_placeholder_img_src();
+            }
+            $precio = $product->get_price_html();
+            ?>
+
+            <article class="product-card">
+                <div class="product-card__image-wrapper">						
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="product-card__image"
+                            style="background-image: url('<?php echo esc_url($imagen_principal); ?>');">
+                        </div>
+                    </a>
+
+                    <a 
+                        href="<?php echo esc_url( wc_get_cart_url() . '?add-to-cart=' . get_the_ID() ); ?>"
+                        class="product-card__add-to-cart"
+                        data-product_id="<?php echo get_the_ID();?>"
+                    >
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-carrito.svg" alt="Agregar al carrito">
+                    </a>
+                </div>
+
+                <h3 class="product-card__title"><?php the_title(); ?></h3>
+                <p class="product-card__price"><?php echo $precio; ?></p>
+            </article>
+
+        <?php endwhile; ?>
         </div>
+
+        <?php wp_reset_postdata(); ?>
+
     </div>
-    <?php else : ?>
-        <p>No hay productos disponibles.</p>
-    <?php endif; ?>
 </main>
+
 <?php get_footer(); ?>
 
