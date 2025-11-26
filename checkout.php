@@ -1,7 +1,6 @@
 <?php
 /**
  * Checkout Form
- * Tu diseño personalizado - 100% funcional con WooCommerce
  */
 
 defined('ABSPATH') || exit;
