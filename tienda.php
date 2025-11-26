@@ -31,27 +31,27 @@
             <div class="col-md-3">
                 <div class="producto gourmet">
                     <img src="assets/img/fotos-editadas/gourmet-01.png" alt="">
-                    <h2>producto#1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <h4>$5.000</h4>
+                    <h2>Malteada de Frutilla — Vaso Largo</h2>
+                    <p>Vela de cera de soja con aroma a malteada de frutilla, en vaso largo de vidrio.</p>
+                    <h4>$15.000</h4>
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="producto gourmet">
                     <img src="assets/img/fotos-editadas/gourmet-02.png" alt="">
-                    <h2>producto#2</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <h4>$5.000</h4>
+                    <h2>Malteada de frutilla</h2>
+                    <p>Vela de cera de soja con aroma a frutilla y crema, presentada en vaso estilo café grande.</p>
+                    <h4>$15.000</h4>
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="producto gourmet">
                     <img src="assets/img/fotos-editadas/gourmet-03.png" alt="">
-                    <h2>producto#3</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <h4>$5.000</h4>
+                    <h2>Café con Crema</h2>
+                    <p>Vela aromática con aroma a café y un toque de vainilla, presentada en vaso estilo café pequeño</p>
+                    <h4>$10.000</h4>
                 </div>
             </div>
 
