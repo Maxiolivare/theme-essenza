@@ -1,11 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 get_header();
-
-
 $categoria_actual = isset($_GET['categoria']) ? sanitize_text_field($_GET['categoria']) : 'todos';
-
-
 $categorias = get_terms([
     'taxonomy' => 'product_cat',
     'hide_empty' => false

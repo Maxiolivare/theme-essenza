@@ -55,7 +55,13 @@ defined( 'ABSPATH' ) || exit;
                 <div class="col-4 d-flex chekp">
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="cart[]"
+                            value="<?php echo $cart_item_key; ?>"
+                        >
+
                     </div>
 
                     <?php echo $img; ?>

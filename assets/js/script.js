@@ -164,7 +164,61 @@ Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
 
+/* CARRITO */
 
+document.querySelectorAll(".qty-btn-custom").forEach(btn => {
+    btn.addEventListener("click", function () {
+
+        const type = this.dataset.type;
+        const key = this.dataset.target;
+
+        const realInput = document.getElementById("qty-real-" + key);
+        const visualBtn = document.getElementById("cantidadVisual-" + key);
+
+        let current = parseInt(realInput.value);
+
+        if (type === "minus" && current > 1) current--;
+        if (type === "plus") current++;
+
+        realInput.value = current;
+        visualBtn.innerText = current;
+
+        document.querySelector("button[name='update_cart']").click();
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+
+    jQuery(document.body).off('change', 'input.qty');
+
+});
+document.addEventListener('DOMContentLoaded', function() {
+
+    const updateButton = document.querySelector('button[name="update_cart"]');
+
+    document.querySelectorAll('input.qty').forEach(function(input){
+        input.addEventListener('change', function(){
+            updateButton.disabled = false;
+        });
+    });
+
+});
+document.getElementById("btnEliminarSeleccionados").addEventListener("click", function() {
+
+    const checkboxes = document.querySelectorAll("input[name='cart[]']:checked");
+
+    if (checkboxes.length === 0) {
+        alert("No hay productos seleccionados");
+        return;
+    }
+    const form = document.querySelector("form.woocommerce-cart-form");
+    checkboxes.forEach(chk => {
+        const cartKey = chk.value;
+        const qtyInput = document.querySelector(`input[name='cart[${cartKey}][qty]']`);
+        if (qtyInput) qtyInput.value = 0;
+    });
+
+    form.submit(); 
+});
 
 /* TIENDA: Filtro Categorias */
 document.addEventListener("DOMContentLoaded", function () {
