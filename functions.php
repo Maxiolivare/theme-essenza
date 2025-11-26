@@ -23,3 +23,11 @@ add_filter('woocommerce_show_page_title', 'ocultar_titulo_solo_en_tienda');
 add_filter( 'woocommerce_checkout_block_enabled', '__return_false' );
 add_filter( 'wc_blocks_checkout_enabled', '__return_false' );
 add_filter( 'woocommerce_cart_block_enabled', '__return_false' ); 
+
+/* sacar los mensajes de woocommerce */
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+add_filter( 'wc_add_to_cart_message_html', '__return_empty_string' );
+add_filter( 'woocommerce_cart_updated_message', '__return_empty_string' );
+remove_action( 'woocommerce_before_single_product', 'wc_print_notices', 10 );
+remove_action( 'woocommerce_before_cart', 'wc_print_notices', 10 );
+remove_action( 'woocommerce_before_checkout_form', 'wc_print_notices', 10 );

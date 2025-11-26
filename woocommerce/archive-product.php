@@ -2,10 +2,10 @@
 defined( 'ABSPATH' ) || exit;
 get_header();
 
-// Obtener categoría seleccionada
+
 $categoria_actual = isset($_GET['categoria']) ? sanitize_text_field($_GET['categoria']) : 'todos';
 
-// Obtener categorías de WooCommerce
+
 $categorias = get_terms([
     'taxonomy' => 'product_cat',
     'hide_empty' => false
@@ -14,16 +14,12 @@ $categorias = get_terms([
 
 <main>
     <div class="container-luis">
-
-        <!-- TÍTULO + MENÚ DE CATEGORÍAS -->
         <div class="productos">
-            <h1 class="productos-h1">PRODUCTOS</h1>
+            <h1 class="h1n">PRODUCTOS</h1>
 
             <ul class="menu-principal">
                 <li class="categorias">
                     <a href="#" class="categorias-link">Categorías ▼</a>
-
-                    <!-- SUBMENÚ DINÁMICO -->
                     <ul class="submenu">
                         <li><a href="?categoria=todos">Todos</a></li>
 
@@ -39,7 +35,6 @@ $categorias = get_terms([
             </ul>
         </div>
 
-        <!-- FILTRO DE PRODUCTOS CON PHP -->
         <?php
         $args = [
             'post_type' => 'product',
@@ -57,7 +52,6 @@ $categorias = get_terms([
         }
         $query = new WP_Query($args);
         ?>
-        <!-- GRID DE PRODUCTOS -->
         <div class="product-grid">
         <?php while ($query->have_posts()) : $query->the_post(); global $product; ?>
 
