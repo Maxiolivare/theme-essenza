@@ -116,15 +116,17 @@ get_header(); ?>
                     </div>
                      <!-- boton de añadir al carro -->
                     <div class="d-flex gap-3 my-5">
-                        <button type="button" 
-                                id="liveToastBtnCarrito" 
-                                class="btn btn-secundary text-nowrap px-4 flex-fill">
+                        <button type="button"
+                                id="liveToastBtnCarrito"
+                                class="btn btn-secundary text-nowrap px-4 flex-fill"
+                                data-product_id="<?php echo $product->get_id(); ?>">
                             <i class="bi bi-cart3"></i> Agregar al carrito
                         </button>
                         <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-secundary px-4 flex-fill">
                             Comprar ahora
                         </a>
                     </div>
+
                     
                     <!-- Botón REAL de WooCommerce (lo dejamos oculto, pero FUNCIONA) -->
                     <div class="d-none">

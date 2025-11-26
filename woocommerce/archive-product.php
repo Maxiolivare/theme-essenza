@@ -11,12 +11,10 @@ $categorias = get_terms([
     'hide_empty' => false
 ]);
 ?>
-
 <main>
     <div class="container-luis">
         <div class="productos">
-            <h1 class="h1n">PRODUCTOS</h1>
-
+            <h1 class="h1n text-center">PRODUCTOS</h1>
             <ul class="menu-principal">
                 <li class="categorias">
                     <a href="#" class="categorias-link">Categorías ▼</a>
