@@ -1177,16 +1177,4 @@ button {
   margin-bottom: 35px;
   text-transform: uppercase;
   font-weight: bold;
-}
-
-/* Oculta las imágenes gigantes del método de pago Mercado Pago */
-.woocommerce-checkout #payment .payment_method_woo-mercado-pago img {
-  display: none !important;
-}
-
-/* Muestra solo el primer logo de Mercado Pago */
-.woocommerce-checkout #payment .payment_method_woo-mercado-pago img:first-of-type {
-  display: inline-block !important;
-  max-width: 150px !important;
-  height: auto !important;
 }/*# sourceMappingURL=style.css.map */
