@@ -935,6 +935,11 @@ button {
   cursor: pointer;
 }
 
+/* para ocultar elementos molestos*/
+#payment #place_order {
+  display: none !important;
+}
+
 .buy-btn:hover {
   background-color: #4a2f25;
 }
@@ -951,6 +956,15 @@ button {
 
 .parrafos-24 {
   font-size: 24px;
+}
+
+.text-cinzel {
+  font-family: "Cinzel", serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.text-inter {
+  font-family: "Inter", sans-serif;
 }
 
 /*Colores*/
