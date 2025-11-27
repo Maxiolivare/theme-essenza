@@ -19,9 +19,3 @@ function ocultar_titulo_solo_en_tienda($show) {
 }
 add_filter('woocommerce_show_page_title', 'ocultar_titulo_solo_en_tienda');
 
-// para activar personalizacion de checkout
-add_filter( 'woocommerce_checkout_block_enabled', '__return_false' );
-add_filter( 'wc_blocks_checkout_enabled', '__return_false' );
-add_filter( 'woocommerce_cart_block_enabled', '__return_false' ); 
-
-
