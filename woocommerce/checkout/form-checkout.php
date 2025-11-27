@@ -113,13 +113,13 @@ if ( WC()->cart->is_empty() ) {
 
 					<!-- CONTACTO -->
 					<h2>Contacto</h2>
-					<div class="mb-3">
+					<div class="mb-3 border border-naranjo-oscuro">
 						<?php do_action( 'woocommerce_checkout_billing' ); ?>
 					</div>
 
 					<!-- DIRECCIÓN -->
 					<h2>Direccion de envio</h2>
-					<div class="mb-3">
+					<div class="mb-3 border border-naranjo-oscuro">
 						<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 					</div>
 
