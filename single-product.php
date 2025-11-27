@@ -32,7 +32,7 @@ get_header(); ?>
         <div class="container textos mt-5">
             <div class="row">
                 <!-- IMÁGENES DEL PRODUCTO -->
-                <div class="col-md-6 mx-auto">
+                <div class="col-md-6 mx-auto ">
                     <!-- Imagen principal -->
                     <div class="mb-4">
                         <?php if ( has_post_thumbnail() ) : ?>
@@ -69,8 +69,8 @@ get_header(); ?>
 
                     <!-- Precio -->
                     <div class="border border-2 rounded-2 w-50 border-naranjo-oscuro textos-naranja-oscuro mb-4">
-                        <h2 class=" text-start align-middle ms-4 sub-titulos-32 my-2">
-                        <h2 class="text-start align-middle ms-4 sub-titulos-32 my-2">
+                        
+                        <h2 class="text-start align-middle ms-4 sub-titulos-32 my-2 text-inter fw-semibold">
                             <?php woocommerce_template_single_price(); ?>
                         </h2>
                     </div>
