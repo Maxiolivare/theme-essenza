@@ -67,3 +67,6 @@ add_filter( 'woocommerce_get_scripts', 'mi_prevenir_desactivacion_fragmentos' );
 add_filter( 'wc_add_to_cart_message_html', '__return_empty_string' );
 add_filter( 'woocommerce_coupon_message', '__return_empty_string' );
 add_filter( 'woocommerce_remove_cart_item_notice', '__return_empty_string' );
+
+// Ocultar aviso y formulario de cupón en el checkout
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
