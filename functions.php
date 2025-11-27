@@ -19,3 +19,9 @@ function ocultar_titulo_solo_en_tienda($show) {
 }
 add_filter('woocommerce_show_page_title', 'ocultar_titulo_solo_en_tienda');
 
+// Desactivar todos los mensajes (notices) de WooCommerce
+remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
+remove_action( 'woocommerce_before_cart', 'woocommerce_output_all_notices', 10 );
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notices', 10 );
+remove_action( 'woocommerce_notices', 'wc_print_notices', 10 );
+
