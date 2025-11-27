@@ -25,172 +25,157 @@ if ( WC()->cart->is_empty() ) {
       enctype="multipart/form-data">
 
 <!-- MAIN (estructura y clases adaptadas desde tu HTML original) -->
-<main class="py-4 py-lg-5">
-	<div class="container">
+<main>
+	<!-- ACORDEÓN: RESUMEN DEL PEDIDO -->
+	<div class="accordion " id="accordionExample">
+		<div class="accordion-item blanco-secundario">
+			<h2 class="accordion-header">
+				<button class="accordion-button blanco-secundario collapsed d-flex align-items-center"
+				        type="button"
+				        data-bs-toggle="collapse"
+				        data-bs-target="#collapseResumen"
+				        aria-expanded="true"
+				        aria-controls="collapseResumen">
 
-		<!-- ACORDEÓN: RESUMEN DEL PEDIDO -->
-		<div class="accordion" id="accordionResumen">
-			<div class="accordion-item blanco-secundario border-0">
-				<h2 class="accordion-header">
-					<button class="accordion-button blanco-secundario collapsed d-flex align-items-center fw-bold fs-5"
-					        type="button"
-					        data-bs-toggle="collapse"
-					        data-bs-target="#collapseResumen"
-					        aria-expanded="true"
-					        aria-controls="collapseResumen">
-						<span>Resumen del pedido
-							<i class="bi bi-chevron-down accordion-icon ms-3" aria-hidden="true"></i>
-							<i class="bi bi-chevron-up accordion-icon ms-3" aria-hidden="true"></i>
-						</span>
+					<span>Resumen del pedido
+						<i class="bi bi-chevron-down accordion-icon ms-3" aria-hidden="true"></i>
+						<i class="bi bi-chevron-up accordion-icon ms-3" aria-hidden="true"></i>
+					</span>
 
-						<div class="ms-auto">
-							<span class="fw-bold"><?php echo WC()->cart->get_cart_total(); ?></span>
-						</div>
-					</button>
-				</h2>
+					<div class="ms-auto">
+						<span><?php echo WC()->cart->get_cart_total(); ?></span>
+					</div>
+				</button>
+			</h2>
 
-				<div id="collapseResumen" class="accordion-collapse collapse show" data-bs-parent="#accordionResumen">
-					<div class="accordion-body">
-						<div class="container">
-							<div class="productos">
-
-								<?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
-									$_product   = $cart_item['data'];
-									$quantity   = $cart_item['quantity'];
-									$line_total = $cart_item['line_total'] + $cart_item['line_tax'];
-									$thumbnail  = $_product->get_image( array( 'class' => 'imagen-miniatura ratio ratio-1x1 cuadrar-img bg-img rounded-4' ) );
-									?>
-									<div class="row mb-3 align-items-center">
-										<div class="col-md-2">
-											<?php echo $thumbnail; ?>
-										</div>
-
-										<div class="col-4 d-flex align-items-start flex-column d-inline-block">
-											<p class="fw-semibold mb-0"><?php echo esc_html( $_product->get_name() ); ?></p>
-											<p class="fw-light">Cantidad: <?php echo intval( $quantity ); ?></p>
-										</div>
-
-										<div class="col-sm-2 ms-auto text-end">
-											<p class="fw-semibold"><?php echo wc_price( $line_total ); ?></p>
-										</div>
-									</div>
-								<?php endforeach; ?>
-
-							</div>
-
-							<hr class="my-4">
-
-							<div class="row mx-auto">
-								<div class="col-md-5 me-auto"><p>Subtotal</p></div>
-								<div class="col-md-5 ms-auto"><div class="d-flex justify-content-end"><p><?php echo WC()->cart->get_cart_subtotal(); ?></p></div></div>
-							</div>
-
-							<div class="row mx-auto">
-								<div class="col-md-5 me-auto"><p>Coste de envío</p></div>
-								<div class="col-md-5 ms-auto"><div class="d-flex justify-content-end"><p><?php echo wc_price( WC()->cart->get_shipping_total() ); ?></p></div></div>
-							</div>
-
-							<?php if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) : ?>
-								<div class="row mx-auto">
-									<div class="col-md-5 me-auto"><p>IVA</p></div>
-									<div class="col-md-5 ms-auto"><div class="d-flex justify-content-end"><p><?php echo wc_price( WC()->cart->get_taxes_total() ); ?></p></div></div>
-								</div>
-							<?php endif; ?>
-
-							<div class="row mx-auto">
-								<div class="col-md-5 me-auto"><p class="fw-bold">Total</p></div>
-								<div class="col-md-5 ms-auto"><div class="d-flex justify-content-end"><p class="fw-bold"><?php echo WC()->cart->get_total(); ?></p></div></div>
-							</div>
-
-						</div><!-- .container -->
-					</div><!-- .accordion-body -->
-				</div><!-- .collapse -->
-			</div><!-- .accordion-item -->
-		</div><!-- .accordion -->
-
-		<!-- CONTENEDOR PRINCIPAL (FORM) -->
-		<div class="container my-5">
-			<div class="row">
-				<div class="col-md-8 mx-auto">
-
-					<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-
-					<div id="customer_details">
-
-						<!-- CONTACTO -->
-						<h2>Contacto</h2>
-						<div class="mb-3">
-							<?php
-							// Renderiza los campos de facturación (WooCommerce los envía dentro de este hook)
-							do_action( 'woocommerce_checkout_billing' ); 
+			<div id="collapseResumen" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+				<div class="accordion-body">
+					<!-- Aquí va el resumen dinámico -->
+					<div class="container">
+						<div class="productos">
+							<?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
+								$_product   = $cart_item['data'];
+								$quantity   = $cart_item['quantity'];
+								$line_total = $cart_item['line_total'] + $cart_item['line_tax'];
+								$thumbnail  = $_product->get_image( array( 'class' => 'imagen-miniatura ratio ratio-1x1 cuadrar-img bg-img rounded-4' ) );
 							?>
+								<div class="row mb-3 align-items-center">
+									<div class="col-md-2 ">
+										<?php echo $thumbnail; ?>
+									</div>
+									<div class="col-4 d-flex align-items-start flex-column d-inline-block">
+										<p class="fw-semibold"><?php echo esc_html( $_product->get_name() ); ?></p>
+										<p class="fw-light">Cantidad: <?php echo intval( $quantity ); ?></p>
+									</div>
+									<div class="col-sm-2 ms-auto">
+										<p class="fw-semibold"><?php echo wc_price( $line_total ); ?></p>
+									</div>
+								</div>
+							<?php endforeach; ?>
 						</div>
 
-						<!-- DIRECCIÓN -->
-						<h2>Dirección de envío</h2>
-						<div class="mb-3">
-							<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+						<div class="row mx-auto">
+							<div class="col-md-5 me-auto"><p>Subtotal</p></div>
+							<div class="col-md-5 ms-auto"><div class="d-flex justify-content-end"><p><?php echo WC()->cart->get_cart_subtotal(); ?></p></div></div>
 						</div>
 
-					</div><!-- #customer_details -->
+						<div class="row mx-auto">
+							<div class="col-md-5 me-auto"><p>Coste de envío</p></div>
+							<div class="col-md-5 ms-auto"><div class="d-flex justify-content-end"><p><?php echo wc_price( WC()->cart->get_shipping_total() ); ?></p></div></div>
+						</div>
 
-					<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+						<?php if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) : ?>
+						<div class="row mx-auto">
+							<div class="col-md-5 me-auto"><p>IVA</p></div>
+							<div class="col-md-5 ms-auto"><div class="d-flex justify-content-end"><p><?php echo wc_price( WC()->cart->get_taxes_total() ); ?></p></div></div>
+						</div>
+						<?php endif; ?>
 
-				</div><!-- .col -->
-			</div><!-- .row -->
-		</div><!-- .container -->
+						<div class="row mx-auto">
+							<div class="col-md-5 me-auto"><p>Total</p></div>
+							<div class="col-md-5 ms-auto"><div class="d-flex justify-content-end"><p><?php echo WC()->cart->get_total(); ?></p></div></div>
+						</div>
 
-		<!-- SECCIÓN DE ENVÍO Y PAGO -->
-		<div class="container my-5">
-			<div class="row">
-				<div class="col-md-8 mx-auto">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-					<!-- FORMA DE ENVÍO -->
-					<h5 class="fw-bold mb-2">FORMA DE ENVÍO</h5>
+	<!-- FORMULARIO: contacto, dirección, envío y pago -->
+	<div class="container my-5">
+		<div class="row">
+			<div class="col-md-8 mx-auto">
 
-					<div class="mb-4">
-						<?php
-						// Muestra los métodos de envío; wrappers y estilos aplicados por tu CSS
-						do_action( 'woocommerce_review_order_before_shipping' );
-						// WooCommerce suele mostrar métodos de envío dentro de review order / shipping hooks
-						do_action( 'woocommerce_review_order_after_shipping' );
-						?>
+				<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+
+				<div id="customer_details">
+
+					<!-- CONTACTO -->
+					<h2>Contacto</h2>
+					<div class="mb-3">
+						<?php do_action( 'woocommerce_checkout_billing' ); ?>
 					</div>
 
-					<!-- MÉTODOS DE PAGO -->
-					<h5 class="fw-bold mb-2">MÉTODO DE PAGO</h5>
-
-					<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-
-					<div id="order_review" class="mb-3">
-						<?php
-						// Tabla resumen (pedido) estándar de WooCommerce
-						do_action( 'woocommerce_checkout_order_review' );
-
-						// Métodos de pago (botones/inputs generados por WooCommerce)
-						do_action( 'woocommerce_checkout_payment', $checkout );
-						?>
+					<!-- DIRECCIÓN -->
+					<h2>Direccion de envio</h2>
+					<div class="mb-3">
+						<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 					</div>
 
-					<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+				</div>
 
-					<!-- BOTÓN PERSONALIZADO (si tu tema/estilos lo requiere) -->
-					<div class="mt-4">
-						<button type="submit"
-						        class="w-100 border border-naranjo-oscuro p-2 rounded-3 bg-white fw-bold"
-						        name="woocommerce_checkout_place_order"
-						        id="place_order">
-							<?php esc_html_e( 'Realizar pedido', 'woocommerce' ); ?>
-						</button>
-					</div>
+				<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
-					<?php wp_nonce_field( 'woocommerce-process_checkout', 'woocommerce-process-checkout-nonce' ); ?>
+			</div>
+		</div>
+	</div>
 
-				</div><!-- .col -->
-			</div><!-- .row -->
-		</div><!-- .container -->
+	<!-- SECCIÓN DE ENVÍO Y PAGO -->
+	<div class="container my-5">
+		<div class="row">
+			<div class="col-md-8 mx-auto">
 
-	</div><!-- .container principal -->
+				<!-- FORMA DE ENVÍO -->
+				<h5 class="fw-bold mb-2">FORMA DE ENVÍO</h5>
+				<div class="mb-4">
+					<?php
+					do_action( 'woocommerce_review_order_before_shipping' );
+					do_action( 'woocommerce_review_order_after_shipping' );
+					?>
+				</div>
+
+				<!-- MÉTODO DE PAGO -->
+				<h5 class="fw-bold mb-2">MÉTODO DE PAGO</h5>
+
+				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+
+				<div id="order_review" class="mb-3">
+					<?php
+					do_action( 'woocommerce_checkout_order_review' );
+					// payment
+					do_action( 'woocommerce_checkout_payment', $checkout );
+					?>
+				</div>
+
+				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+
+				<!-- BOTÓN FINAL -->
+				<div class="mt-4">
+					<button type="submit"
+					        class="w-100 border border-naranjo-oscuro p-2 rounded-3 bg-white fw-bold"
+					        name="woocommerce_checkout_place_order"
+					        id="place_order">
+						<?php esc_html_e( 'Realizar pedido', 'woocommerce' ); ?>
+					</button>
+				</div>
+
+				<?php wp_nonce_field( 'woocommerce-process_checkout', 'woocommerce-process-checkout-nonce' ); ?>
+
+			</div>
+		</div>
+	</div>
+
 </main>
 
 </form>
@@ -198,3 +183,33 @@ if ( WC()->cart->is_empty() ) {
 <?php
 // Hook obligatorio después del formulario
 do_action( 'woocommerce_after_checkout_form', $checkout );
+?>
+
+<!-- Inline script para aplicar clases y estilos Bootstrap a los campos que genera WooCommerce -->
+<script>
+(function(){
+	document.addEventListener('DOMContentLoaded', function(){
+		// inputs y selects dentro del checkout: añadir clases bootstrap y tu clase personalizada
+		const form = document.querySelector('.woocommerce-checkout');
+		if(!form) return;
+
+		// Añadir clases a inputs, selects y textarea generados por WooCommerce
+		form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="password"], textarea, select').forEach(function(el){
+			// evitar duplicar clases
+			el.classList.add('form-control');
+			el.classList.add('border-naranjo-oscuro');
+		});
+
+		// Añadir clases a los wrapper de métodos de pago y envío para que coincidan con diseño
+		form.querySelectorAll('.woocommerce-shipping-methods, .wc_payment_methods, .woocommerce-checkout-review-order-table').forEach(function(el){
+			el.classList.add('bg-white');
+		});
+
+		// Ajustes para radios/checkboxes dentro de wrappers para estilizar similar al HTML
+		form.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(function(r){
+			// si quieres, podemos envolverlos o añadir clases; por ahora solo aseguramos visibilidad
+			r.classList.add('');
+		});
+	});
+})();
+</script>
