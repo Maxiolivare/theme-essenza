@@ -8,7 +8,7 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-
+get_header();
 // Required by WooCommerce – show notices
 wc_print_notices();
 
@@ -21,7 +21,7 @@ if ( WC()->cart->is_empty() ) {
     return;
 }
 ?>
-<?php get_header(); ?>
+
 <form name="checkout" method="post" class="checkout woocommerce-checkout" 
     action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
