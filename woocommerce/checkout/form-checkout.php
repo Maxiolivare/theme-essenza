@@ -2,28 +2,27 @@
 /**
  * Checkout form
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/checkout/form-checkout.php.
- *
  * @version 9.4.0
  */
 
 defined( 'ABSPATH' ) || exit;
-get_header();
+
 // Required by WooCommerce – show notices
 wc_print_notices();
 
 // Required hook
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
-// Block checkout if cart empty
 if ( WC()->cart->is_empty() ) {
     wc_print_notice( __('Tu carrito está vacío.', 'woocommerce'), 'error' );
     return;
 }
 ?>
 
-<form name="checkout" method="post" class="checkout woocommerce-checkout" 
-    action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
+<form name="checkout" method="post" class="checkout woocommerce-checkout"
+      action="<?php echo esc_url( wc_get_checkout_url() ); ?>"
+      enctype="multipart/form-data">
+
 
 
 
@@ -123,4 +122,4 @@ if ( WC()->cart->is_empty() ) {
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
-<?php get_footer(); ?>
+
