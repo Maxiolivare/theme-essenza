@@ -131,6 +131,32 @@ Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
 
+(function(){
+	document.addEventListener('DOMContentLoaded', function(){
+		// inputs y selects dentro del checkout: añadir clases bootstrap y tu clase personalizada
+		const form = document.querySelector('.woocommerce-checkout');
+		if(!form) return;
+
+		// Añadir clases a inputs, selects y textarea generados por WooCommerce
+		form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="password"], textarea, select').forEach(function(el){
+			// evitar duplicar clases
+			el.classList.add('form-control');
+			el.classList.add('border-naranjo-oscuro');
+		});
+
+		// Añadir clases a los wrapper de métodos de pago y envío para que coincidan con diseño
+		form.querySelectorAll('.woocommerce-shipping-methods, .wc_payment_methods, .woocommerce-checkout-review-order-table').forEach(function(el){
+			el.classList.add('bg-white');
+		});
+
+		// Ajustes para radios/checkboxes dentro de wrappers para estilizar similar al HTML
+		form.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(function(r){
+			// si quieres, podemos envolverlos o añadir clases; por ahora solo aseguramos visibilidad
+			r.classList.add('');
+		});
+	});
+})();
+
 /* CARRITO */
 
 document.querySelectorAll(".qty-btn-custom").forEach(btn => {
