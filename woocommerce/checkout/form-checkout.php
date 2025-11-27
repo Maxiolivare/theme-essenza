@@ -7,12 +7,13 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// Required by WooCommerce – show notices
+// Mostrar avisos
 wc_print_notices();
 
-// Required hook
+// Hook obligatorio antes del formulario
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
+// Bloquear si el carrito está vacío
 if ( WC()->cart->is_empty() ) {
     wc_print_notice( __('Tu carrito está vacío.', 'woocommerce'), 'error' );
     return;
@@ -22,9 +23,6 @@ if ( WC()->cart->is_empty() ) {
 <form name="checkout" method="post" class="checkout woocommerce-checkout"
       action="<?php echo esc_url( wc_get_checkout_url() ); ?>"
       enctype="multipart/form-data">
-
-
-
 
 <main class="py-4 py-lg-5">
 <div class="container">
@@ -41,6 +39,7 @@ if ( WC()->cart->is_empty() ) {
                     <span class="ms-auto fw-bold"><?php echo WC()->cart->get_cart_total(); ?></span>
                 </button>
             </h2>
+
             <div id="collapseResumen" class="accordion-collapse collapse show">
                 <div class="accordion-body pt-4">
 
@@ -88,25 +87,42 @@ if ( WC()->cart->is_empty() ) {
         </div>
     </div>
 
-    <!-- FORMULARIO -->
+    <!-- FORMULARIO DE CHECKOUT -->
     <div class="row justify-content-center">
         <div class="col-lg-8">
 
-            <h2 class="mb-4">Contacto</h2>
-            <?php do_action( 'woocommerce_checkout_billing' ); ?>
+            <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-            <h2 class="mt-5 mb-4">Dirección de envío</h2>
-            <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+            <div id="customer_details">
+
+                <h2 class="mb-4">Contacto</h2>
+                <?php do_action( 'woocommerce_checkout_billing' ); ?>
+
+                <h2 class="mt-5 mb-4">Dirección de envío</h2>
+                <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+
+            </div>
+
+            <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
             <h5 class="fw-bold mt-5 mb-3">FORMA DE ENVÍO</h5>
             <?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
+            <?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
 
             <h5 class="fw-bold mt-5 mb-3">MÉTODO DE PAGO</h5>
-            <?php do_action( 'woocommerce_checkout_payment', $checkout ); ?>
+
+            <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+
+            <div id="order_review">
+                <?php do_action( 'woocommerce_checkout_order_review' ); ?>
+                <?php do_action( 'woocommerce_checkout_payment', $checkout ); ?>
+            </div>
+
+            <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 
             <div class="mt-5">
-                <button type="submit" class="w-100 btn btn-lg border border-naranjo-oscuro bg-naranjo text-white fw-bold py-3 rounded-3 shadow" 
-                    name="woocommerce_checkout_place_order" id="place_order">
+                <button type="submit" class="w-100 btn btn-lg border border-naranjo-oscuro bg-naranjo text-white fw-bold py-3 rounded-3 shadow"
+                        name="woocommerce_checkout_place_order" id="place_order">
                     Realizar pedido
                 </button>
             </div>
@@ -122,4 +138,3 @@ if ( WC()->cart->is_empty() ) {
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
-
