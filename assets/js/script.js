@@ -156,12 +156,6 @@ Fancybox.bind("[data-fancybox]", {
 		});
 	});
 })();
-document.addEventListener('DOMContentLoaded', function() {
-    const payment = document.querySelector('#payment');
-    if(payment){
-        payment.classList.add('fondo', 'border-naranjo-oscuro', 'rounded-3', 'p-3');
-    }
-});
 
 /* CARRITO */
 
