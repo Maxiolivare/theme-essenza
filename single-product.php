@@ -68,9 +68,9 @@ get_header(); ?>
                     <p class="my-3"><?php the_excerpt(); ?></p>
 
                     <!-- Precio -->
-                    <div class="border border-2 rounded-2 w-50 border-naranjo-oscuro textos-naranja-oscuro mb-4">
+                    <div class="border border-2 rounded-2 w-50 border-naranjo-oscuro textos-naranja-oscuro mb-4 d-flex align-items-center">
                         
-                        <h2 class="text-start align-middle ms-4 sub-titulos-32 my-2 text-inter fw-semibold d-flex align-items-center">
+                        <h2 class="text-start align-middle ms-4 sub-titulos-32 my-2 text-inter fw-semibold">
                             <?php woocommerce_template_single_price(); ?>
                         </h2>
                     </div>
