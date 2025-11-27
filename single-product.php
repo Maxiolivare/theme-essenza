@@ -64,7 +64,7 @@ get_header(); ?>
 
                 <!-- INFORMACIÓN DEL PRODUCTO -->
                 <div class="col-md-6 mx-auto">
-                    <h1 class="titulos-48 text-cinzel"><?php the_title(); ?></h1>
+                    <h1 class="titulos-48 text-cinzel fw-bold"><?php the_title(); ?></h1>
                     <p class="my-3"><?php the_excerpt(); ?></p>
 
                     <!-- Precio -->
@@ -158,7 +158,7 @@ get_header(); ?>
         <div class="container my-5">
             <div class="row">
                 <div class="col-md-12 my-5">
-                    <h1 class="text-center text-cinzel">Podrían Interesarte</h1>
+                    <h1 class="text-center text-cinzel fw-bold">Podrían Interesarte</h1>
                 </div>
 
                 <?php
