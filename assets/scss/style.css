@@ -940,11 +940,6 @@ button {
 }
 
 /*css para detalle-producto y checkout*/
-/* para ocultar elementos molestos*/
-#payment #place_order {
-    display: none !important;
-}
-
 /*Tamaño de letra*/
 .titulos-48 {
   font-size: 48px;
@@ -957,14 +952,6 @@ button {
 .parrafos-24 {
   font-size: 24px;
 }
-.text-cinzel {
-    font-family: "Cinzel", serif;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-.text-inter {
-  font-family: "Inter", sans-serif;
-}
-
 
 /*Colores*/
 .textos {
@@ -1190,4 +1177,11 @@ button {
   margin-bottom: 35px;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.woocommerce-checkout #payment .payment_method_woo-mercado-pago img {
+  max-width: 80px !important;
+  height: auto !important;
+  display: inline-block;
+  margin-right: 10px;
 }/*# sourceMappingURL=style.css.map */

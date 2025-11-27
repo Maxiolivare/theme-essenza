@@ -1174,5 +1174,11 @@ button {
   text-transform: uppercase;
   font-weight: bold;
 }
+.woocommerce-checkout #payment .payment_method_woo-mercado-pago img {
+    max-width: 80px !important;
+    height: auto !important;
+    display: inline-block;
+    margin-right: 10px;
+}
 
 
