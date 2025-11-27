@@ -151,14 +151,14 @@ if ( WC()->cart->is_empty() ) {
 				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
 				<div id="order_review" class="mb-3">
-					 <?php
+					<?php
 					do_action( 'woocommerce_checkout_order_review' );
 					// payment
-					<!-- do_action( 'woocommerce_checkout_payment', $checkout ); -->
-					?>  
+					do_action( 'woocommerce_checkout_payment', $checkout );
+					?>
 				</div>
 
-				<!-- <?php do_action( 'woocommerce_checkout_after_order_review' ); ?> -->
+				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 
 				<!-- BOTÓN FINAL -->
 				<div class="mt-4">
