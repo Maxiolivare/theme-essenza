@@ -112,15 +112,9 @@ if ( WC()->cart->is_empty() ) {
 				<div id="customer_details">
 
 					<!-- CONTACTO -->
-					<h2>Contacto</h2>
+					<h2>Contacto y Direccion de envio</h2>
 					<div class="mb-3">
 						<?php do_action( 'woocommerce_checkout_billing' ); ?>
-					</div>
-
-					<!-- DIRECCIÓN -->
-					<h2>Direccion de envio</h2>
-					<div class="mb-3">
-						<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 					</div>
 
 				</div>
@@ -137,7 +131,7 @@ if ( WC()->cart->is_empty() ) {
 			<div class="col-md-8 mx-auto">
 
 				<!-- FORMA DE ENVÍO -->
-				<h5 class="fw-bold mb-2">FORMA DE ENVÍO</h5>
+				<h5 class="fw-bold mb-2"></h5>
 				<div class="mb-4">
 					<?php
 					do_action( 'woocommerce_review_order_before_shipping' );
