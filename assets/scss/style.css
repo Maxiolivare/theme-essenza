@@ -945,6 +945,11 @@ button {
 }
 
 /*css para detalle-producto y checkout*/
+/* para ocultar elementos molestos*/
+#payment #place_order {
+    display: none !important;
+}
+
 /*Tamaño de letra*/
 .titulos-48 {
   font-size: 48px;
@@ -957,6 +962,30 @@ button {
 .parrafos-24 {
   font-size: 24px;
 }
+.text-cinzel {
+    font-family: "Cinzel", serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.text-inter {
+  font-family: "Inter", sans-serif;
+}
+/* Estilo para todo el cuadro de métodos de pago */
+#order_review .wc_payment_methods,
+#order_review .woocommerce-checkout-review-order-table,
+#order_review #payment {
+    background-color: white; /* o el color que uses */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Cada método de pago */
+#order_review .wc_payment_method {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 
 .text-cinzel {
   font-family: "Cinzel", serif;
