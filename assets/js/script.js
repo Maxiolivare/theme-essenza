@@ -136,7 +136,7 @@ Fancybox.bind("[data-fancybox]", {
 		// inputs y selects dentro del checkout: añadir clases bootstrap y tu clase personalizada
 		const form = document.querySelector('.woocommerce-checkout');
 		if(!form) return;
-
+        
 		// Añadir clases a inputs, selects y textarea generados por WooCommerce
 		form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="password"], textarea, select').forEach(function(el){
 			// evitar duplicar clases
@@ -153,6 +153,13 @@ Fancybox.bind("[data-fancybox]", {
 		form.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(function(r){
 			// si quieres, podemos envolverlos o añadir clases; por ahora solo aseguramos visibilidad
 			r.classList.add('');
+        });
+        // Para metodo de pago
+        const payment = document.querySelector('#payment');
+        if(payment){
+        payment.classList.add('bg-white', 'border-naranjo-oscuro', 'rounded-3', 'p-3');
+        }
+        
 		});
 	});
 })();
