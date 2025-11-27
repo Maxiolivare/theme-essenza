@@ -153,13 +153,6 @@ Fancybox.bind("[data-fancybox]", {
 		form.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(function(r){
 			// si quieres, podemos envolverlos o añadir clases; por ahora solo aseguramos visibilidad
 			r.classList.add('');
-        });
-        // Para metodo de pago
-        const payment = document.querySelector('#payment');
-        if(payment){
-        payment.classList.add('bg-white', 'border-naranjo-oscuro', 'rounded-3', 'p-3');
-        }
-        
 		});
 	});
 })();
