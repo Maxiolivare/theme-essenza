@@ -153,8 +153,6 @@ if ( WC()->cart->is_empty() ) {
 				<div id="order_review" class="mb-3">
 					<?php
 					do_action( 'woocommerce_checkout_order_review' );
-					// payment
-					do_action( 'woocommerce_checkout_payment', $checkout );
 					?>
 				</div>
 
