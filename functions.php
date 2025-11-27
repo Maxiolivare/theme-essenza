@@ -70,3 +70,12 @@ add_filter( 'woocommerce_remove_cart_item_notice', '__return_empty_string' );
 
 // Ocultar aviso y formulario de cupón en el checkout
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+// Ocultar todos los notices de WooCommerce en el checkout
+add_action( 'wp', function() {
+    if ( is_checkout() && ! is_wc_endpoint_url() ) {
+        remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notices', 10 );
+        remove_action( 'woocommerce_before_checkout_form', 'woocommerce_show_messages', 10 );
+        remove_action( 'woocommerce_before_cart', 'woocommerce_output_all_notices', 10 );
+        remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
+    }
+});
