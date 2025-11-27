@@ -940,6 +940,11 @@ button {
 }
 
 /*css para detalle-producto y checkout*/
+/* para ocultar elementos molestos*/
+#payment #place_order {
+    display: none !important;
+}
+
 /*Tamaño de letra*/
 .titulos-48 {
   font-size: 48px;
