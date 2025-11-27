@@ -158,7 +158,7 @@ if ( WC()->cart->is_empty() ) {
 					?>
 				</div>
 
-				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+				<!-- <?php do_action( 'woocommerce_checkout_after_order_review' ); ?> -->
 
 				<!-- BOTÓN FINAL -->
 				<div class="mt-4">
