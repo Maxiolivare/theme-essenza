@@ -147,7 +147,7 @@ if ( WC()->cart->is_empty() ) {
 				<div id="order_review" class="mb-3 border border-naranjo-oscuro p-2 rounded-3 bg-white">
 					<?php
 					do_action( 'woocommerce_checkout_order_review' );
-					// payment
+					// metodo de pago
 					do_action( 'woocommerce_checkout_payment', $checkout );
 					?>
 				</div>
