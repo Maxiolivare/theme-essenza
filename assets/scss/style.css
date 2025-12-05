@@ -65,8 +65,8 @@ button {
 
 /* Logo circulo de fondo */
 .logo-circle {
-  width: 64px;
-  height: 64px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background: var(--blanco);
   border: 2px solid var(--crema-medio);
