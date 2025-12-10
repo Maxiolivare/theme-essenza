@@ -1221,3 +1221,1052 @@ button {
   text-transform: uppercase;
   font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
+
+
+/* ===================== PÁGINA CONFIRMACIÓN DE COMPRA ===================== */
+
+.page-confirmacion {
+  background: var(--crema-claro);
+}
+
+.confirm-main {
+  padding-block: 3.5rem;
+}
+
+.confirm-container {
+  display: flex;
+  justify-content: center;
+}
+
+.confirm-card {
+  background: var(--blanco);
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+  padding: 2.5rem 2.25rem;
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid rgba(210, 117, 41, 0.15);
+}
+
+.confirm-icon {
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.confirm-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.9rem;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cafe);
+}
+
+.confirm-text {
+  margin: 0 0 2rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Bloques internos */
+.confirm-block {
+  background: var(--crema-claro);
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.confirm-block__title {
+  font-family: "Lora", serif;
+  font-size: 1.05rem;
+  margin: 0 0 0.75rem;
+  color: var(--cafe);
+}
+
+.confirm-order-number {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+/* Lista de productos */
+.confirm-order-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  border-top: 1px solid rgba(92, 61, 46, 0.15);
+  border-bottom: 1px solid rgba(92, 61, 46, 0.15);
+}
+
+.confirm-order-item {
+  display: grid;
+  grid-template-columns: 1.5fr 0.4fr 0.6fr;
+  gap: 0.5rem;
+  padding: 0.55rem 0;
+  font-size: 0.93rem;
+}
+
+.confirm-order-item span:last-child {
+  text-align: right;
+}
+
+/* Total */
+.confirm-order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.confirm-order-total__amount {
+  color: var(--ambar);
+  font-size: 1.05rem;
+}
+
+/* Datos de entrega */
+.confirm-detail {
+  margin: 0 0 0.35rem;
+  font-size: 0.93rem;
+}
+
+/* Botones / acciones */
+.confirm-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--cafe);
+  border: 1px solid rgba(92, 61, 46, 0.25);
+}
+
+.btn--ghost:hover {
+  background: var(--crema-medio);
+  color: var(--cafe);
+}
+
+.confirm-help {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .confirm-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .confirm-order-item {
+    grid-template-columns: 1.6fr 0.4fr 0.7fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .confirm-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  .confirm-block {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .confirm-order-item {
+    grid-template-columns: 1.3fr 0.4fr 0.8fr;
+    font-size: 0.9rem;
+  }
+
+  .confirm-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* ==================== PÁGINA ERROR / FALLO DE PAGO ==================== */
+
+.pago-error-main {
+  padding-block: 4rem;
+  background: var(--crema-claro);
+}
+
+.pago-error-container {
+  width: min(600px, 100%);
+  margin-inline: auto; /* Asegura centrado */
+}
+
+.pago-error-card {
+  background: var(--blanco);
+  border-radius: 20px;
+  padding: 2.5rem 1.75rem; /* Ajuste para equilibrar laterales */
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(210, 117, 41, 0.18);
+  text-align: center;
+  margin: 0 auto; /* Centrado absoluto del card */
+}
+
+.pago-error-icon {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.pago-error-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.8rem;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cafe);
+}
+
+.pago-error-text {
+  margin: 0 0 0.5rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--cafe);
+}
+
+.pago-error-text-sec {
+  margin: 0 0 1.75rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--cafe);
+  opacity: 0.9;
+}
+
+/* ======== BOTONES ======== */
+
+.pago-error-actions {
+  display: flex;
+  justify-content: center !important; /* Fuerza centrado total */
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo unificado para ambos botones */
+.pago-error-actions a {
+  padding: 0.75rem 2.2rem;
+  min-width: 170px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 !important; /* Evita desplazamientos */
+}
+
+/* Estilo ghost */
+.btn--ghost {
+  background: transparent;
+  color: var(--cafe);
+  border: 1px solid rgba(92, 61, 46, 0.25);
+}
+
+.btn--ghost:hover {
+  background: var(--crema-medio);
+  color: var(--cafe);
+}
+
+/* Texto de ayuda */
+.pago-error-help {
+  font-size: 0.9rem;
+  color: var(--cafe);
+  opacity: 0.9;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 520px) {
+  .pago-error-card {
+    padding: 2rem 1.5rem;
+    border-radius: 18px;
+  }
+
+  .pago-error-title {
+    font-size: 1.6rem;
+  }
+
+  /* Botones uno debajo del otro y centrados */
+  .pago-error-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+/* ===================== AUTH (LOGIN / REGISTRO) ===================== */
+
+.auth-main {
+  padding-block: 4rem;
+  background: var(--crema-claro);
+}
+
+/* Centrado perfecto */
+.auth-container {
+  width: min(480px, 100%);
+  margin-inline: auto;
+}
+
+/* Card centrado y equilibrado */
+.auth-card {
+  background: var(--blanco);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  padding: 2.5rem 1.75rem; /* Ajuste lateral */
+  border: 1px solid rgba(210, 117, 41, 0.18);
+  margin: 0 auto; /* Centrado real */
+}
+
+/* Título */
+.auth-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cafe);
+  text-align: center;
+}
+
+/* Subtítulo */
+.auth-subtitle {
+  margin: 0 0 1.75rem;
+  font-family: "Lora", serif;
+  font-size: 0.98rem;
+  color: var(--cafe);
+  text-align: center;
+}
+
+/* Formulario */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.auth-field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--cafe);
+}
+
+.auth-field input {
+  padding: 0.7rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid rgba(92, 61, 46, 0.35);
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.auth-field input:focus {
+  outline: none;
+  border-color: var(--ambar);
+  box-shadow: 0 0 0 2px rgba(210, 117, 41, 0.15);
+}
+
+/* Botón de iniciar/registrar */
+.auth-btn {
+  width: 50%;
+  margin-top: 0.75rem;
+  padding-block: 0.8rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-left: 7rem;
+}
+
+/* Link extra (olvidaste contraseña) */
+.auth-extra {
+  margin-top: 0.9rem;
+  text-align: center;
+}
+
+/* Switch entre login / registro */
+.auth-switch {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.auth-link {
+  color: var(--ambar);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 520px) {
+  .auth-card {
+    padding: 2rem 1.4rem;
+  }
+
+  .auth-title {
+    font-size: 1.6rem;
+  }
+}
+/* ===================== PERFIL (DASHBOARD) ===================== */
+
+
+/* === CONTENEDOR GENERAL === */
+.perfil-contenedor {
+  padding-block: 3rem;
+}
+
+.perfil-titulo {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--cafe);
+}
+
+/* === GRID PRINCIPAL === */
+.perfil-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .perfil-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === BLOQUES === */
+.perfil-block {
+  background: var(--crema-claro);
+  border: 1px solid rgba(210, 117, 41, 0.25);
+  border-radius: 14px;
+  padding: 1.7rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.perfil-block__title {
+  margin: 0 0 1.2rem;
+  font-family: "Lora", serif;
+  font-size: 1.3rem;
+  color: var(--ambar);
+}
+
+/* LÍNEAS DE INFO */
+.perfil-line {
+  margin: 0.3rem 0 1rem;
+  font-size: 0.95rem;
+  color: var(--cafe);
+}
+
+/* BOTÓN GHOST */
+.btn--ghost {
+  background: transparent !important;
+  color: var(--cafe) !important;
+  border: 1px solid rgba(92, 61, 46, 0.35);
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+}
+
+.btn--ghost:hover {
+  background: var(--crema-medio) !important;
+}
+
+
+
+/* Página de edición de datos */
+.perfil-main {
+  padding-block: 3rem;
+}
+
+.perfil-titulo {
+  font-family: "Cinzel", serif;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: var(--cafe);
+}
+
+.form-box {
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--cafe);
+}
+
+.form-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2c9b3;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--ambar);
+  box-shadow: 0 0 0 2px rgba(210, 117, 41, 0.25);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+
+
+/* ===================== MÉTODOS DE PAGO ===================== */
+
+.metodo-box {
+  background: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.metodo-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.metodo-icono {
+  width: 48px;
+}
+
+.metodo-tipo {
+  font-weight: 600;
+  color: var(--cafe);
+  margin: 0;
+}
+
+.metodo-detalle,
+.metodo-expira {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6f5748;
+}
+
+.metodo-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btn-accion {
+  font-size: 0.9rem;
+  color: var(--ambar);
+  cursor: pointer;
+}
+
+.btn-accion.eliminar {
+  color: rgb(180, 60, 60);
+}
+
+/* ===================== MODAL ===================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal--visible {
+  display: flex;
+}
+
+.modalContenido {
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: 16px;
+  width: min(480px, 90%);
+  box-shadow: var(--shadow-soft);
+}
+
+
+/* ===================== HISTORIAL DE COMPRAS ===================== */
+
+.perfil-contenido {
+  padding: 3rem 0;
+}
+
+.perfil-titulo {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--cafe);
+}
+
+.historial-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Tarjeta de pedido */
+.pedido-card {
+  background: var(--blanco);
+  border: 1px solid #ffd7b0;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.pedido-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+}
+
+/* Texto interno */
+.pedido-id,
+.pedido-fecha,
+.pedido-total {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: var(--cafe);
+}
+
+/* Estados */
+.pedido-estado {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.pedido-estado.completado {
+  color: #2e8b57;
+}
+
+.pedido-estado.pendiente {
+  color: #d27529;
+}
+
+.pedido-estado.cancelado {
+  color: #c62828;
+}
+
+/* Botón ver detalle */
+.pedido-btn {
+  background: var(--ambar);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background .2s ease;
+}
+
+.pedido-btn:hover {
+  background: #b96122;
+}
+
+
+/* ========================= MODAL DETALLE DEL PEDIDOS ============================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--blanco);
+  border-radius: 18px;
+  padding: 2rem;
+  width: min(480px, 95%);
+  position: relative;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  animation: fadeUp .25s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--cafe);
+}
+
+.modal h2 {
+  margin-top: 0;
+  font-family: "Cinzel", serif;
+  color: var(--cafe);
+  text-align: center;
+}
+
+.modal h3 {
+  margin-top: 1.5rem;
+  font-family: "Lora", serif;
+  color: var(--cafe);
+}
+
+.modal-productos {
+  padding-left: 1.2rem;
+}
+
+.modal-total {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--ambar);
+  text-align: right;
+}
+
+
+
+/* ===================== RECUPERAR CONTRASEÑA ===================== */
+
+.rec-wrapper {
+  min-height: calc(100vh - 220px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: var(--crema-claro);
+}
+
+.rec-card {
+  background: var(--blanco);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 2.3rem 1.75rem;
+  width: min(420px, 100%);
+  text-align: center;
+}
+
+.rec-card h1 {
+  font-family: "Cinzel", serif;
+  font-size: 1.6rem;
+  margin: 0 0 1rem;
+  color: var(--cafe);
+}
+
+.rec-intro {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  color: var(--cafe);
+}
+
+.rec-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.rec-label {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--cafe);
+}
+
+.rec-input {
+  width: 100%;
+  max-width: 280px;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.rec-btn {
+  width: auto;
+  padding: 0.7rem 1.8rem;
+  align-self: center;
+  margin-top: 0.75rem;
+  border-radius: 10px;
+}
+
+.rec-btn {
+  width: auto;
+  padding: 0.7rem 1.8rem;
+  align-self: center;
+  margin-top: 0.75rem;
+  border-radius: 10px;
+  margin-left: 1rem;
+}
+
+.rec-note {
+  font-size: 0.85rem;
+  color: rgba(92, 61, 46, 0.85);
+  margin-top: 1rem;
+}
+
+.rec-back {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.rec-back a {
+  color: var(--ambar);
+  font-weight: 500;
+}
+
+.rec-back a:hover {
+  text-decoration: underline;
+}
+
+
+/* ===================== PÁGINA DE CONTACTO ===================== */
+
+.contact-page {
+  background: var(--crema-claro);
+  padding-block: 3rem 4rem;
+}
+
+.contact-section {
+  padding-bottom: 3rem;
+}
+
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Texto introductorio */
+.contact-text {
+  max-width: 540px;
+  margin-inline: auto;
+  color: var(--cafe);
+}
+
+.contact-title {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-text p {
+  margin: 0 0 0.6rem;
+  line-height: 1.6;
+}
+
+/* Tarjeta formulario */
+.contact-form-card {
+  background: var(--blanco);
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
+  padding: 2.5rem 2.25rem;
+  width: min(640px, 100%);
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--cafe);
+}
+
+.required {
+  color: #d62828;
+  margin-left: 0.15rem;
+}
+
+/* Inputs generales */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid var(--ambar);
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+/* Input deshabilitado (correo) */
+.input-disabled {
+  background: #f2f2f2;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* Ayuda bajo el campo nombre */
+.form-help {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #d27529;
+}
+
+/* Teléfono – fila con código + número */
+.phone-row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.phone-prefix select {
+  width: 100%;
+  background: var(--blanco);
+  border-radius: 10px;
+  border: 1px solid var(--ambar);
+  padding: 0.75rem 0.7rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+/* Textarea */
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* Botón enviar (estilo similar al mockup: borde ámbar, fondo claro) */
+.form-actions {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.btn--contact-submit {
+  background: var(--blanco);
+  color: var(--cafe);
+  border: 1px solid var(--ambar);
+  box-shadow: none;
+  padding-inline: 3rem;
+}
+
+.btn--contact-submit:hover {
+  background: var(--ambar);
+  color: var(--blanco);
+}
+
+/* Bloque contacto directo */
+.contact-direct {
+  background: var(--crema-medio);
+  padding-block: 2.5rem 0;
+}
+
+.contact-direct-inner {
+  text-align: center;
+}
+
+.contact-direct-title {
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+  color: var(--cafe);
+}
+
+.contact-direct-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.contact-direct-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--blanco);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-direct-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.contact-direct-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--cafe);
+}
+
+/* Responsive contacto */
+@media (max-width: 768px) {
+  .contact-page {
+    padding-block: 2.25rem 3rem;
+  }
+
+  .contact-form-card {
+    padding: 2rem 1.4rem;
+  }
+
+  .phone-row {
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+}
+
+
