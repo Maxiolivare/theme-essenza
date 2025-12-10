@@ -1,15 +1,17 @@
-// Manejo simple del menú hamburguesa en móvil
+// Manejo simple del menú hamburguesa en movil + enlaces activos
 document.addEventListener("DOMContentLoaded", () => {
   const btnOpen = document.getElementById("btnOpenMenu");
   const btnClose = document.getElementById("btnCloseMenu");
   const mobileMenu = document.getElementById("mobileMenu");
 
   const openMenu = () => {
+    if (!mobileMenu) return;
     mobileMenu.classList.add("mobile-menu--visible");
     document.body.classList.add("menu-open");
   };
 
   const closeMenu = () => {
+    if (!mobileMenu) return;
     mobileMenu.classList.remove("mobile-menu--visible");
     document.body.classList.remove("menu-open");
   };
@@ -17,22 +19,91 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnOpen) btnOpen.addEventListener("click", openMenu);
   if (btnClose) btnClose.addEventListener("click", closeMenu);
 
-  // Cierra el menú si se hace click fuera del panel central
-  mobileMenu.addEventListener("click", (e) => {
-    if (e.target === mobileMenu) {
-      closeMenu();
-    }
-  });
+  // Cerrar tocando fuera del contenido
+  if (mobileMenu) {
+    mobileMenu.addEventListener("click", (e) => {
+      if (e.target === mobileMenu) closeMenu();
+    });
 
-  // Cierra al hacer click en cualquier enlace del menú móvil
-  mobileMenu.querySelectorAll(".mobile-menu__link").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
+    // Cerrar al hacer clic en un enlace
+    mobileMenu.querySelectorAll(".mobile-menu__link").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+
+  // ========== ENLACES ACTIVOS DINAMICOS (desktop + movil) ==========
+  const mobileLinks = document.querySelectorAll(".mobile-menu__link");
+  const desktopLinks = document.querySelectorAll(".main-nav .nav-link");
+
+  // Nombre del archivo actual (index.html, tienda.html, etc....-)
+  let currentPage = window.location.pathname.split("/").pop();
+  if (!currentPage || currentPage === "") {
+    currentPage = "index.html"; // por si el navegador no muestra el archivo
+  }
+
+  // Función auxiliar para marcar activo según href
+  const setActiveLink = (nodeList, activeClass) => {
+    nodeList.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+
+      const hrefFile = href.split("/").pop(); // por si algún día hay subcarpetas
+
+      if (hrefFile === currentPage) {
+        link.classList.add(activeClass);
+      }
+    });
+  };
+
+  // Mobile usa .active (para la barrita/puntito blancos)
+  setActiveLink(mobileLinks, "active");
+
+  // Desktop usa .nav-link--active (para el subrayado)
+  setActiveLink(desktopLinks, "nav-link--active");
 });
 
-//Barra active dinamica de cada enlace de cada pagina en el header
 
-// Función para actualizar links activos
+
+//Edicion de Metodo de pago del perfil
+const modal = document.getElementById("modalPago");
+const btnAbrir = document.getElementById("btnAbrirModal");
+const btnCerrar = document.getElementById("btnCerrarModal");
+
+btnAbrir.addEventListener("click", () => {
+  modal.classList.add("modal--visible");
+});
+
+btnCerrar.addEventListener("click", () => {
+  modal.classList.remove("modal--visible");
+});
+
+
+
+// ===== MODAL DETALLE DE PEDIDO =====
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("modalDetalle");
+  const closeBtn = document.getElementById("closeModal");
+
+  // Abrir modal con cualquier botón "Ver detalle"
+  document.querySelectorAll(".pedido-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      modal.classList.add("active");
+    });
+  });
+
+  // Cerrar modal al hacer clic en la X
+  closeBtn?.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  // Cerrar al hacer click fuera del contenido
+  modal?.addEventListener("click", (e) => {
+    if (e.target.id === "modalDetalle") {
+      modal.classList.remove("active");
+    }
+  });
+});
 
 
 
