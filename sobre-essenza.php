@@ -44,7 +44,10 @@ if ( have_posts() ) :
 
         <!-- Imagen derecha -->
         <div class="col-md-2 d-flex justify-content-end">
-            <?php echo get_template_directory_uri(); ?>/assets/img/flores-sobre-essenza02.png
+        <img 
+            src="<?php echo esc_url( SCF::get( 'flores_sobre_essenza_1' ) ); ?>" 
+            alt="flores-sobre-essenza02" 
+            class="img-fluid img-derecha">
 
         </div>
 
