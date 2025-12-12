@@ -99,7 +99,7 @@ if ( have_posts() ) :
         <img 
             src="<?php echo esc_url( get_field( 'separador' ) ); ?>" 
             alt="linea-separadora" 
-            class="img-fluid">
+            class="img-fluid d-block mx-auto">
     </div>
 
     <!-- La persona detrás de la marca -->
