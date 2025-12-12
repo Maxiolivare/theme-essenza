@@ -7,7 +7,6 @@ get_header();
 if ( have_posts() ) :
     while ( have_posts() ) : the_post();
 ?>
-?>
 
 <main class="fondo">
     <div class="row pt-5 mx-auto">
@@ -144,6 +143,7 @@ endif;
 /* Aqui deberia de ir mi footer */
 get_footer(); 
 ?>
+
 
 
 
