@@ -44,8 +44,7 @@ if ( have_posts() ) :
 
         <!-- Imagen derecha -->
         <div class="col-md-2 d-flex justify-content-end">
-        <img 
-            src="<?php echo esc_url( SCF::get( 'flores_sobre_essenza_1' ) ); ?>" 
+        <img src="<?php echo esc_url( SCF::get( 'flores_sobre_essenza_1' ) ); ?>" 
             alt="flores-sobre-essenza02" 
             class="img-fluid img-derecha">
 
@@ -54,8 +53,7 @@ if ( have_posts() ) :
     </div>
 
     <div class="separador text-center">
-        <img 
-            src="<?php echo get_template_directory_uri(); ?>/assets/img/separador.png" 
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/separador.png" 
             alt="linea-separadora" 
             class="img-fluid">
     </div>
