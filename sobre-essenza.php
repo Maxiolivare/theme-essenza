@@ -49,14 +49,14 @@ if ( have_posts() ) :
             <img 
                 src="<?php echo esc_url( get_field( 'flores_sobre_essenza_2' ) ); ?>"  
                 alt="flores-sobre-essenza02" 
-                class="img-fluid img-derecha">
+                class="img-fluid img-derecha ">
         </div>
 
     </div>
 
     <div class="separador mx-auto">
         <img 
-            src="<?php echo esc_url( get_field( 'separador' ) ); ?>" alt="linea-separadora" class="img-fluid">
+            src="<?php echo esc_url( get_field( 'separador' ) ); ?>" alt="linea-separadora" class="img-fluid d-block mx-auto">
     </div>
 
     <!-- Emprendimiento -->
@@ -115,7 +115,7 @@ if ( have_posts() ) :
                 <img 
                     src="<?php echo esc_url( get_field( 'foto_de_emprendedora' ) ); ?>" 
                     alt="emprendedora-margarita" 
-                    class="img-fluid rounded-4 shadow border-emprendedora p-2 py-3">
+                    class="img-fluid rounded-4 shadow border-emprendedora p-2 py-3 d-block mx-auto">
             </div>
         </div>
 
@@ -132,7 +132,7 @@ if ( have_posts() ) :
         <img 
             src="<?php echo esc_url( get_field( 'separador' ) ); ?>"  
             alt="linea-separadora" 
-            class="img-fluid">
+            class="img-fluid d-block mx-auto">
     </div>
 
 </main>
