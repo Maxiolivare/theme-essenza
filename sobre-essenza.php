@@ -3,6 +3,10 @@
 Template Name: Sobre Essenza
 */
 get_header();
+// LOOP 
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+?>
 ?>
 
 <main class="fondo">
@@ -133,10 +137,13 @@ get_header();
     </div>
 
 </main>
-
+<?php
+    endwhile;
+endif;
 <?php 
 /* Aqui deberia de ir mi footer */
 get_footer(); 
 ?>
+
 
 
