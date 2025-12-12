@@ -3,34 +3,37 @@
 Template Name: Sobre Essenza
 */
 get_header();
-// LOOP 
+
+// LOOP
 if ( have_posts() ) :
     while ( have_posts() ) : the_post();
 ?>
 
 <main class="fondo">
+
     <div class="row pt-5 mx-auto">
 
         <!-- Imagen izquierda -->
         <div class="col-md-4 d-flex justify-content-start crop-10-abajo">
-            <img 
-                src="<?php echo esc_url( get_field( 'flores_sobre_essenza_1' ) ); ?>" 
-                alt="flores-sobre-essenza01" 
-                class="img-fluid img-izquierda mb-n1">
+            <?php if ( get_field( 'flores_sobre_essenza_1' ) ) : ?>
+                <img 
+                    src="<?php echo esc_url( get_field( 'flores_sobre_essenza_1' ) ); ?>" 
+                    alt="flores-sobre-essenza01" 
+                    class="img-fluid img-izquierda mb-n1">
+            <?php endif; ?>
         </div>
 
-
-
         <!-- Texto -->
-        <div class="col-md-6 d-flex flex-column" style="height: 100%;">
+        <div class="col-md-6 d-flex flex-column w-100">
 
             <!-- TÍTULO ARRIBA PEGADO -->
-            <h1 class="ms-5 text-center text-md-start mt-5 pt-0">Sobre Essenza</h1>
+            <h1 class="ms-5 text-center text-md-start mt-5 pt-0">
+                Sobre Essenza
+            </h1>
 
-            <!-- CONTENEDOR FLEX QUE OCUPA EL RESTO DEL ALTO -->
+            <!-- CONTENEDOR FLEX -->
             <div class="d-flex flex-column flex-grow-1 my-5">
 
-                <!-- PÁRRAFO CENTRADO VERTICALMENTE EN EL ESPACIO RESTANTE -->
                 <div class="ps-5 pe-5">
                     <p class="text-start">
                         “En Essenza creemos que una vela no solo ilumina un espacio,
@@ -41,24 +44,28 @@ if ( have_posts() ) :
                 </div>
 
             </div>
-
         </div>
 
         <!-- Imagen derecha -->
         <div class="col-md-2 d-flex justify-content-end">
-            <img 
-                src="<?php echo get_template_directory_uri(''); ?>/assets/img/flores-sobre-essenza02.png" 
-                alt="flores-sobre-essenza02" 
-                class="img-fluid img-derecha">
+            <?php if ( get_field( 'flores_sobre_essenza_2' ) ) : ?>
+                <img 
+                    src="<?php echo esc_url( get_field( 'flores_sobre_essenza_2' ) ); ?>" 
+                    alt="flores-sobre-essenza02" 
+                    class="img-fluid img-derecha">
+            <?php endif; ?>
         </div>
 
     </div>
 
+    <!-- Separador -->
     <div class="separador text-center">
-        <img 
-            src="<?php echo get_template_directory_uri(); ?>/assets/img/separador.png" 
-            alt="linea-separadora" 
-            class="img-fluid">
+        <?php if ( get_field( 'separador' ) ) : ?>
+            <img 
+                src="<?php echo esc_url( get_field( 'separador' ) ); ?>" 
+                alt="linea-separadora" 
+                class="img-fluid">
+        <?php endif; ?>
     </div>
 
     <!-- Emprendimiento -->
@@ -83,7 +90,9 @@ if ( have_posts() ) :
                 <div class="row">
                     <div class="col-md-8 mx-auto">
                         <ul class="fw-regular lista-sin-estilo espaciado-lista">
-                            <h3 class="fw-bold mb-4">Lo que diferencia a Essenza no es solo el producto, sino el esfuerzo y compromiso detrás de él</h3>
+                            <h3 class="fw-bold mb-4">
+                                Lo que diferencia a Essenza no es solo el producto, sino el esfuerzo y compromiso detrás de él
+                            </h3>
 
                             <li>✔ 100% cera de soya natural, ecológica y amigable con el medio ambiente.</li>
                             <li>✔ Aromas exclusivos, inspirados en flores, frutos, postres y momentos especiales.</li>
@@ -97,15 +106,19 @@ if ( have_posts() ) :
         </div>
     </div>
 
+    <!-- Separador -->
     <div class="separador text-center my-5">
-        <img 
-            src="<?php echo get_template_directory_uri(); ?>/assets/img/separador.png" 
-            alt="linea-separadora" 
-            class="img-fluid">
+        <?php if ( get_field( 'separador' ) ) : ?>
+            <img 
+                src="<?php echo esc_url( get_field( 'separador' ) ); ?>" 
+                alt="linea-separadora" 
+                class="img-fluid">
+        <?php endif; ?>
     </div>
 
     <!-- La persona detrás de la marca -->
     <div class="container-fluid">
+
         <div class="row">
             <div class="col-md-8 mx-auto text-center py-5">
                 <h1>La persona detrás de la marca</h1>
@@ -114,10 +127,12 @@ if ( have_posts() ) :
 
         <div class="row">
             <div class="col-md-8 mx-auto text-center mb-4">
-                <img 
-                    src="<?php echo get_template_directory_uri(); ?>/assets/img/emprendedora-margarita.png" 
-                    alt="emprendedora-margarita" 
-                    class="img-fluid rounded-4 shadow border-emprendedora p-2 py-3">
+                <?php if ( get_field( 'emprendedora_margarita' ) ) : ?>
+                    <img 
+                        src="<?php echo esc_url( get_field( 'emprendedora_margarita' ) ); ?>" 
+                        alt="emprendedora-margarita" 
+                        class="img-fluid rounded-4 shadow border-emprendedora p-2 py-3">
+                <?php endif; ?>
             </div>
         </div>
 
@@ -128,22 +143,27 @@ if ( have_posts() ) :
                 </p>
             </div>
         </div>
+
     </div>
 
+    <!-- Separador -->
     <div class="separador text-center py-5">
-        <img 
-            src="<?php echo get_template_directory_uri(); ?>/assets/img/separador.png" 
-            alt="linea-separadora" 
-            class="img-fluid">
+        <?php if ( get_field( 'separador' ) ) : ?>
+            <img 
+                src="<?php echo esc_url( get_field( 'separador' ) ); ?>" 
+                alt="linea-separadora" 
+                class="img-fluid">
+        <?php endif; ?>
     </div>
 
 </main>
-<?php
 
+<?php
     endwhile;
 endif;
-/* Aqui deberia de ir mi footer */
-get_footer(); 
+
+get_footer();
+
 ?>
 
 
