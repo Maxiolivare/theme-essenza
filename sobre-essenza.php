@@ -54,7 +54,7 @@ if ( have_posts() ) :
 
     </div>
 
-    <div class="separador text-center">
+    <div class="separador mx-auto">
         <img 
             src="<?php echo esc_url( get_field( 'separador' ) ); ?>" 
             alt="linea-separadora" 
