@@ -12,12 +12,13 @@ if ( have_posts() ) :
     <div class="row pt-5 mx-auto">
 
         <!-- Imagen izquierda -->
-<div class="col-md-4 d-flex justify-content-start crop-10-abajo">
-    <img 
-        src="<?php echo esc_url( SCF::get( 'flores_sobre_essenza_1' ) ); ?>" 
-        alt="flores-sobre-essenza01" 
-        class="img-fluid img-izquierda mb-n1">
-</div>
+        <div class="col-md-4 d-flex justify-content-start crop-10-abajo">
+            <img 
+                src="<?php echo esc_url( get_field( 'flores_sobre_essenza_1' ) ); ?>" 
+                alt="flores-sobre-essenza01" 
+                class="img-fluid img-izquierda mb-n1">
+        </div>
+
 
 
         <!-- Texto -->
