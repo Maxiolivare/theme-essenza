@@ -64,7 +64,7 @@ if ( have_posts() ) :
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 mx-auto text-center py-5">
-                <h1 class="text-cinzel">Emprendimiento</h1>
+                <h1 class="text-cinzel-0 fw-bold">Emprendimiento</h1>
             </div>
         </div>
 
