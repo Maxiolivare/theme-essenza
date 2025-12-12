@@ -12,12 +12,13 @@ if ( have_posts() ) :
     <div class="row pt-5 mx-auto">
 
         <!-- Imagen izquierda -->
-        <div class="col-md-4 d-flex justify-content-start crop-10-abajo">
-            <img 
-                src="<?php echo get_template_directory_uri(); ?>/assets/img/flores-sobre-essenza01.png" 
-                alt="flores-sobre-essenza01" 
-                class="img-fluid img-izquierda mb-n1 ">
-        </div>
+<div class="col-md-4 d-flex justify-content-start crop-10-abajo">
+    <img 
+        src="<?php echo esc_url( SCF::get( 'flores_sobre_essenza_1' ) ); ?>" 
+        alt="flores-sobre-essenza01" 
+        class="img-fluid img-izquierda mb-n1">
+</div>
+
 
         <!-- Texto -->
         <div class="col-md-6 d-flex flex-column" style="height: 100%;">
@@ -44,16 +45,17 @@ if ( have_posts() ) :
 
         <!-- Imagen derecha -->
         <div class="col-md-2 d-flex justify-content-end">
-        <img src="<?php echo esc_url( SCF::get( 'flores_sobre_essenza_1' ) ); ?>" 
-            alt="flores-sobre-essenza02" 
-            class="img-fluid img-derecha">
-
+            <img 
+                src="<?php echo get_template_directory_uri(''); ?>/assets/img/flores-sobre-essenza02.png" 
+                alt="flores-sobre-essenza02" 
+                class="img-fluid img-derecha">
         </div>
 
     </div>
 
     <div class="separador text-center">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/separador.png" 
+        <img 
+            src="<?php echo get_template_directory_uri(); ?>/assets/img/separador.png" 
             alt="linea-separadora" 
             class="img-fluid">
     </div>
