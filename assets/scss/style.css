@@ -1136,6 +1136,54 @@ button {
 .accordion-button:not(.collapsed) .bi-chevron-up {
   display: inline-block;
 }
+/* para pagina sobre essenza */
+
+/* Imagen izquierda: sobresale levemente */
+.img-izquierda {
+    margin-left: -30px;   /* invade hacia afuera */
+    margin-top: -20px;    /* ajusta vertical */
+    max-width: 120%;     
+}
+
+/* Imagen derecha: sobresale hacia adentro y hacia afuera */
+.img-derecha {
+    margin-right: -12px;  /* invade hacia afuera, esto es justo para que no extienda la web */
+    margin-top: -10px;    /* ajusta vertical */
+    max-width: 140%; 
+    max-height: 413px;    
+}
+
+/* Responsive: en móviles se reducen para no romper diseño */
+@media (max-width: 768px) {
+    .img-izquierda,
+    .img-derecha {
+        max-width: 90%;
+        margin: 0;
+    }
+}
+.crop-10-abajo {
+    height: 90%;               /* la altura que ya tenías */
+    object-fit: cover;
+    object-position: 50% 40%;       /* recorta ~10% abajo */
+    clip-path: inset(0 0 10% 0);    /* recorte exacto del 10% inferior */
+    background-size: cover;
+}
+.mb-n1 {
+  margin-bottom: -1rem !important;
+}
+/* cambiar diseño de ul y ol */
+.lista-sin-estilo {
+    list-style-type: none; /* Elimina los puntos o números predeterminados */
+    padding-left: 0; /* Elimina el padding izquierdo */
+}
+.espaciado-lista li {
+    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+}   
+
+/* border para imgen de emprendedora */
+.border-emprendedora {
+    border: 1px solid #F5E6D3; /* Color de borde naranja oscuro */
+}
 
 .chekp {
   display: flex;
