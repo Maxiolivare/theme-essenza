@@ -40,77 +40,8 @@ if ( have_posts() ) :
 
             <!-- Tarjeta con formulario -->
             <div class="contact-form-card">
-                <form action="#" method="post" class="contact-form">
-
-                    <!-- Nombre -->
-                    <div class="form-group">
-                        <label for="nombre">Nombre<span class="required">*</span></label>
-                        <input
-                            type="text"
-                            id="nombre"
-                            name="nombre"
-                            placeholder="Juan Santome Villa Mercedez"
-                            required
-                        />
-                        <p class="form-help">Introduce un nombre</p>
-                    </div>
-
-                    <!-- Correo (deshabilitado según mockup) -->
-                    <div class="form-group">
-                        <label for="correo">Correo<span class="required">*</span></label>
-                        <input
-                            type="email"
-                            id="correo"
-                            name="correo"
-                            value="Deshabilitado"
-                            class="input-disabled"
-                            disabled
-                        />
-                    </div>
-
-                    <!-- Teléfono -->
-                    <div class="form-group">
-                        <label for="telefono">Teléfono</label>
-                        <div class="phone-row">
-                            <div class="phone-prefix">
-                                <select name="codigo" id="codigo">
-                                    <option value="+56">+56</option>
-                                    <option value="+54">+54</option>
-                                    <option value="+55">+55</option>
-                                    <option value="+591">+591</option>
-                                </select>
-                            </div>
-                            <input
-                                type="tel"
-                                id="telefono"
-                                name="telefono"
-                                placeholder="9 3523 8991"
-                            />
-                        </div>
-                    </div>
-
-                    <!-- Mensaje -->
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje<span class="required">*</span></label>
-                        <textarea
-                            id="mensaje"
-                            name="mensaje"
-                            rows="5"
-                            placeholder="¿Qué es lo que necesitas?"
-                            required
-                        ></textarea>
-                    </div>
-
-                    <!-- Botón enviar -->
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn--contact-submit">
-                            Enviar
-                        </button>
-                    </div>
-
-                </form>
+                <?php echo do_shortcode('[contact-form-7 id="e320f41" title="Formulario de contacto 1"]'); ?>
             </div>
-
         </div>
     </section>
 
@@ -148,3 +79,4 @@ if ( have_posts() ) :
 endif;
 
 get_footer();
+?>
