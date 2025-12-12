@@ -56,7 +56,9 @@ if ( have_posts() ) :
 
     <div class="separador mx-auto">
         <img 
-            src="<?php echo esc_url( get_field( 'separador' ) ); ?>" alt="linea-separadora" class="img-fluid d-block mx-auto">
+            src="<?php echo esc_url( get_field( 'separador' ) ); ?>"
+            alt="linea-separadora"
+            class="img-fluid d-block mx-auto">
     </div>
 
     <!-- Emprendimiento -->
