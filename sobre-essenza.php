@@ -32,7 +32,7 @@ if ( have_posts() ) :
 
                 <!-- PÁRRAFO CENTRADO VERTICALMENTE EN EL ESPACIO RESTANTE -->
                 <div class="ps-5 pe-5">
-                    <p class="text-start">
+                    <p class="text-start text-inter">
                         “En Essenza creemos que una vela no solo ilumina un espacio,
                         también transmite emociones, recuerdos y sensaciones únicas.
                         Cada creación está pensada para acompañar momentos de calma,
@@ -71,7 +71,7 @@ if ( have_posts() ) :
 
         <div class="row">
             <div class="col-md-8 mx-auto shadow p-3 mb-5 bg-body-tertiary rounded">
-                <p>
+                <p class="text-inter">
                     Este proyecto nació de la pasión de Margarita, una emprendedora que decidió transformar su gusto por los aromas y lo artesanal en un oficio lleno de significado.
                     Desde su propio hogar, Margarita diseña, produce y cuida cada detalle de las velas: desde la elección de la cera hasta el envasado final. Todo se hace a mano, con dedicación y cariño, lo que hace que cada vela sea única.
                 </p>
@@ -85,11 +85,11 @@ if ( have_posts() ) :
                         <ul class="fw-regular lista-sin-estilo espaciado-lista">
                             <h3 class="fw-bold mb-4">Lo que diferencia a Essenza no es solo el producto, sino el esfuerzo y compromiso detrás de él</h3>
 
-                            <li>✔ 100% cera de soya natural, ecológica y amigable con el medio ambiente.</li>
-                            <li>✔ Aromas exclusivos, inspirados en flores, frutos, postres y momentos especiales.</li>
-                            <li>✔ Hechas completamente a mano, cuidando cada detalle.</li>
-                            <li>✔ Producción en pequeñas cantidades, garantizando calidad y frescura en cada vela.</li>
-                            <li>✔ Un emprendimiento local que mantiene viva la tradición artesanal.</li>
+                            <li  class="text-inter">✔ 100% cera de soya natural, ecológica y amigable con el medio ambiente.</li>
+                            <li  class="text-inter">✔ Aromas exclusivos, inspirados en flores, frutos, postres y momentos especiales.</li>
+                            <li  class="text-inter">✔ Hechas completamente a mano, cuidando cada detalle.</li>
+                            <li  class="text-inter">✔ Producción en pequeñas cantidades, garantizando calidad y frescura en cada vela.</li>
+                            <li  class="text-inter">✔ Un emprendimiento local que mantiene viva la tradición artesanal.</li>
                         </ul>
                     </div>
                 </div>
@@ -123,7 +123,7 @@ if ( have_posts() ) :
 
         <div class="row">
             <div class="col-md-8 mx-auto text-center">
-                <p class="my-3 fw-regular">
+                <p class="my-3 fw-regular text-inter">
                     Soy Margarita, trabajo sola en todo el proceso: idear, diseñar, producir y distribuir. Este esfuerzo personal es parte del sello de Essenza. No hay producción masiva ni procesos fríos; al contrario, cada vela pasa por sus manos y lleva consigo su dedicación y pasión.
                 </p>
             </div>
