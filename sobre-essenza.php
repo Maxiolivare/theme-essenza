@@ -144,7 +144,3 @@ endif;
 get_footer(); 
 ?>
 
-
-
-
-
