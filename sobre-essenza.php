@@ -2,9 +2,7 @@
 /*
 Template Name: Sobre Essenza
 */
-<?php 
-/* Aqui deberia de ir mi header */
-get_header(); 
+get_header();
 ?>
 
 <main class="fondo">
@@ -140,4 +138,5 @@ get_header();
 /* Aqui deberia de ir mi footer */
 get_footer(); 
 ?>
+
 
