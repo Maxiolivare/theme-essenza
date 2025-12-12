@@ -137,12 +137,13 @@ if ( have_posts() ) :
 
 </main>
 <?php
+
     endwhile;
 endif;
-<?php 
 /* Aqui deberia de ir mi footer */
 get_footer(); 
 ?>
+
 
 
 
