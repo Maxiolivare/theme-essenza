@@ -20,7 +20,6 @@ if ( have_posts() ) :
         </div>
 
 
-
         <!-- Texto -->
         <div class="col-md-6 d-flex flex-column">
 
