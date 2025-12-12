@@ -44,10 +44,8 @@ if ( have_posts() ) :
 
         <!-- Imagen derecha -->
         <div class="col-md-2 d-flex justify-content-end">
-            <img 
-                src="<?php echo get_template_directory_uri('flores_sobre_essenza_1'); ?>/assets/img/flores-sobre-essenza02.png" 
-                alt="flores-sobre-essenza02" 
-                class="img-fluid img-derecha">
+            <?php echo get_template_directory_uri(); ?>/assets/img/flores-sobre-essenza02.png
+
         </div>
 
     </div>
