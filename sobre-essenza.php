@@ -56,7 +56,7 @@ if ( have_posts() ) :
 
     <div class="separador text-center">
         <img 
-            src="<?php echo get_template_directory_uri(); ?>/assets/img/separador.png" 
+            src="<?php echo esc_url( get_field( 'separador' ) ); ?>" 
             alt="linea-separadora" 
             class="img-fluid">
     </div>
@@ -132,7 +132,7 @@ if ( have_posts() ) :
 
     <div class="separador text-center py-5">
         <img 
-            src="<?php echo get_template_directory_uri(); ?>/assets/img/separador.png" 
+            src="<?php echo esc_url( get_field( 'separador' ) ); ?>"  
             alt="linea-separadora" 
             class="img-fluid">
     </div>
