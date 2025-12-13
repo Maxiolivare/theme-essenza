@@ -3,7 +3,6 @@
 Template Name: Login
 */
 
-// Si el usuario ya está logueado, lo mandamos al perfil o mi cuenta
 if ( is_user_logged_in() ) {
     wp_redirect( site_url('/mi-cuenta') );
     exit;
@@ -22,20 +21,41 @@ get_header();
       </p>
 
       <?php
-      wp_login_form( array(
-          'redirect'       => site_url('/mi-cuenta'), // a dónde va al loguearse
-          'label_username' => 'Correo electrónico',
-          'label_password' => 'Contraseña',
-          'label_remember' => 'Recordarme',
-          'label_log_in'   => 'Iniciar sesión',
-          'remember'       => false,
-
-          // CLASES PERSONALIZADAS (clave para tu CSS)
+      // Arreglo con opciones personalizadas
+      $args = array(
+          'redirect'       => site_url('/mi-cuenta'),
           'form_id'        => 'loginform',
-          'id_username'    => 'login-email',
-          'id_password'    => 'login-password',
-      ) );
+          'label_username' => '', // removemos etiquetas nativas
+          'label_password' => '',
+          'label_log_in'   => '',
+          'remember'       => false,
+          'value_remember' => false,
+      );
+
+      // Guardamos el formulario original en una variable
+      $login_form = wp_login_form( $args, false );
       ?>
+
+      <form name="loginform" id="loginform" class="auth-form" action="<?php echo esc_url( site_url('wp-login.php', 'login_post') ); ?>" method="post">
+
+        <!-- Username -->
+        <div class="auth-field">
+          <label for="login-email">Correo electrónico</label>
+          <input type="text" name="log" id="login-email" class="form-control" placeholder="ejemplo@correo.cl" required>
+        </div>
+
+        <!-- Password -->
+        <div class="auth-field">
+          <label for="login-password">Contraseña</label>
+          <input type="password" name="pwd" id="login-password" class="form-control" placeholder="••••••••" required>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn--primary auth-btn">Iniciar sesión</button>
+
+        <!-- Redirect hidden -->
+        <input type="hidden" name="redirect_to" value="<?php echo esc_url( site_url('/mi-cuenta') ); ?>">
+      </form>
 
       <div class="auth-extra">
         <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" class="auth-link">
@@ -49,6 +69,7 @@ get_header();
           Crear cuenta
         </a>
       </div>
+
     </section>
 
   </div>
