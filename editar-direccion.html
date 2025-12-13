@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar-direccion</title>
+
+ <!-- Fuentes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos generales del sitio -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="page-confirmacion">
+
+  <!-- ===================== MENU MOVIL OVERLAY ===================== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__header">
+      <button class="icon-btn icon-btn--close" id="btnCloseMenu" aria-label="Cerrar menú">✕</button>
+
+      <div class="mobile-menu__logo">
+        <div class="logo-circle">
+          <img src="assets/img/Logo-essenza.svg" alt="Logo Essenza">
+        </div>
+      </div>
+    </div>
+
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link">
+        <span class="mobile-menu__icon">
+          <img src="assets/img/icono-home.svg" alt="Inicio">
+        </span>
+        <span>Inicio</span>
+      </a>
+
+      <a href="tienda.html" class="mobile-menu__link">
+        <span class="mobile-menu__icon">
+          <img src="assets/img/icono-tienda.svg" alt="Tienda">
+        </span>
+        <span>Tienda</span>
+      </a>
+
+      <a href="sobre-essenza.html" class="mobile-menu__link">
+        <span class="mobile-menu__icon">
+          <img src="assets/img/icono-sobre-la-marca.svg" alt="Sobre Essenza">
+        </span>
+        <span>Sobre Essenza</span>
+      </a>
+
+      <a href="contacto.html" class="mobile-menu__link">
+        <span class="mobile-menu__icon">
+          <img src="assets/img/icono-contacto.svg" alt="Contacto">
+        </span>
+        <span>Contacto</span>
+      </a>
+    </nav>
+
+    <div class="mobile-menu__footer">
+      <p>“Ilumina tus momentos con la calidez de lo artesanal”</p>
+      <p class="mobile-menu__brand">🕯️ Essenza</p>
+    </div>
+  </div>
+  <!-- ===================== FIN DEL MENU MOVIL ===================== -->
+
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="inicio">
+    <div class="container header-container">
+
+      <!-- Boton menu móvil -->
+      <button class="icon-btn icon-btn--menu" id="btnOpenMenu" aria-label="Abrir menú">☰</button>
+
+      <!-- Logo -->
+      <div class="header-left">
+        <a href="index.html" class="logo-link">
+          <div class="logo-circle">
+            <img src="assets/img/Logo-essenza.svg" alt="Logo Essenza">
+          </div>
+        </a>
+      </div>
+
+      <!-- Nav desktop -->
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="tienda.html" class="nav-link">Tienda</a>
+        <a href="sobre-essenza.html" class="nav-link">Sobre Essenza</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </nav>
+
+      <!-- Iconos derecha -->
+       <div class="header-right">
+      <!-- CARRITO-->
+      <a href="carrito.html" class="icon-btn" aria-label="Ver carrito">
+        <span class="icon-round">
+          <img src="assets/img/icono-carrito.svg" alt="Carrito">
+        </span>
+      </a>
+
+      <!-- PERFIL (entrada al área de cuenta) -->
+      <a href="login.html" class="icon-btn" aria-label="Ir a mi cuenta">
+        <span class="icon-round">
+          <img src="assets/img/icono-perfil.svg" alt="Perfil">
+        </span>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+  <!-- ===================== FIN DEL HEADER ===================== -->
+
+
+<!-- ===================== CONTENIDO PRINCIPAL ===================== -->
+<main class="perfil-main container">
+
+  <h1 class="perfil-titulo">Editar dirección</h1>
+
+  <form action="#" method="POST" class="form-box">
+
+    <!-- Dirección -->
+    <label class="form-label">Dirección</label>
+    <input type="text" class="form-input" placeholder="Ej: Calle Los Aromas 1234" required />
+
+    <!-- Ciudad -->
+    <label class="form-label">Ciudad / Comuna</label>
+    <input type="text" class="form-input" placeholder="Ej: Viña del Mar" required />
+
+    <!-- Región -->
+    <label class="form-label">Región</label>
+    <select class="form-input" required>
+      <option value="">Seleccionar región</option>
+      <option>Región de Valparaíso</option>
+      <option>Región Metropolitana</option>
+      <option>Región del Biobío</option>
+      <option>Región de Coquimbo</option>
+    </select>
+
+    <!-- Código postal -->
+    <label class="form-label">Código postal (opcional)</label>
+    <input type="text" class="form-input" placeholder="Ej: 2520000" />
+
+    <!-- Indicaciones -->
+    <label class="form-label">Indicaciones adicionales (opcional)</label>
+    <textarea class="form-input" rows="3" placeholder="Ej: Departamento 304, torre norte"></textarea>
+
+    <!-- Botones -->
+    <div class="form-actions">
+      <a href="perfil.html" class="btn btn--secondary">Cancelar</a>
+      <button type="submit" class="btn btn--primary">Guardar cambios</button>
+    </div>
+
+  </form>
+
+</main>
+<!-- ===================== FIN CONTENIDO ===================== -->
+
+<!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+
+
+        <div class="footer-col">
+          <nav class="footer-nav">
+            <a href="#inicio.html" class="footer-link">Inicio</a>
+            <a href="#tienda.html" class="footer-link">Tienda</a>
+            <a href="#contacto.html" class="footer-link">Contacto</a>
+          </nav>
+        </div>
+
+
+        <div class="footer-col footer-col--center">
+          <div class="logo-circle logo-circle--footer">
+            <img src="assets/img/Logo-essenza.svg" alt="Logo Essenza">
+          </div>
+        </div>
+
+
+        <div class="footer-col footer-col--right">
+          <p class="footer-social-title">Redes Sociales</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon">
+              <img src="assets/img/icono-instagram.svg" alt="Instagram Essenza">
+            </a>
+            <a href="mailto:essenzachile.velas@gmail.com" class="social-icon">
+              <img src="assets/img/icono-gmail.svg" alt="Correo Essenza">
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom__inner">
+        <p>© 2025 Essenza. Todos los derechos reservados</p>
+        <nav class="footer-legal">
+          <a href="#" class="footer-legal__link">Términos y condiciones</a>
+          <span>|</span>
+          <a href="#" class="footer-legal__link">Política de reembolsos</a>
+          <span>|</span>
+          <a href="#" class="footer-legal__link">Política de privacidad</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- JS -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+
