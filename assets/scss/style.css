@@ -2320,4 +2320,17 @@ button {
   }
 }
 
+/* login*/
+#loginform {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
+#loginform input {
+  width: 100%;
+}
+
+#loginform .button {
+  width: 100%;
+}
