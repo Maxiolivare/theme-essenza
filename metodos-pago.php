@@ -11,7 +11,7 @@ if ( have_posts() ) :
 
 <main class="perfil-main container">
 
-  <h1 class="perfil-titulo"><?php the_title(); ?></h1>
+  <h1 class="perfil-titulo">Metodos de pago</h1>
 
   <!-- Tarjeta guardada (visual) -->
   <div class="metodo-box">
