@@ -4,7 +4,7 @@ Template Name: Login
 */
 
 if ( is_user_logged_in() ) {
-    wp_redirect( site_url('/mi-cuenta') );
+    wp_redirect( site_url('/perfil') );
     exit;
 }
 
@@ -76,3 +76,4 @@ get_header();
 </main>
 
 <?php get_footer(); ?>
+
