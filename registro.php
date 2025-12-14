@@ -18,7 +18,7 @@ if ( have_posts() ) :
         Crea tu cuenta para guardar tus datos y seguir tus pedidos.
       </p>
 
-      <form class="auth-form" method="post" action="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>">
+      <form class="auth-form" method="post" action="<?php echo esc_url( wc_get_page_permalink( 'perfil' ) ); ?>">
         
         <div class="auth-field">
           <label for="reg-nombre">Nombre</label>
@@ -78,7 +78,7 @@ if ( have_posts() ) :
 
       <div class="auth-switch">
         <span>¿Ya tienes cuenta?</span>
-        <a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="auth-link">Iniciar sesión</a>
+        <a href="<?php echo esc_url( wc_get_page_permalink( 'perfil' ) ); ?>" class="auth-link">Iniciar sesión</a>
       </div>
     </section>
 
@@ -91,3 +91,4 @@ endif;
 
 get_footer();
 ?>
+
