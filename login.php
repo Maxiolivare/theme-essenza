@@ -23,7 +23,7 @@ get_header();
       <?php
       // Arreglo con opciones personalizadas
       $args = array(
-          'redirect'       => site_url('/mi-cuenta'),
+          'redirect'       => site_url('/perfil'),
           'form_id'        => 'loginform',
           'label_username' => '', // removemos etiquetas nativas
           'label_password' => '',
@@ -54,7 +54,7 @@ get_header();
         <button type="submit" class="btn btn--primary auth-btn">Iniciar sesión</button>
 
         <!-- Redirect hidden -->
-        <input type="hidden" name="redirect_to" value="<?php echo esc_url( site_url('/mi-cuenta') ); ?>">
+        <input type="hidden" name="redirect_to" value="<?php echo esc_url( site_url('/perfil') ); ?>">
       </form>
 
       <div class="auth-extra">
@@ -76,4 +76,5 @@ get_header();
 </main>
 
 <?php get_footer(); ?>
+
 
