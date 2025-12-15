@@ -59,25 +59,24 @@
                     <?php echo $img; ?>
                 </div>
                 <!-- NOMBRE, PRECIO, CANTIDAD, ELIMINAR -->
-                <div class="mb-3 cantidad-box">
-                    <?php
-                    if ( $product->is_sold_individually() ) {
-                        echo '1';
-                        echo '<input type="hidden" name="cart[' . esc_attr( $cart_item_key ) . '][qty]" value="1" />';
-                    } else {
+                <div class="col-5">
+                    <h5 class="mb-1 nombre-carrito"><?php echo esc_html( $nombre ); ?></h5>
+                    <p class="mb-3 precio-carri"><?php echo $precio; ?></p>
+                    <!-- CANTIDAD PERSONALIZADA -->
+                    <div class="mb-3 cantidad-box">
+                        <?php
                         woocommerce_quantity_input(
                             [
                                 'input_name'  => "cart[{$cart_item_key}][qty]",
                                 'input_value' => $cart_item['quantity'],
+                                'min_value'   => 1,
                                 'max_value'   => $product->get_max_purchase_quantity(),
-                                'min_value'   => '1',
                             ],
                             $product,
                             false
                         );
-                    }
-                    ?>
-                </div>
+                        ?>
+                    </div>
                     <div>
                         <a 
                             class="btn minar-p btn-link p-0 mt-2"
