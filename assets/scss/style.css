@@ -2269,4 +2269,23 @@ button {
 
 #loginform .button {
   width: 100%;
+}
+
+.shop_attributes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.shop_attributes th,
+.shop_attributes td {
+  padding: 8px 12px;
+  text-align: left; /* o center si quieres */
+  vertical-align: top;
+  border-bottom: 1px solid #ddd; /* opcional */
+}
+
+.shop_attributes th {
+  font-weight: 600; /* destacar título */
+  width: 150px; /* opcional: ancho fijo para alinear columnas */
 }/*# sourceMappingURL=style.css.map */

@@ -41,7 +41,6 @@ get_header(); ?>
                                 <?php the_post_thumbnail( 'large', ['class' => ' img-fluid cuadrar-img w-100 bg-img rounded-4'] ); ?>
                             </a>
                         <?php endif; ?>
-
                         <!-- Miniaturas -->
                         <?php
                         $attachment_ids = $product->get_gallery_image_ids();
@@ -61,12 +60,10 @@ get_header(); ?>
                         ?>
                     </div>
                 </div>
-
                 <!-- INFORMACIÓN DEL PRODUCTO -->
                 <div class="col-md-6 mx-auto">
                     <h1 class="titulos-48 text-cinzel fw-bold"><?php the_title(); ?></h1>
                     <p class="my-3"><?php the_excerpt(); ?></p>
-
                     <!-- Precio -->
                     <div class="border border-2 rounded-2 w-50 border-naranjo-oscuro textos-naranja-oscuro mb-4">
                         
@@ -74,10 +71,8 @@ get_header(); ?>
                             <?php woocommerce_template_single_price(); ?>
                         </h2>
                     </div>
-
                     <p class="my-3 parrafos-24">Detalles del producto:</p>
                     <?php wc_display_product_attributes( $product ); ?>
-
                     <!-- Contador de productos -->
                     <div class="mx-auto d-flex align-items-center mb-4">
                         <div class="col-md-4">
@@ -107,9 +102,7 @@ get_header(); ?>
                                 'input_id'    => 'cantidadReal',
                                 'classes'     => ['d-none'],           // oculta el input
                             ), $product );
-                            ?>
-    
-                    
+                            ?>                
                         </div>
                     </div>
                      <!-- boton de añadir al carro -->
@@ -122,14 +115,11 @@ get_header(); ?>
                         <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-secundary px-4 flex-fill">
                             Comprar ahora
                         </a>
-                    </div>
-                    
+                    </div>              
                     <!-- Botón REAL de WooCommerce (lo dejamos oculto, pero FUNCIONA) -->
                     <div class="d-none">
                         <?php woocommerce_template_single_add_to_cart(); ?>
                     </div>
-
-
                     <!-- Toast, se activa al apretar agregar carrito. -->
                     <div class="toast-container position-fixed bottom-0 end-0 p-3">
                         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -158,7 +148,7 @@ get_header(); ?>
         <div class="container my-5">
             <div class="row">
                 <div class="col-md-12 my-5">
-                    <h1 class="text-center text-cinzel fw-bold">Podrían Interesarte</h1>
+                    <h2 class="text-center text-cinzel fw-bold">Podrían Interesarte</h2>
                 </div>
 
                 <?php
@@ -239,9 +229,6 @@ get_header(); ?>
                 ?>
             </div>
         </div>
-
     </main>
-
 <?php endwhile; ?>
-
 <?php get_footer(); ?>
