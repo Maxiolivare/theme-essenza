@@ -57,25 +57,19 @@
         </div>
       </div>
     </section>
-    <!-- CATEGORiAS -->
     <section class="section section-categories" id="tienda">
       <div class="container-luis">
         <h2>EXPLORA NUESTRAS CATEGORÍAS</h2>
-
         <div class="category-grid">
-
           <?php
-          // Obtener categorías de productos WooCommerce
           $categorias = get_terms( array(
             'taxonomy'   => 'product_cat',
-            'hide_empty' => false, // solo categorías con productos
-            'slug'       => array('gourmet', 'arreglo-floral', 'flores', 'animales'), // ORDÉN que tú quieras
+            'hide_empty' => false, 
+            'slug'       => array('gourmet', 'arreglo-floral', 'flores', 'animales'), 
           ));
           foreach ( $categorias as $cat ) :
-            // Imagen de la categoría
             $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
             $imagen = $thumbnail_id ? wp_get_attachment_url( $thumbnail_id ) : wc_placeholder_img_src();
-            // Link a la categoría
             $link = get_term_link( $cat );
           ?>
           <article class="category-card">
@@ -86,59 +80,59 @@
               <h3 class="category-card__title">
                 <?php echo esc_html( $cat->name ); ?>
               </h3>
-
             </a>
           </article>
-
           <?php endforeach; ?>
-
         </div>
       </div>
     </section>
-
-    <!-- EVENTOS -->
+    <?php if ( class_exists('SCF') ) : ?>
     <section class="section section-events">
       <div class="container-luis">
         <h2>EVENTOS / FERIAS</h2>
+
         <div class="events-layout">
           <div class="events-info">
             <div class="events-info__item">
               <span class="events-info__icon">
-                <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
               </span>
               <div>
                 <p class="events-info__label">Ubicación</p>
-                <p>Viña del Mar, Plaza Sucre</p>
+                <p><?php echo esc_html( SCF::get('ubicacion') ); ?></p>
               </div>
             </div>
             <div class="events-info__item">
               <span class="events-info__icon">
-                <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-calendario.svg" alt="Fechas">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-calendario.svg" alt="Fechas">
               </span>
               <div>
                 <p class="events-info__label">Fechas</p>
-                <p>10 a 12 de octubre</p>
+                <p><?php echo esc_html( SCF::get('fecha') ); ?></p>
               </div>
             </div>
             <div class="events-info__item">
               <span class="events-info__icon">
-                <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-reloj.svg" alt="Horario">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-reloj.svg" alt="Horario">
               </span>
               <div>
                 <p class="events-info__label">Horario</p>
-                <p>10:00 am a 19:00 pm</p>
+                <p><?php echo esc_html( SCF::get('horario') ); ?></p>
               </div>
             </div>
           </div>
           <div class="events-map">
-            <iframe
-              title="Mapa Plaza Sucre, Viña del Mar"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.769182996026!2d-71.552!3d-33.024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689de63d1b3f1f1%3A0x0!2sPlaza%20Sucre%2C%20Vi%C3%B1a%20del%20Mar!5e0!3m2!1ses-419!2scl!4v1700000000000"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <?php
+              $mapa = SCF::get('mapa');
+              if ( $mapa ) {
+                echo $mapa;
+              }
+            ?>
           </div>
         </div>
       </div>
-    section
+    </section>
+<?php endif; ?>
+
   </main>
 <?php get_footer();?>
