@@ -227,6 +227,18 @@ Fancybox.bind("[data-fancybox]", {
 		});
 	});
 })();
+//carro
+document.addEventListener('DOMContentLoaded', function() {
+    const qtyInputs = document.querySelectorAll('.woocommerce-cart-form .qty');
+    const updateCartButton = document.querySelector('button[name="update_cart"]');
+    if (qtyInputs.length > 0 && updateCartButton) {
+        qtyInputs.forEach(function(input) {
+            input.addEventListener('change', function() {
+                updateCartButton.click();
+            });
+        });
+    }
+});
 
 /* TIENDA: Filtro Categorias */
 document.addEventListener("DOMContentLoaded", function () {
