@@ -865,7 +865,6 @@ button {
   transform: scale(1.08);
 }
 /* CARRITO */
-/* FORZAR VISIBILIDAD quantity WooCommerce */
 .woocommerce .quantity,
 .woocommerce .quantity .qty,
 .woocommerce .quantity input[type="number"] {
@@ -2316,3 +2315,7 @@ button {
     width: 150px;     /* opcional: ancho fijo para alinear columnas */
 }
 
+.form-control{
+  border: solid 1px #b96122;
+  width: 80%;
+}

@@ -848,7 +848,6 @@ button {
 }
 
 /* CARRITO */
-/* FORZAR VISIBILIDAD quantity WooCommerce */
 .woocommerce .quantity,
 .woocommerce .quantity .qty,
 .woocommerce .quantity input[type=number] {
@@ -2297,4 +2296,9 @@ button {
 .shop_attributes th {
   font-weight: 600; /* destacar título */
   width: 150px; /* opcional: ancho fijo para alinear columnas */
+}
+
+.form-control {
+  border: solid 1px #b96122;
+  width: 80%;
 }/*# sourceMappingURL=style.css.map */
