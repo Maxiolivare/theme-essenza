@@ -43,7 +43,7 @@
         <span>Tienda</span>
       </a>
 
-      <a href="#sobre-essenza" class="mobile-menu__link">
+      <a href="<?php echo get_permalink(194); ?>" class="mobile-menu__link">
         <span class="mobile-menu__icon">
           <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-sobre-la-marca.svg" alt="Sobre Essenza">
         </span>
