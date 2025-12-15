@@ -865,6 +865,12 @@ button {
   transform: scale(1.08);
 }
 /* CARRITO */
+.woocommerce .quantity,
+.woocommerce .qty {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
 .cart-custom {
     font-family: 'Inter', sans-serif;
     background: #f6efe4;
