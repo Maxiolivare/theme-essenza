@@ -86,12 +86,17 @@
               <h3 class="category-card__title">
                 <?php echo esc_html( $cat->name ); ?>
               </h3>
+
             </a>
           </article>
+
           <?php endforeach; ?>
+
         </div>
       </div>
     </section>
+
+    <!-- EVENTOS -->
     <section class="section section-events">
       <div class="container-luis">
         <h2>EVENTOS / FERIAS</h2>
@@ -99,34 +104,41 @@
           <div class="events-info">
             <div class="events-info__item">
               <span class="events-info__icon">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
+                <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
               </span>
               <div>
                 <p class="events-info__label">Ubicación</p>
-                <p><?php echo esc_html( SCF::get('ubicacion') ); ?></p>
+                <p>Viña del Mar, Plaza Sucre</p>
               </div>
             </div>
             <div class="events-info__item">
               <span class="events-info__icon">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-calendario.svg" alt="Fechas">
+                <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-calendario.svg" alt="Fechas">
               </span>
               <div>
                 <p class="events-info__label">Fechas</p>
-                <p><?php echo esc_html( SCF::get('fechas') ); ?></p>
+                <p>10 a 12 de octubre</p>
               </div>
             </div>
             <div class="events-info__item">
               <span class="events-info__icon">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-reloj.svg" alt="Horario">
+                <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-reloj.svg" alt="Horario">
               </span>
               <div>
                 <p class="events-info__label">Horario</p>
-                <p><?php echo esc_html( SCF::get('horario') ); ?></p>
+                <p>10:00 am a 19:00 pm</p>
               </div>
             </div>
           </div>
+          <div class="events-map">
+            <iframe
+              title="Mapa Plaza Sucre, Viña del Mar"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.769182996026!2d-71.552!3d-33.024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689de63d1b3f1f1%3A0x0!2sPlaza%20Sucre%2C%20Vi%C3%B1a%20del%20Mar!5e0!3m2!1ses-419!2scl!4v1700000000000"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
-    </section>
+    section
   </main>
 <?php get_footer();?>
