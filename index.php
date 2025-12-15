@@ -92,5 +92,41 @@
         </div>
       </div>
     </section>
+    <section class="section section-events">
+      <div class="container-luis">
+        <h2>EVENTOS / FERIAS</h2>
+        <div class="events-layout">
+          <div class="events-info">
+            <div class="events-info__item">
+              <span class="events-info__icon">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
+              </span>
+              <div>
+                <p class="events-info__label">Ubicación</p>
+                <p><?php echo esc_html( SCF::get('ubicacion') ); ?></p>
+              </div>
+            </div>
+            <div class="events-info__item">
+              <span class="events-info__icon">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-calendario.svg" alt="Fechas">
+              </span>
+              <div>
+                <p class="events-info__label">Fechas</p>
+                <p><?php echo esc_html( SCF::get('fechas') ); ?></p>
+              </div>
+            </div>
+            <div class="events-info__item">
+              <span class="events-info__icon">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-reloj.svg" alt="Horario">
+              </span>
+              <div>
+                <p class="events-info__label">Horario</p>
+                <p><?php echo esc_html( SCF::get('horario') ); ?></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 <?php get_footer();?>
