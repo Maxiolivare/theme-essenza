@@ -125,14 +125,6 @@
               </div>
             </div>
           </div>
-          <div class="events-map">
-            <?php
-              $mapa = SCF::get('mapa');
-              if ($mapa) {
-                echo $mapa;
-              }
-            ?>
-          </div>
         </div>
       </div>
     </section>
