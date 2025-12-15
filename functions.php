@@ -78,7 +78,6 @@ add_filter( 'woocommerce_get_scripts', 'mi_prevenir_desactivacion_fragmentos' );
 // ---------------------------------------------------------------------
 // OCULTAR LOS MENSAJES TIPO:
 // “X se ha añadido al carrito. Ver carrito”
-// (como pediste anteriormente)
 // ---------------------------------------------------------------------
 add_filter( 'wc_add_to_cart_message_html', '__return_empty_string' );
 add_filter( 'woocommerce_coupon_message', '__return_empty_string' );
