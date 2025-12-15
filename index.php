@@ -103,7 +103,7 @@
               </span>
               <div>
                 <p class="events-info__label">Ubicación</p>
-                <p><?php echo esc_html( SCF::get('ubicacion_evento') ); ?></p>
+                <p><?php echo esc_html( SCF::get('ubicacion') ); ?></p>
               </div>
             </div>
             <div class="events-info__item">
@@ -112,7 +112,7 @@
               </span>
               <div>
                 <p class="events-info__label">Fechas</p>
-                <p><?php echo esc_html( SCF::get('fecha_evento') ); ?></p>
+                <p><?php echo esc_html( SCF::get('fechas') ); ?></p>
               </div>
             </div>
             <div class="events-info__item">
@@ -121,13 +121,13 @@
               </span>
               <div>
                 <p class="events-info__label">Horario</p>
-                <p><?php echo esc_html( SCF::get('horario_evento') ); ?></p>
+                <p><?php echo esc_html( SCF::get('horario') ); ?></p>
               </div>
             </div>
           </div>
           <div class="events-map">
             <?php
-              $mapa = SCF::get('mapa_evento');
+              $mapa = SCF::get('mapa');
               if ($mapa) {
                 echo $mapa;
               }
