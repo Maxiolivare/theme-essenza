@@ -43,7 +43,7 @@
         <span>Tienda</span>
       </a>
 
-      <a href="<?php echo site_url('/sobre-essenza'); ?>" class="mobile-menu__link">
+      <a href="<?php echo get_permalink(194);?>" class="mobile-menu__link">
         <span class="mobile-menu__icon">
           <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-sobre-la-marca.svg" alt="Sobre Essenza">
         </span>
@@ -81,18 +81,22 @@
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="<?php echo home_url(); ?>" class="nav-link">Inicio</a>
         <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="nav-link">Tienda</a>
-        <a href="<?php echo get_permalink(194); ?>" class="nav-link">Sobre Essenza</a>
+        <a href="<?php echo get_permalink(194);?>" class="nav-link">Sobre Essenza</a>
         <a href="" class="nav-link">Contacto</a>
       </nav>
 
       <!-- Iconos derecha -->
       <div class="header-right">
-        <button class="icon-btn-luis" aria-label="Ver carrito">
+        <?php if ( function_exists('WC') ) : ?>
+        <a href="<?php echo wc_get_cart_url(); ?>" class="icon-btn-luis cart-link" aria-label="Ver carrito">
           <span class="icon-round">
-            <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-carrito.svg" alt="Carrito">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-carrito.svg" alt="Carrito">
+            <span class="cart-count">
+              <?php echo WC()->cart->get_cart_contents_count(); ?>
+            </span>
           </span>
-        </button>
-
+        </a>
+        <?php endif; ?>
         <button class="icon-btn-luis" aria-label="Cuenta">
           <span class="icon-round">
             <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-perfil.svg" alt="Perfil">
