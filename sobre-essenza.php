@@ -11,7 +11,7 @@ if ( have_posts() ) :
     <div class="row pt-5 mx-auto">
 
         <!-- Imagen izquierda -->
-        <div class="col-md-4 d-flex justify-content-start crop-10-abajo">
+        <div class="col-md-4 d-flex flor justify-content-start crop-10-abajo">
             <img 
                 src="<?php echo esc_url( get_field( 'flores_sobre_essenza_1' ) ); ?>" 
                 alt="flores-sobre-essenza01" 
@@ -26,7 +26,7 @@ if ( have_posts() ) :
 
                 <!-- PÁRRAFO CENTRADO VERTICALMENTE EN EL ESPACIO RESTANTE -->
                 <div class="ps-5 pe-5">
-                    <p class="text-start text-inter">
+                    <p class="text-start enez text-inter">
                         “En Essenza creemos que una vela no solo ilumina un espacio,
                         también transmite emociones, recuerdos y sensaciones únicas.
                         Cada creación está pensada para acompañar momentos de calma,
@@ -39,7 +39,7 @@ if ( have_posts() ) :
         </div>
 
         <!-- Imagen derecha -->
-        <div class="col-md-2 d-flex justify-content-end">
+        <div class="col-md-2 d-flex flor justify-content-end">
             <img 
                 src="<?php echo esc_url( get_field( 'flores_sobre_essenza_2' ) ); ?>"  
                 alt="flores-sobre-essenza02" 
