@@ -1236,12 +1236,6 @@ button {
     width: 100% !important;
     float: none !important;
 }
-@media (min-width: 768px) {
-  .woocommerce-checkout .form-row-first,
-  .woocommerce-checkout .form-row-last {
-      width: 50%;
-  }
-}
 
 
 .total-monto {
