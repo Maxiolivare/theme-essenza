@@ -17,7 +17,7 @@ if ( have_posts() ) :
 
             <!-- Texto introductorio -->
             <div class="contact-text">
-                <h1 class="contact-title"><?php the_title(); ?></h1>
+                <h1 class="contact-title h1n"><?php the_title(); ?></h1>
 
                 <p>Este espacio de contacto es para ti.</p>
                 <p>

@@ -59,7 +59,7 @@ if ( have_posts() ) :
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 mx-auto text-center py-5">
-                <h1 class="text-cinzel-0 fw-bold">Emprendimiento</h1>
+                <h2 class="text-cinzel-0 h1n fw-bold">Emprendimiento</h2>
             </div>
         </div>
 
@@ -102,7 +102,7 @@ if ( have_posts() ) :
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 mx-auto text-center py-5">
-                <h1 class="text-cinzel-0 fw-bold">La persona detrás de la marca</h1>
+                <h2 class="text-cinzel-0 h1n fw-bold">La persona detrás de la marca</h2>
             </div>
         </div>
 
