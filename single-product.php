@@ -54,7 +54,7 @@ remove_action( 'woocommerce_after_quantity_input_field', 'woocommerce_quantity_i
 <h1 class="titulos-48 text-cinzel fw-bold"><?php the_title(); ?></h1>
 <p class="my-3"><?php the_excerpt(); ?></p>
 
-<div class="mb-4">
+<div class="producto-precio mb-4">
     <h2 class="text-inter fw-semibold textos-naranja-oscuro mb-1 precio-tamano">
         <?php woocommerce_template_single_price(); ?>
     </h2>

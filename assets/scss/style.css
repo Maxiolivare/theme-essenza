@@ -1007,7 +1007,12 @@ button {
   font-size: 32px;
 }
 .precio-tamano {
-  font-size: 36px; !important
+  font-size: 36px; 
+}
+.producto-precio .price {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
 }
 
 .parrafos-24 {
