@@ -141,9 +141,9 @@
             <?php endif; ?>
           </div>
           <div class="events-map">
-            <?php if ( get_field('mapa') ) : ?>
-              <?php the_field('mapa'); ?>
-            <?php endif; ?>
+              <?php if ( SCF::get('mapa') ) : ?>
+                  <?php echo SCF::get('mapa'); ?>
+              <?php endif; ?>
           </div>
         </div>
       </div>
