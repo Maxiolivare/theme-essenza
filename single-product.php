@@ -78,31 +78,17 @@ get_header(); ?>
                         <div class="col-md-4">
                             <p class="parrafos-24 mb-0">Cantidad:</p>
                         </div>
-                        <div class="col-md-8 d-flex align-items-center ms-3">
-                    
-                            <!-- Contador, para que se vea visualmente y no use el de woocomerce por defecto-->
-                            <div class="btn-group me-3" role="group">
-                                <button type="button" class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-end-0 btn-lg" onclick="decrementar()">
-                                    <i class="bi bi-dash-circle"></i>
-                                </button>
-                                <button type="button" id="cantidadVisual" class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-end-0 border-start-0 btn-lg">
-                                    1
-                                </button>
-                                <button type="button" class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-start-0 btn-lg" onclick="incrementar()">
-                                    <i class="bi bi-plus-circle"></i>
-                                </button>
-                            </div>
-                            <!-- ESTE ES EL INPUT REAL que WooCommerce lee (lo ocultamos) -->
-                                <?php
-                            woocommerce_quantity_input( array(
-                                'min_value'   => 1,
-                                'max_value'   => $product->get_max_purchase_quantity(), //colocar luego, solo desactivado para probar muchos productos
-                                'input_value' => 1,
-                                'input_name'  => 'quantity',
-                                'input_id'    => 'cantidadReal',
-                                'classes'     => ['d-none'],           // oculta el input
-                            ), $product );
-                            ?>                
+                        <div class="col-md-8 d-flex align-items-center ms-3">  
+                            <div class="quantity d-flex align-items-center gap-2">
+                            <input
+                                type="number"
+                                class="form-control qty text-center"
+                                name="cart[<?php echo esc_attr( $cart_item_key ); ?>][qty]"
+                                value="<?php echo esc_attr( $cart_item['quantity'] ); ?>"
+                                min="1"
+                                step="1"
+                            />
+                        </div>     
                         </div>
                     </div>
                      <!-- boton de añadir al carro -->
