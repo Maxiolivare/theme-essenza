@@ -2299,6 +2299,9 @@ button {
 }
 
 .form-control {
+  background-color: white;
   border: solid 1px #d27529 !important;
   width: 80% !important;
+  height: 48px !important;
+  color: #d27529;
 }/*# sourceMappingURL=style.css.map */
