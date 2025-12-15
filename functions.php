@@ -132,17 +132,20 @@ add_action( 'init', 'registrar_cpt_ferias' );
 add_filter( 'woocommerce_form_field_args', 'essenza_estilos_checkout', 10, 3 );
 function essenza_estilos_checkout( $args, $key, $value ) {
 
-	// input, select, textarea
-	$args['input_class'][] = 'form-control';
-	$args['input_class'][] = 'border-naranjo-oscuro';
-	$args['input_class'][] = 'blanco-secundario';
+    // input, select, textarea
+    $args['input_class'][] = 'form-control';
+    $args['input_class'][] = 'border-naranjo-oscuro';
+    $args['input_class'][] = 'blanco-secundario';
+    
+    // Aplicar w-100 (ancho completo de Bootstrap)
+    $args['input_class'][] = 'w-100';
 
-	// wrapper (p.form-row)
-	$args['class'][] = 'mb-3';
+    // wrapper (p.form-row)
+    $args['class'][] = 'mb-3';
 
-	// label
-	$args['label_class'][] = 'form-label';
+    // label
+    $args['label_class'][] = 'form-label';
 
-	return $args;
+    return $args;
 }
 
