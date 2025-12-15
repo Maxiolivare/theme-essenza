@@ -97,7 +97,7 @@
           </span>
         </a>
         <?php endif; ?>
-        <a href="<?php echo get_permalink(227);?>" class="icon-btn-luis" aria-label="Cuenta">
+        <a href="<?php echo get_permalink(247);?>" class="icon-btn-luis" aria-label="Cuenta">
           <span class="icon-round">
             <img class="icono-h-der" src="<?php echo get_template_directory_uri();?>/assets/img/icono-perfil.svg" alt="Perfil">
           </span>
