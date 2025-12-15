@@ -1,7 +1,3 @@
-<?php
-defined( 'ABSPATH' ) || exit;
-?>
-
 <main>
     <div class="container">
         <h1 class="h1n">Tu carrito</h1>
@@ -68,38 +64,23 @@ defined( 'ABSPATH' ) || exit;
                     <p class="mb-3 precio-carri"><?php echo $precio; ?></p>
                     <!-- CANTIDAD PERSONALIZADA -->
                     <div class="mb-3 cantidad-box">
-                        <div class="btn-group me-3" role="group">
-                            <!-- Botón restar -->
-                            <button type="button"
-                                class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-end-0 btn-lg qty-btn-custom"
-                                data-type="minus"
-                                data-target="<?php echo $cart_item_key; ?>">
-                                <i class="bi bi-dash-circle"></i>
-                            </button>
-
-                            <!-- Botón cantidad visual -->
-                            <button type="button"
-                                id="cantidadVisual-<?php echo $cart_item_key; ?>"
-                                class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-end-0 border-start-0 btn-lg">
-                                <?php echo $cart_item['quantity']; ?>
-                            </button>
-
-                            <!-- Input real que WooCommerce necesita -->
-                            <input type="number"
-                                class="d-none"
-                                name="cart[<?php echo $cart_item_key; ?>][qty]"
-                                id="qty-real-<?php echo $cart_item_key; ?>"
-                                value="<?php echo $cart_item['quantity']; ?>"
-                                min="1" />
-
-                            <!-- Botón sumar -->
-                            <button type="button"
-                                class="btn btn-primary bg-white border-naranjo-oscuro textos-naranja-oscuro border-start-0 btn-lg qty-btn-custom"
-                                data-type="plus"
-                                data-target="<?php echo $cart_item_key; ?>">
-                                <i class="bi bi-plus-circle"></i>
-                            </button>
-                        </div>
+                        <?php
+                        if ( $product->is_sold_individually() ) {
+                            echo '1';
+                            echo '<input type="hidden" name="cart[' . esc_attr( $cart_item_key ) . '][qty]" value="1" />';
+                        } else {
+                            woocommerce_quantity_input(
+                                [
+                                    'input_name'  => "cart[{$cart_item_key}][qty]",
+                                    'input_value' => $cart_item['quantity'],
+                                    'max_value'   => $product->get_max_purchase_quantity(),
+                                    'min_value'   => '1',
+                                ],
+                                $product,
+                                false
+                            );
+                        }
+                        ?>
                     </div>
                     <div>
                         <a 
@@ -131,7 +112,6 @@ defined( 'ABSPATH' ) || exit;
         </a>
     </div>
 </main>
-
 
 
 
