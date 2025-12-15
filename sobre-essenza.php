@@ -64,7 +64,7 @@ if ( have_posts() ) :
         </div>
 
         <div class="row">
-            <div class="col-md-8 mx-auto shadow p-3 mb-5 bg-body-tertiary rounded">
+            <div class="col-md-8 mx-auto shadow p-4 mb-5 bg-body-tertiary rounded">
                 <p class="text-inter">
                     Este proyecto nació de la pasión de Margarita, una emprendedora que decidió transformar su gusto por los aromas y lo artesanal en un oficio lleno de significado.
                     Desde su propio hogar, Margarita diseña, produce y cuida cada detalle de las velas: desde la elección de la cera hasta el envasado final. Todo se hace a mano, con dedicación y cariño, lo que hace que cada vela sea única.
@@ -73,7 +73,7 @@ if ( have_posts() ) :
         </div>
 
         <div class="row bg-img">
-            <div class="col-md-12 my-3">
+            <div class="col-md-12 my-3 p-5">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
                         <ul class="fw-regular lista-sin-estilo espaciado-lista">
