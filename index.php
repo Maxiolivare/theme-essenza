@@ -86,81 +86,58 @@
         </div>
       </div>
     </section>
+    <?php if ( class_exists('SCF') ) : ?>
     <section class="section section-events">
       <div class="container-luis">
         <h2>EVENTOS / FERIAS</h2>
 
-        <?php
-        $hay_eventos = false;
+        <div class="events-layout">
+          <div class="events-info">
 
-        for ( $i = 1; $i <= 5; $i++ ) :
-
-          $ubicacion = get_field( "ubicacion_$i" );
-          $fecha     = get_field( "fechas_$i" );
-          $horario   = get_field( "horario_$i" );
-
-          if ( $ubicacion || $fecha || $horario ) :
-            $hay_eventos = true;
-        ?>
-          <div class="events-layout">
-
-            <div class="events-info">
-
-              <?php if ( $ubicacion ) : ?>
-              <div class="events-info__item">
-                <span class="events-info__icon">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
-                </span>
-                <div>
-                  <p class="events-info__label">Ubicación</p>
-                  <p><?php echo esc_html( $ubicacion ); ?></p>
-                </div>
+            <div class="events-info__item">
+              <span class="events-info__icon">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
+              </span>
+              <div>
+                <p class="events-info__label">Ubicación</p>
+                <p><?php echo esc_html( SCF::get('ubicacion', $home_id) ); ?></p>
               </div>
-              <?php endif; ?>
-
-              <?php if ( $fecha ) : ?>
-              <div class="events-info__item">
-                <span class="events-info__icon">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-calendario.svg" alt="Fechas">
-                </span>
-                <div>
-                  <p class="events-info__label">Fechas</p>
-                  <p><?php echo esc_html( $fecha ); ?></p>
-                </div>
-              </div>
-              <?php endif; ?>
-
-              <?php if ( $horario ) : ?>
-              <div class="events-info__item">
-                <span class="events-info__icon">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-reloj.svg" alt="Horario">
-                </span>
-                <div>
-                  <p class="events-info__label">Horario</p>
-                  <p><?php echo esc_html( $horario ); ?></p>
-                </div>
-              </div>
-              <?php endif; ?>
-
             </div>
 
-            <?php if ( $mapa ) : ?>
-            <div class="events-map">
-              <?php echo wp_oembed_get( $mapa ); ?>
+            <div class="events-info__item">
+              <span class="events-info__icon">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-calendario.svg" alt="Fechas">
+              </span>
+              <div>
+                <p class="events-info__label">Fechas</p>
+                <p><?php echo esc_html( SCF::get('fechas', $home_id) ); ?></p>
+              </div>
             </div>
-            <?php endif; ?>
+
+            <div class="events-info__item">
+              <span class="events-info__icon">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-reloj.svg" alt="Horario">
+              </span>
+              <div>
+                <p class="events-info__label">Horario</p>
+                <p><?php echo esc_html( SCF::get('horario', $home_id) ); ?></p>
+              </div>
+            </div>
 
           </div>
-        <?php
-          endif;
-        endfor;
 
-        if ( ! $hay_eventos ) :
-        ?>
-          <p class="text-muted">No hay eventos programados.</p>
-        <?php endif; ?>
-
+          <div class="events-map">
+            <?php
+              $mapa = SCF::get('mapa', $home_id);
+              if ( $mapa ) {
+                echo wp_oembed_get( $mapa );
+              }
+            ?>
+          </div>
+        </div>
       </div>
     </section>
+    <?php endif; ?>
+
   </main>
 <?php get_footer();?>
