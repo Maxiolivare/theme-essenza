@@ -1396,7 +1396,7 @@ button {
     border-radius: 18px;
   }
   .flor {
-    display: none;
+    display: none !important;
   }
   .confirm-block {
     padding: 1.25rem 1.25rem;
