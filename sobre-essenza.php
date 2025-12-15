@@ -8,7 +8,7 @@ if ( have_posts() ) :
     while ( have_posts() ) : the_post();
 ?>
 <main class="fondo">
-    <div class="row pt-5 mx-auto ">
+    <div class="row pt-5 mx-auto g-0">
 
         <!-- Imagen izquierda -->
         <div class="col-md-4 d-flex flor justify-content-start crop-10-abajo">
@@ -138,6 +138,7 @@ endif;
 /* Aqui deberia de ir mi footer */
 get_footer(); 
 ?>
+
 
 
 
