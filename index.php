@@ -110,7 +110,7 @@
               </span>
               <div>
                 <p class="events-info__label">Fechas</p>
-                <p><?php echo esc_html( SCF::get('fecha', $home_id) ); ?></p>
+                <p><?php echo esc_html( SCF::get('fechas', $home_id) ); ?></p>
               </div>
             </div>
 
@@ -134,7 +134,6 @@
               }
             ?>
           </div>
-
         </div>
       </div>
     </section>
