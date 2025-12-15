@@ -81,7 +81,7 @@
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="<?php echo home_url(); ?>" class="nav-link">Inicio</a>
         <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="nav-link">Tienda</a>
-        <a href="" class="nav-link">Sobre Essenza</a>
+        <a href="<?php echo get_permalink(194); ?>" class="nav-link">Sobre Essenza</a>
         <a href="" class="nav-link">Contacto</a>
       </nav>
 
