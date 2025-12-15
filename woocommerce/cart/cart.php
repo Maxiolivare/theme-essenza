@@ -75,6 +75,7 @@
                                 inputmode="numeric"
                             />
                         </div>
+                    <button type="submit" name="update_cart" class="d-none"></button>
                     </div>
                     <div>
                         <a 
