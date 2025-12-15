@@ -55,7 +55,7 @@ remove_action( 'woocommerce_after_quantity_input_field', 'woocommerce_quantity_i
 <p class="my-3"><?php the_excerpt(); ?></p>
 
 <div class="mb-4">
-    <h2 class="precio-tamano text-inter fw-semibold textos-naranja-oscuro mb-1">
+    <h2 class="precio-tamano text-inter fw-semibold textos-naranja-oscuro mb-1 precio-tamano">
         <?php woocommerce_template_single_price(); ?>
     </h2>
     <small class="text-muted">IVA incluido</small>
