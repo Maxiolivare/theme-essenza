@@ -228,46 +228,6 @@ Fancybox.bind("[data-fancybox]", {
 	});
 })();
 
-
-//CARRITO 
-
-
-document.addEventListener("click", function (e) {
-
-  if (e.target.closest(".qty-plus")) {
-    const btn = e.target.closest(".qty-plus");
-    const key = btn.dataset.target;
-    const input = document.getElementById("qty-" + key);
-
-    if (!input) return;
-
-    input.value = parseInt(input.value || 1) + 1;
-    input.dispatchEvent(new Event("change", { bubbles: true }));
-  }
-
-  if (e.target.closest(".qty-minus")) {
-    const btn = e.target.closest(".qty-minus");
-    const key = btn.dataset.target;
-    const input = document.getElementById("qty-" + key);
-
-    if (!input) return;
-
-    if (parseInt(input.value) > 1) {
-      input.value = parseInt(input.value) - 1;
-      input.dispatchEvent(new Event("change", { bubbles: true }));
-    }
-  }
-});
-
-
-document.addEventListener("change", function (e) {
-  if (e.target.classList.contains("qty")) {
-    const updateBtn = document.querySelector('button[name="update_cart"]');
-    if (updateBtn) updateBtn.click();
-  }
-});
-
-
 /* TIENDA: Filtro Categorias */
 document.addEventListener("DOMContentLoaded", function () {
     const botonCategorias = document.querySelector(".categorias-link");
