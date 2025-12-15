@@ -227,15 +227,7 @@ Fancybox.bind("[data-fancybox]", {
 		});
 	});
 })();
-//carrrro
-document.addEventListener('change', function (e) {
-    if (e.target.matches('.woocommerce-cart-form input.qty')) {
-        const form = e.target.closest('form');
-        if (form) {
-            form.submit();
-        }
-    }
-});
+
 /* TIENDA: Filtro Categorias */
 document.addEventListener("DOMContentLoaded", function () {
     const botonCategorias = document.querySelector(".categorias-link");
