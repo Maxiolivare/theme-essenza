@@ -45,6 +45,22 @@ function mi_forzar_cart_fragments() {
 }
 add_action( 'wp_enqueue_scripts', 'mi_forzar_cart_fragments', 1 );
 
+add_action('wp_ajax_custom_add_to_cart', 'custom_add_to_cart');
+add_action('wp_ajax_nopriv_custom_add_to_cart', 'custom_add_to_cart');
+
+function custom_add_to_cart() {
+
+    if ( ! isset($_POST['product_id'], $_POST['quantity']) ) {
+        wp_send_json_error();
+    }
+
+    $product_id = absint($_POST['product_id']);
+    $quantity   = max(1, absint($_POST['quantity']));
+
+    WC()->cart->add_to_cart($product_id, $quantity);
+
+    wp_send_json_success();
+}
 
 // ---------------------------------------------------------------------
 // EVITAR QUE OTRO CÓDIGO DESACTIVE LOS FRAGMENTOS
@@ -102,7 +118,7 @@ function registrar_cpt_ferias() {
     'publicly_queryable' => true,
     'show_ui'            => true,
     'show_in_menu'       => true,
-    'show_in_rest'       => true, 
+    'show_in_rest'       => true, // Gutenberg / REST
     'has_archive'        => false,
     'rewrite'            => array( 'slug' => 'ferias' ),
     'supports'           => array( 'title' ),
