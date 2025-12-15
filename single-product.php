@@ -74,7 +74,7 @@ get_header(); ?>
                     <p class="my-3 parrafos-24">Detalles del producto:</p>
                     <?php wc_display_product_attributes( $product ); ?>
                     <!-- Contador de productos -->
-                    <div class="mx-auto d-flex align-items-center mb-4">
+                    <div class="mx-auto d-flex align-items-center my-4 mb-4">
                         <div class="col-md-4">
                             <p class="parrafos-24 mb-0">Cantidad:</p>
                         </div>
