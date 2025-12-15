@@ -229,10 +229,10 @@ Fancybox.bind("[data-fancybox]", {
 })();
 //carrrro
 document.addEventListener('change', function (e) {
-    if (e.target.classList.contains('qty')) {
-        const updateBtn = document.querySelector('button[name="update_cart"]');
-        if (updateBtn) {
-            updateBtn.click();
+    if (e.target.matches('.woocommerce-cart-form input.qty')) {
+        const form = e.target.closest('form');
+        if (form) {
+            form.submit();
         }
     }
 });

@@ -60,7 +60,14 @@
         submenu.style.display = submenu.style.display === "block" ? "none" : "block";
     });
 });
-
+document.addEventListener('change', function (e) {
+    if (e.target.matches('.woocommerce-cart-form input.qty')) {
+        const form = e.target.closest('form');
+        if (form) {
+            form.submit();
+        }
+    }
+});
 </script>
 
   </script>
