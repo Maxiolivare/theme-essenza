@@ -49,7 +49,7 @@
         </span>
         <span>Sobre Essenza</span>
       </a>
-      <a href="#contacto" class="mobile-menu__link">
+      <a href="<?php echo get_permalink(212);?>" class="mobile-menu__link">
         <span class="mobile-menu__icon">
           <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-contacto.svg" alt="Contacto">
         </span>
@@ -82,7 +82,7 @@
         <a href="<?php echo home_url(); ?>" class="nav-link">Inicio</a>
         <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="nav-link">Tienda</a>
         <a href="<?php echo get_permalink(194);?>" class="nav-link">Sobre Essenza</a>
-        <a href="" class="nav-link">Contacto</a>
+        <a href="<?php echo get_permalink(212);?>" class="nav-link">Contacto</a>
       </nav>
 
       <!-- Iconos derecha -->
