@@ -228,61 +228,45 @@ Fancybox.bind("[data-fancybox]", {
 	});
 })();
 
-/* CARRITO */
 
-document.querySelectorAll(".qty-btn-custom").forEach(btn => {
-    btn.addEventListener("click", function () {
+//CARRITO 
 
-        const type = this.dataset.type;
-        const key = this.dataset.target;
 
-        const realInput = document.getElementById("qty-real-" + key);
-        const visualBtn = document.getElementById("cantidadVisual-" + key);
+document.addEventListener("click", function (e) {
 
-        let current = parseInt(realInput.value);
+  if (e.target.closest(".qty-plus")) {
+    const btn = e.target.closest(".qty-plus");
+    const key = btn.dataset.target;
+    const input = document.getElementById("qty-" + key);
 
-        if (type === "minus" && current > 1) current--;
-        if (type === "plus") current++;
+    if (!input) return;
 
-        realInput.value = current;
-        visualBtn.innerText = current;
+    input.value = parseInt(input.value || 1) + 1;
+    input.dispatchEvent(new Event("change", { bubbles: true }));
+  }
 
-        document.querySelector("button[name='update_cart']").click();
-    });
-});
-document.addEventListener('DOMContentLoaded', function() {
+  if (e.target.closest(".qty-minus")) {
+    const btn = e.target.closest(".qty-minus");
+    const key = btn.dataset.target;
+    const input = document.getElementById("qty-" + key);
 
-    jQuery(document.body).off('change', 'input.qty');
+    if (!input) return;
 
-});
-document.addEventListener('DOMContentLoaded', function() {
-
-    const updateButton = document.querySelector('button[name="update_cart"]');
-
-    document.querySelectorAll('input.qty').forEach(function(input){
-        input.addEventListener('change', function(){
-            updateButton.disabled = false;
-        });
-    });
-
-});
-document.getElementById("btnEliminarSeleccionados").addEventListener("click", function() {
-
-    const checkboxes = document.querySelectorAll("input[name='cart[]']:checked");
-
-    if (checkboxes.length === 0) {
-        alert("No hay productos seleccionados");
-        return;
+    if (parseInt(input.value) > 1) {
+      input.value = parseInt(input.value) - 1;
+      input.dispatchEvent(new Event("change", { bubbles: true }));
     }
-    const form = document.querySelector("form.woocommerce-cart-form");
-    checkboxes.forEach(chk => {
-        const cartKey = chk.value;
-        const qtyInput = document.querySelector(`input[name='cart[${cartKey}][qty]']`);
-        if (qtyInput) qtyInput.value = 0;
-    });
-
-    form.submit(); 
+  }
 });
+
+
+document.addEventListener("change", function (e) {
+  if (e.target.classList.contains("qty")) {
+    const updateBtn = document.querySelector('button[name="update_cart"]');
+    if (updateBtn) updateBtn.click();
+  }
+});
+
 
 /* TIENDA: Filtro Categorias */
 document.addEventListener("DOMContentLoaded", function () {

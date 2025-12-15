@@ -65,17 +65,32 @@
                     <!-- CANTIDAD PERSONALIZADA -->
                     <div class="mb-3 cantidad-box">
                         <div class="quantity d-flex align-items-center gap-2">
+                            
+                            <button 
+                                type="button"
+                                class="btn btn-outline-secondary qty-minus"
+                                data-target="<?php echo esc_attr( $cart_item_key ); ?>">
+                                −
+                            </button>
                             <input
                                 type="number"
                                 class="form-control qty text-center"
+                                id="qty-<?php echo esc_attr( $cart_item_key ); ?>"
                                 name="cart[<?php echo esc_attr( $cart_item_key ); ?>][qty]"
                                 value="<?php echo esc_attr( $cart_item['quantity'] ); ?>"
                                 min="1"
                                 step="1"
                                 inputmode="numeric"
                             />
+                            <button 
+                                type="button"
+                                class="btn btn-outline-secondary qty-plus"
+                                data-target="<?php echo esc_attr( $cart_item_key ); ?>">
+                                +
+                            </button>
                         </div>
                     </div>
+
                     <div>
                         <a 
                             class="btn minar-p btn-link p-0 mt-2"
