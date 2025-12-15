@@ -72,6 +72,70 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// Sincronizar al cargar
+document.addEventListener('DOMContentLoaded', () => {
+    const real = document.getElementById('cantidadReal');
+    document.getElementById('cantidadVisual').textContent = real.value;
+});
+/*     Fin de funciones de añadir cantidad de productos */
+/* Funcion para cambiar el texto de añadir a carrito a eliminar de carrito */
+function cambiarTextoBoton(){
+    const btn = document.getElementById('liveToastBtnCarrito');
+    if (!btn) return;let textNode = null;
+for (let n of btn.childNodes) {
+    if (n.nodeType === Node.TEXT_NODE) { textNode = n; break; }
+}
+if (!textNode) {
+    textNode = document.createTextNode(' Agregar al Carrito');
+    btn.appendChild(textNode);
+}
+
+const current = textNode.nodeValue.trim();
+if (current === 'Agregar al Carrito' || current === 'Agregar al carrito') {
+    textNode.nodeValue = ' Eliminar del Carrito';
+} else {
+    textNode.nodeValue = ' Agregar al Carrito';
+}
+    // Actualizar mensaje del toast segun si es para agregar o añadir
+    const liveToast = document.getElementById('liveToast');
+    if (liveToast) {
+        const body = liveToast.querySelector('.toast-body');
+        if (body) {
+            if (textNode.nodeValue.trim() === 'Eliminar del Carrito') {
+                body.innerHTML = '<p class="d-inline m-0 align-middle">Su producto ha sido añadido al Carrito'+'<i class="bi bi-check2 align-middle"></i></p>';
+            } else {
+                body.innerHTML = '<p class="d-inline m-0 align-middle">Su producto ha sido eliminado del carrito'+'<i class="bi bi-check2 align-middle"></i></p>';
+            }
+        }
+    }}
+
+{ /*     Funciones de Toast de Bootstrap, con esto se activa. */
+    const toastTrigger = document.getElementById('liveToastBtnCarrito') // Cambiado para que funcione con el id de carrito
+    const toastLiveExample = document.getElementById('liveToast')
+
+    if (toastTrigger) {
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+    toastTrigger.addEventListener('click', () => {
+        toastBootstrap.show()
+    })
+    }
+}
+document.addEventListener('DOMContentLoaded', function () {
+    const botonBonito = document.getElementById('liveToastBtnCarrito');
+    const botonReal    = document.querySelector('.single_add_to_cart_button'); // botón oculto de WooCommerce
+
+    if (!botonBonito || !botonReal) return;
+
+    // Cuando haces clic en tu botón bonito → haces clic en el real (invisible)
+    botonBonito.addEventListener('click', function () {
+        botonReal.click();  // ← esto añade el producto de verdad al carrito
+    });
+
+    // Después de que WooCommerce añada el producto → cambiamos el texto
+    document.body.addEventListener('added_to_cart', function () {
+        cambiarTextoBoton();
+    });
+});
 </script>
 
   </script>

@@ -121,7 +121,6 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-10 my-4">
                     <h5 class="text-danger">Material inflamable: Utilizar con precaución</h5>
