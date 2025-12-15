@@ -1232,9 +1232,8 @@ button {
   font-size: 22px;
   color: #4a2a1b;
 }
-.woocommerce-checkout .form-row {
+.woocommerce-checkout .form-control {
     width: 100% !important;
-    float: none !important;
 }
 
 
