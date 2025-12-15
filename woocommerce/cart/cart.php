@@ -64,23 +64,17 @@
                     <p class="mb-3 precio-carri"><?php echo $precio; ?></p>
                     <!-- CANTIDAD PERSONALIZADA -->
                     <div class="mb-3 cantidad-box">
-                        <?php
-                        if ( $product->is_sold_individually() ) {
-                            echo '1';
-                            echo '<input type="hidden" name="cart[' . esc_attr( $cart_item_key ) . '][qty]" value="1" />';
-                        } else {
-                            woocommerce_quantity_input(
-                                [
-                                    'input_name'  => "cart[{$cart_item_key}][qty]",
-                                    'input_value' => $cart_item['quantity'],
-                                    'max_value'   => $product->get_max_purchase_quantity(),
-                                    'min_value'   => '1',
-                                ],
-                                $product,
-                                false
-                            );
-                        }
-                        ?>
+                        <div class="quantity d-flex align-items-center gap-2">
+                            <input
+                                type="number"
+                                class="form-control qty text-center"
+                                name="cart[<?php echo esc_attr( $cart_item_key ); ?>][qty]"
+                                value="<?php echo esc_attr( $cart_item['quantity'] ); ?>"
+                                min="1"
+                                step="1"
+                                inputmode="numeric"
+                            />
+                        </div>
                     </div>
                     <div>
                         <a 
