@@ -64,17 +64,30 @@
                     <p class="mb-3 precio-carri"><?php echo $precio; ?></p>
                     <!-- CANTIDAD PERSONALIZADA -->
                     <div class="mb-3 cantidad-box">
-                        <div class="quantity d-flex align-items-center gap-2">
-                            <input
-                                type="number"
-                                class="form-control qty text-center"
-                                name="cart[<?php echo esc_attr( $cart_item_key ); ?>][qty]"
-                                value="<?php echo esc_attr( $cart_item['quantity'] ); ?>"
-                                min="1"
-                                step="1"
-                                inputmode="numeric"
-                            />
+                        <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+                        <!-- PRODUCTO -->
+                        <div class="mb-3 cantidad-box">
+                            <div class="quantity d-flex align-items-center gap-2">
+                                <input
+                                    type="number"
+                                    class="form-control qty text-center"
+                                    name="cart[<?php echo esc_attr( $cart_item_key ); ?>][qty]"
+                                    value="<?php echo esc_attr( $cart_item['quantity'] ); ?>"
+                                    min="1"
+                                    step="1"
+                                />
+                            </div>
                         </div>
+
+                        <!-- BOTÓN OBLIGATORIO -->
+                        <button type="submit" name="update_cart" value="1" class="d-none">
+                            Update cart
+                        </button>
+
+                        <?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+
+                    </form>
+
                     <button type="submit" name="update_cart" class="d-none"></button>
                     </div>
                     <div>
