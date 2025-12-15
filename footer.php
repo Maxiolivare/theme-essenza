@@ -61,13 +61,11 @@
     });
 });
 document.addEventListener('change', function (e) {
-    if (e.target.matches('.woocommerce-cart-form input.qty')) {
-        const form = e.target.closest('form');
-        if (form) {
-            form.submit();
-        }
+    if (e.target.classList.contains('qty')) {
+        document.querySelector('.woocommerce-cart-form').submit();
     }
 });
+
 </script>
 
   </script>
