@@ -2298,6 +2298,17 @@ button {
   width: 150px; /* opcional: ancho fijo para alinear columnas */
 }
 
+.volver {
+  background: var(--ambar);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
 .form-control {
   background-color: white;
   border: solid 1px #d27529 !important;
