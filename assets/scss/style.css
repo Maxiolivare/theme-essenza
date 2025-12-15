@@ -796,6 +796,8 @@ button {
 
 .icon-round-carro {
   position: relative;
+  height: 22px;
+  width: 22px;
 }
 
 .cart-count {
