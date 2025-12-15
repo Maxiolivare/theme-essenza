@@ -865,12 +865,15 @@ button {
   transform: scale(1.08);
 }
 /* CARRITO */
+/* FORZAR VISIBILIDAD quantity WooCommerce */
 .woocommerce .quantity,
-.woocommerce .qty {
+.woocommerce .quantity .qty,
+.woocommerce .quantity input[type="number"] {
     display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
 }
+
 .cart-custom {
     font-family: 'Inter', sans-serif;
     background: #f6efe4;
