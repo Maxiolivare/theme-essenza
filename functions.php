@@ -127,3 +127,22 @@ function registrar_cpt_ferias() {
   register_post_type( 'ferias', $args );
 }
 add_action( 'init', 'registrar_cpt_ferias' );
+
+// Para que woocommerce no reescriba el css de checkout
+add_filter( 'woocommerce_form_field_args', 'essenza_estilos_checkout', 10, 3 );
+function essenza_estilos_checkout( $args, $key, $value ) {
+
+	// input, select, textarea
+	$args['input_class'][] = 'form-control';
+	$args['input_class'][] = 'border-naranjo-oscuro';
+	$args['input_class'][] = 'blanco-secundario';
+
+	// wrapper (p.form-row)
+	$args['class'][] = 'mb-3';
+
+	// label
+	$args['label_class'][] = 'form-label';
+
+	return $args;
+}
+
