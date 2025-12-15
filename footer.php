@@ -60,11 +60,31 @@
         submenu.style.display = submenu.style.display === "block" ? "none" : "block";
     });
 });
-document.addEventListener('change', function (e) {
-    if (e.target.classList.contains('qty')) {
-        document.querySelector('.woocommerce-cart-form').submit();
+document.addEventListener('click', function (e) {
+    if (!e.target.classList.contains('qty-btn')) return;
+
+    const btn = e.target;
+    const wrapper = btn.closest('.quantity');
+    const input = wrapper.querySelector('.qty');
+
+    let value = parseInt(input.value, 10);
+    const min = parseInt(input.min || 1, 10);
+
+    if (btn.dataset.action === 'plus') {
+        value++;
+    }
+
+    if (btn.dataset.action === 'minus' && value > min) {
+        value--;
+    }
+
+    input.value = value;
+    const form = document.querySelector('.woocommerce-cart-form');
+    if (form) {
+        form.submit();
     }
 });
+
 
 </script>
 
