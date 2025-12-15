@@ -2318,11 +2318,13 @@ button {
   background: var(--ambar);
   color: white;
   border: none;
-  border-radius: 30px;
-  padding: 0.6rem 1.4rem;
+  padding: 20px 30px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 20px;
   transition: background .2s ease;
+}
+.volver:hover{
+  background: #b96122;
 }
 .form-control{
   background-color: white;
