@@ -86,53 +86,60 @@
         </div>
       </div>
     </section>
-    <?php if ( class_exists('SCF') ) : ?>
-    <section class="section section-events">
-      <div class="container-luis">
-        <h2>EVENTOS / FERIAS</h2>
+    <?php while ( have_posts() ) : the_post(); ?>
+      <?php if ( class_exists('SCF') ) : ?>
+      <section class="section section-events">
+        <div class="container-luis">
+          <h2>EVENTOS / FERIAS</h2>
 
-        <div class="events-layout">
-          <div class="events-info">
-            <div class="events-info__item">
-              <span class="events-info__icon">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
-              </span>
-              <div>
-                <p class="events-info__label">Ubicación</p>
-                <p><?php echo esc_html( SCF::get('ubicacion') ); ?></p>
+          <div class="events-layout">
+            <div class="events-info">
+
+              <div class="events-info__item">
+                <span class="events-info__icon">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
+                </span>
+                <div>
+                  <p class="events-info__label">Ubicación</p>
+                  <p><?php echo esc_html( SCF::get('ubicacion') ); ?></p>
+                </div>
               </div>
-            </div>
-            <div class="events-info__item">
-              <span class="events-info__icon">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-calendario.svg" alt="Fechas">
-              </span>
-              <div>
-                <p class="events-info__label">Fechas</p>
-                <p><?php echo esc_html( SCF::get('fecha') ); ?></p>
+
+              <div class="events-info__item">
+                <span class="events-info__icon">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-calendario.svg" alt="Fechas">
+                </span>
+                <div>
+                  <p class="events-info__label">Fechas</p>
+                  <p><?php echo esc_html( SCF::get('fecha') ); ?></p>
+                </div>
               </div>
-            </div>
-            <div class="events-info__item">
-              <span class="events-info__icon">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-reloj.svg" alt="Horario">
-              </span>
-              <div>
-                <p class="events-info__label">Horario</p>
-                <p><?php echo esc_html( SCF::get('horario') ); ?></p>
+
+              <div class="events-info__item">
+                <span class="events-info__icon">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-reloj.svg" alt="Horario">
+                </span>
+                <div>
+                  <p class="events-info__label">Horario</p>
+                  <p><?php echo esc_html( SCF::get('horario') ); ?></p>
+                </div>
               </div>
+
             </div>
-          </div>
-          <div class="events-map">
-            <?php
-              $mapa = SCF::get('mapa');
-              if ( $mapa ) {
-                echo $mapa;
-              }
-            ?>
+
+            <div class="events-map">
+              <?php
+                $mapa = SCF::get('mapa');
+                if ( $mapa ) {
+                  echo wp_oembed_get( $mapa );
+                }
+              ?>
+            </div>
+
           </div>
         </div>
-      </div>
-    </section>
-<?php endif; ?>
-
+      </section>
+      <?php endif; ?>
+    <?php endwhile; ?>
   </main>
 <?php get_footer();?>
