@@ -20,7 +20,7 @@ if ( have_posts() ) :
         <!-- Texto -->
         <div class="col-md-6 d-flex flex-column">
             <!-- TÍTULO ARRIBA PEGADO -->
-            <h1 class="ms-5 text-center text-md-start mt-5 pt-0 fw-bold text-cinzel-0">Sobre Essenza</h1>
+            <h1 class="ms-5 h1n text-center text-md-start mt-5 pt-0 fw-bold text-cinzel-0">Sobre Essenza</h1>
             <!-- CONTENEDOR FLEX QUE OCUPA EL RESTO DEL ALTO -->
             <div class="d-flex flex-column flex-grow-1 my-5">
 
