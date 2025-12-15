@@ -90,7 +90,7 @@
         <?php if ( function_exists('WC') ) : ?>
         <a href="<?php echo wc_get_cart_url(); ?>" class="icon-btn-luis cart-link" aria-label="Ver carrito">
           <span class="icon-round-carro">
-            <img class="icono-carro" src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-carrito.svg" alt="Carrito">
+            <img class="icono-h-der" src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-carrito.svg" alt="Carrito">
             <span class="cart-count">
               <?php echo WC()->cart->get_cart_contents_count(); ?>
             </span>
@@ -99,7 +99,7 @@
         <?php endif; ?>
         <button class="icon-btn-luis" aria-label="Cuenta">
           <span class="icon-round">
-            <img src="<?php echo get_template_directory_uri();?>/assets/img/icono-perfil.svg" alt="Perfil">
+            <img class="icono-h-der" src="<?php echo get_template_directory_uri();?>/assets/img/icono-perfil.svg" alt="Perfil">
           </span>
         </button>
       </div>
