@@ -810,6 +810,29 @@ button {
   font-weight: bold;
   margin: 40px 0 ;
 }
+//carro header
+.cart-link {
+  position: relative;
+}
+
+.icon-round-carro {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #432f25;
+  color: #fff;
+  font-size: 11px;
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 600;
+}
 /* Tarjeta con carrito */
 
 .product-card__image-wrapper {

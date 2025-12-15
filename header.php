@@ -89,7 +89,7 @@
       <div class="header-right">
         <?php if ( function_exists('WC') ) : ?>
         <a href="<?php echo wc_get_cart_url(); ?>" class="icon-btn-luis cart-link" aria-label="Ver carrito">
-          <span class="icon-round">
+          <span class="icon-round-carro">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-carrito.svg" alt="Carrito">
             <span class="cart-count">
               <?php echo WC()->cart->get_cart_contents_count(); ?>
