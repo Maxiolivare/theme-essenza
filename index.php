@@ -86,58 +86,71 @@
         </div>
       </div>
     </section>
-    <?php if ( class_exists('SCF') ) : ?>
+      <?php
+        $args = [
+          'post_type'      => 'ferias',
+          'posts_per_page' => 1,
+          'post_status'    => 'publish',
+          'orderby'        => 'date',
+          'order'          => 'ASC',
+        ];
+
+        $ferias = new WP_Query($args);
+
+        if ( $ferias->have_posts() ) :
+          while ( $ferias->have_posts() ) : $ferias->the_post();
+        ?>
     <section class="section section-events">
       <div class="container-luis">
         <h2>EVENTOS / FERIAS</h2>
-
         <div class="events-layout">
           <div class="events-info">
-
+            <?php if ( get_field('ubicacion') ) : ?>
             <div class="events-info__item">
               <span class="events-info__icon">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-ubicacion.svg" alt="Ubicación">
               </span>
               <div>
                 <p class="events-info__label">Ubicación</p>
-                <p><?php echo esc_html( SCF::get('ubicacion', $home_id) ); ?></p>
+                <p><?php the_field('ubicacion'); ?></p>
               </div>
             </div>
-
+            <?php endif; ?>
+            <?php if ( get_field('fechas') ) : ?>
             <div class="events-info__item">
               <span class="events-info__icon">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-calendario.svg" alt="Fechas">
               </span>
               <div>
                 <p class="events-info__label">Fechas</p>
-                <p><?php echo esc_html( SCF::get('fechas', $home_id) ); ?></p>
+                <p><?php the_field('fechas'); ?></p>
               </div>
             </div>
-
+            <?php endif; ?>
+            <?php if ( get_field('horario') ) : ?>
             <div class="events-info__item">
               <span class="events-info__icon">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-reloj.svg" alt="Horario">
               </span>
               <div>
                 <p class="events-info__label">Horario</p>
-                <p><?php echo esc_html( SCF::get('horario', $home_id) ); ?></p>
+                <p><?php the_field('horario'); ?></p>
               </div>
             </div>
-
+            <?php endif; ?>
           </div>
-
           <div class="events-map">
-            <?php
-              $mapa = SCF::get('mapa', $home_id);
-              if ( $mapa ) {
-                echo wp_oembed_get( $mapa );
-              }
-            ?>
+            <?php if ( get_field('mapa') ) : ?>
+              <?php the_field('mapa'); ?>
+            <?php endif; ?>
           </div>
         </div>
       </div>
     </section>
-    <?php endif; ?>
-
+    <?php
+      endwhile;
+      wp_reset_postdata();
+    endif;
+    ?>
   </main>
 <?php get_footer();?>
