@@ -65,8 +65,8 @@ button {
 
 /* Logo circulo de fondo */
 .logo-circle {
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: var(--blanco);
   border: 2px solid var(--crema-medio);
@@ -940,16 +940,28 @@ button {
   display: none !important;
 }
 
+/* Estilo para todo el cuadro de métodos de pago */
+#order_review .wc_payment_methods,
+#order_review .woocommerce-checkout-review-order-table,
+#order_review #payment {
+  background-color: white; /* o el color que uses */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Cada método de pago */
+#order_review .wc_payment_method {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 .buy-btn:hover {
   background-color: #4a2f25;
 }
 
 /*css para detalle-producto y checkout*/
-/* para ocultar elementos molestos*/
-#payment #place_order {
-    display: none !important;
-}
-
 /*Tamaño de letra*/
 .titulos-48 {
   font-size: 48px;
@@ -962,37 +974,10 @@ button {
 .parrafos-24 {
   font-size: 24px;
 }
-.text-cinzel {
-    font-family: "Cinzel", serif;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-.text-inter {
-  font-family: "Inter", sans-serif;
-}
-/* Estilo para todo el cuadro de métodos de pago */
-#order_review .wc_payment_methods,
-#order_review .woocommerce-checkout-review-order-table,
-#order_review #payment {
-    background-color: white; /* o el color que uses */
-    padding: 15px;
-    border-radius: 8px;
-}
-
-/* Cada método de pago */
-#order_review .wc_payment_method {
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
 
 .text-cinzel {
   font-family: "Cinzel", serif;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-.text-cinzel-0 {
-  font-family: "Cinzel", serif;
 }
 
 .text-inter {
@@ -1139,54 +1124,6 @@ button {
 .accordion-button:not(.collapsed) .bi-chevron-up {
   display: inline-block;
 }
-/* para pagina sobre essenza */
-
-/* Imagen izquierda: sobresale levemente */
-.img-izquierda {
-    margin-left: -30px;   /* invade hacia afuera */
-    margin-top: -20px;    /* ajusta vertical */
-    max-width: 120%;     
-}
-
-/* Imagen derecha: sobresale hacia adentro y hacia afuera */
-.img-derecha {
-    margin-right: -12px;  /* invade hacia afuera, esto es justo para que no extienda la web */
-    margin-top: -10px;    /* ajusta vertical */
-    max-width: 140%; 
-    max-height: 413px;    
-}
-
-/* Responsive: en móviles se reducen para no romper diseño */
-@media (max-width: 768px) {
-    .img-izquierda,
-    .img-derecha {
-        max-width: 90%;
-        margin: 0;
-    }
-}
-.crop-10-abajo {
-    height: 90%;               /* la altura que ya tenías */
-    object-fit: cover;
-    object-position: 50% 40%;       /* recorta ~10% abajo */
-    clip-path: inset(0 0 10% 0);    /* recorte exacto del 10% inferior */
-    background-size: cover;
-}
-.mb-n1 {
-  margin-bottom: -1rem !important;
-}
-/* cambiar diseño de ul y ol */
-.lista-sin-estilo {
-    list-style-type: none; /* Elimina los puntos o números predeterminados */
-    padding-left: 0; /* Elimina el padding izquierdo */
-}
-.espaciado-lista li {
-    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
-}   
-
-/* border para imgen de emprendedora */
-.border-emprendedora {
-    border: 1px solid #F5E6D3; /* Color de borde naranja oscuro */
-}
 
 .chekp {
   display: flex;
@@ -1271,11 +1208,9 @@ button {
   margin-bottom: 35px;
   text-transform: uppercase;
   font-weight: bold;
-}/*# sourceMappingURL=style.css.map */
-
+}
 
 /* ===================== PÁGINA CONFIRMACIÓN DE COMPRA ===================== */
-
 .page-confirmacion {
   background: var(--crema-claro);
 }
@@ -1412,35 +1347,27 @@ button {
   .confirm-card {
     padding: 2rem 1.5rem;
   }
-
   .confirm-order-item {
     grid-template-columns: 1.6fr 0.4fr 0.7fr;
   }
 }
-
 @media (max-width: 520px) {
   .confirm-card {
     padding: 1.75rem 1.25rem;
     border-radius: 18px;
   }
-
   .confirm-block {
     padding: 1.25rem 1.25rem;
   }
-
   .confirm-order-item {
     grid-template-columns: 1.3fr 0.4fr 0.8fr;
     font-size: 0.9rem;
   }
-
   .confirm-title {
     font-size: 1.6rem;
   }
 }
-
-
 /* ==================== PÁGINA ERROR / FALLO DE PAGO ==================== */
-
 .pago-error-main {
   padding-block: 4rem;
   background: var(--crema-claro);
@@ -1491,7 +1418,6 @@ button {
 }
 
 /* ======== BOTONES ======== */
-
 .pago-error-actions {
   display: flex;
   justify-content: center !important; /* Fuerza centrado total */
@@ -1535,22 +1461,16 @@ button {
     padding: 2rem 1.5rem;
     border-radius: 18px;
   }
-
   .pago-error-title {
     font-size: 1.6rem;
   }
-
   /* Botones uno debajo del otro y centrados */
   .pago-error-actions {
     flex-direction: column;
     align-items: center;
   }
 }
-
-
-
 /* ===================== AUTH (LOGIN / REGISTRO) ===================== */
-
 .auth-main {
   padding-block: 4rem;
   background: var(--crema-claro);
@@ -1663,19 +1583,15 @@ button {
 }
 
 /* ===================== RESPONSIVE ===================== */
-
 @media (max-width: 520px) {
   .auth-card {
     padding: 2rem 1.4rem;
   }
-
   .auth-title {
     font-size: 1.6rem;
   }
 }
 /* ===================== PERFIL (DASHBOARD) ===================== */
-
-
 /* === CONTENEDOR GENERAL === */
 .perfil-contenedor {
   padding-block: 3rem;
@@ -1701,14 +1617,13 @@ button {
     grid-template-columns: 1fr;
   }
 }
-
 /* === BLOQUES === */
 .perfil-block {
   background: var(--crema-claro);
   border: 1px solid rgba(210, 117, 41, 0.25);
   border-radius: 14px;
   padding: 1.7rem 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .perfil-block__title {
@@ -1737,8 +1652,6 @@ button {
 .btn--ghost:hover {
   background: var(--crema-medio) !important;
 }
-
-
 
 /* Página de edición de datos */
 .perfil-main {
@@ -1790,10 +1703,7 @@ button {
   margin-top: 1.5rem;
 }
 
-
-
 /* ===================== MÉTODOS DE PAGO ===================== */
-
 .metodo-box {
   background: var(--blanco);
   padding: 1.5rem;
@@ -1848,7 +1758,7 @@ button {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   display: none;
   align-items: center;
   justify-content: center;
@@ -1867,9 +1777,7 @@ button {
   box-shadow: var(--shadow-soft);
 }
 
-
 /* ===================== HISTORIAL DE COMPRAS ===================== */
-
 .perfil-contenido {
   padding: 3rem 0;
 }
@@ -1898,12 +1806,12 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .pedido-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* Texto interno */
@@ -1942,20 +1850,18 @@ button {
   padding: 0.6rem 1.4rem;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: background .2s ease;
+  transition: background 0.2s ease;
 }
 
 .pedido-btn:hover {
   background: #b96122;
 }
 
-
 /* ========================= MODAL DETALLE DEL PEDIDOS ============================= */
-
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   display: none;
   justify-content: center;
   align-items: center;
@@ -1973,15 +1879,20 @@ button {
   padding: 2rem;
   width: min(480px, 95%);
   position: relative;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-  animation: fadeUp .25s ease;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeUp 0.25s ease;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 .modal-close {
   position: absolute;
   right: 1rem;
@@ -2018,10 +1929,7 @@ button {
   text-align: right;
 }
 
-
-
 /* ===================== RECUPERAR CONTRASEÑA ===================== */
-
 .rec-wrapper {
   min-height: calc(100vh - 220px);
   display: flex;
@@ -2073,7 +1981,7 @@ button {
   max-width: 280px;
   padding: 0.65rem 0.85rem;
   border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   font-size: 0.95rem;
   font-family: inherit;
 }
@@ -2115,9 +2023,7 @@ button {
   text-decoration: underline;
 }
 
-
 /* ===================== PÁGINA DE CONTACTO ===================== */
-
 .contact-page {
   background: var(--crema-claro);
   padding-block: 3rem 4rem;
@@ -2186,9 +2092,9 @@ button {
 }
 
 /* Inputs generales */
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
+.contact-form input[type=text],
+.contact-form input[type=email],
+.contact-form input[type=tel],
 .contact-form select,
 .contact-form textarea {
   font-family: inherit;
@@ -2197,6 +2103,10 @@ button {
   border-radius: 10px;
   border: 1px solid var(--ambar);
   outline: none;
+}
+
+.contact-form input::-moz-placeholder, .contact-form textarea::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.35);
 }
 
 .contact-form input::placeholder,
@@ -2296,7 +2206,8 @@ button {
 .contact-direct-icon img {
   width: 22px;
   height: 22px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .contact-direct-text {
@@ -2310,16 +2221,13 @@ button {
   .contact-page {
     padding-block: 2.25rem 3rem;
   }
-
   .contact-form-card {
     padding: 2rem 1.4rem;
   }
-
   .phone-row {
     grid-template-columns: 90px minmax(0, 1fr);
   }
 }
-
 /* login*/
 #loginform {
   display: flex;
@@ -2333,4 +2241,4 @@ button {
 
 #loginform .button {
   width: 100%;
-}
+}/*# sourceMappingURL=style.css.map */
