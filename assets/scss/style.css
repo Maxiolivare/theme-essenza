@@ -2299,6 +2299,6 @@ button {
 }
 
 .form-control {
-  border: solid 1px #b96122;
-  width: 80%;
+  border: solid 1px #b96122 !important;
+  width: 80% !important;
 }/*# sourceMappingURL=style.css.map */
