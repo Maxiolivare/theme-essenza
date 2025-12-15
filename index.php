@@ -98,9 +98,8 @@
           $ubicacion = get_field( "ubicacion_$i" );
           $fecha     = get_field( "fechas_$i" );
           $horario   = get_field( "horario_$i" );
-          $mapa      = get_field( "mapa_$i" );
 
-          if ( $ubicacion || $fecha || $horario || $mapa ) :
+          if ( $ubicacion || $fecha || $horario ) :
             $hay_eventos = true;
         ?>
           <div class="events-layout">
