@@ -1383,8 +1383,11 @@ button {
     padding: 1.75rem 1.25rem;
     border-radius: 18px;
   }
+  .ps-5, .pe-5{
+    padding: 3px !important;
+  }
   .h1n{
-    text-align: center;
+    text-align: center !important;
   }
   .flor{
     display: none !important;
