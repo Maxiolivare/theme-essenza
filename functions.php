@@ -79,3 +79,35 @@ add_action( 'wp', function() {
         remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
     }
 });
+//custom post types
+function registrar_cpt_ferias() {
+
+  $labels = array(
+    'name'               => 'Ferias',
+    'singular_name'      => 'Feria',
+    'menu_name'          => 'Ferias',
+    'add_new'            => 'Agregar feria',
+    'add_new_item'       => 'Agregar nueva feria',
+    'edit_item'          => 'Editar feria',
+    'new_item'           => 'Nueva feria',
+    'view_item'          => 'Ver feria',
+    'search_items'       => 'Buscar ferias',
+    'not_found'          => 'No hay ferias',
+    'not_found_in_trash' => 'No hay ferias en la papelera',
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'show_in_rest'       => true, 
+    'has_archive'        => false,
+    'rewrite'            => array( 'slug' => 'ferias' ),
+    'supports'           => array( 'title' ),
+  );
+
+  register_post_type( 'ferias', $args );
+}
+add_action( 'init', 'registrar_cpt_ferias' );
