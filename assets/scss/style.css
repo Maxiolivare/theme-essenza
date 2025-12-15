@@ -1232,16 +1232,17 @@ button {
   font-size: 22px;
   color: #4a2a1b;
 }
-#billing_first_name_field,
-#billing_last_name_field,
-#billing_email_field,
-#billing_phone_field,
-#billing_address_1_field,
-#billing_city_field,
-#billing_state_field,
-#billing_postcode_field {
-	width: 100% !important;
+.woocommerce-checkout .form-row {
+    width: 100% !important;
+    float: none !important;
 }
+@media (min-width: 768px) {
+  .woocommerce-checkout .form-row-first,
+  .woocommerce-checkout .form-row-last {
+      width: 50%;
+  }
+}
+
 
 .total-monto {
   font-weight: bold;
