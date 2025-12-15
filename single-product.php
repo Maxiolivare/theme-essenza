@@ -54,11 +54,13 @@ remove_action( 'woocommerce_after_quantity_input_field', 'woocommerce_quantity_i
 <h1 class="titulos-48 text-cinzel fw-bold"><?php the_title(); ?></h1>
 <p class="my-3"><?php the_excerpt(); ?></p>
 
-<div class="w-50 border-naranjo-oscuro textos-naranja-oscuro mb-4">
-    <h2 class="text-start align-middle ms-4 sub-titulos-32 my-2 text-inter fw-bold">
+<div class="mb-4">
+    <h2 class="sub-titulos-32 text-inter fw-semibold textos-naranja-oscuro mb-1">
         <?php woocommerce_template_single_price(); ?>
     </h2>
+    <small class="text-muted">IVA incluido</small>
 </div>
+
 
 <p class="my-3 parrafos-24">Detalles del producto:</p>
 <?php wc_display_product_attributes( $product ); ?>
