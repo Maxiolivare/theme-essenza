@@ -100,7 +100,6 @@
                 </div>
             </div>
             <?php endforeach; ?>
-            <button type="submit" class="d-none" name="update_cart"></button>
         </form>
         <!-- TOTAL FINAL -->
         <div class="checkout-total-carro">
