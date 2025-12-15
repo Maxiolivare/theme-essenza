@@ -47,14 +47,6 @@
                     <p class="mb-3 precio-carri"><?php echo $precio; ?></p>
                     <div class="mb-3 cantidad-box">
                         <div class="quantity d-flex align-items-center gap-2">
-
-                            <button
-                                type="button"
-                                class="qty-btn"
-                                data-action="minus">
-                                −
-                            </button>
-
                             <input
                                 type="number"
                                 class="form-control qty text-center"
@@ -63,17 +55,8 @@
                                 min="1"
                                 step="1"
                             />
-
-                            <button
-                                type="button"
-                                class="qty-btn"
-                                data-action="plus">
-                                +
-                            </button>
-
                         </div>
                     </div>
-
                     <a class="btn minar-p btn-link p-0 mt-2"
                        href="<?php echo wc_get_cart_remove_url( $cart_item_key ); ?>">
                         Eliminar producto
@@ -95,7 +78,6 @@
                 <?php echo wc_price( WC()->cart->total ); ?>
             </span>
         </div>
-
         <a href="<?php echo wc_get_checkout_url(); ?>" class="buy-btn">
             Comprar
         </a>
