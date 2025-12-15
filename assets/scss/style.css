@@ -1232,6 +1232,17 @@ button {
   font-size: 22px;
   color: #4a2a1b;
 }
+/* Forzar campos de checkout a 100% */
+.woocommerce-checkout .form-row {
+	width: 100% !important;
+	float: none !important;
+}
+
+.woocommerce-checkout .form-row-first,
+.woocommerce-checkout .form-row-last {
+	width: 100% !important;
+	float: none !important;
+}
 
 .total-monto {
   font-weight: bold;
