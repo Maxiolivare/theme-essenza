@@ -1007,7 +1007,7 @@ button {
   font-size: 32px;
 }
 .precio-tamano {
-  font-size: 36px;
+  font-size: 36px; !important
 }
 
 .parrafos-24 {
