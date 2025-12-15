@@ -61,7 +61,6 @@ remove_action( 'woocommerce_after_quantity_input_field', 'woocommerce_quantity_i
     <small class="text-muted">IVA incluido</small>
 </div>
 
-
 <p class="my-3 parrafos-24">Detalles del producto:</p>
 <?php wc_display_product_attributes( $product ); ?>
 
